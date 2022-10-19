@@ -21,7 +21,7 @@ const Navbar = (props) => {
                 <div className="mt-32 text-right pr-16 text-text">
                     {props.MenuItems.map((e, i) => {
                         return (
-                            <Link href={`/${e}`}>
+                            <Link key={`link${i}`} href={`/${e}`}>
                                 <a className={`fade-in block mb-3 tracking-widest hover:text-black`}>{e}</a>
                             </Link>
                         );
@@ -43,7 +43,7 @@ const Navbar = (props) => {
                         </Link>
                         {props.MenuItems.map((e, i) => {
                             return (
-                                <Link href={`/${e}`}>
+                                <Link key={`linkM${i}`} href={`/${e}`}>
                                     <a className={`fade-in block text-xl mb-6 tracking-widest hover:text-black`}>{e}</a>
                                 </Link>
                             );

@@ -11,9 +11,9 @@ import { H1, H2, H3 } from "../components/utils/headlines";
 import { useNextSanityImage } from "next-sanity-image";
 
 export default function Home({ dataStart, dataNews }) {
-    useEffect(() => {
-        console.log(dataStart, dataNews);
-    }, []);
+    // useEffect(() => {
+    //     console.log(dataStart, dataNews);
+    // }, []);
 
     const imageProps = useNextSanityImage(client, dataStart.mainImage);
 
@@ -35,7 +35,7 @@ export default function Home({ dataStart, dataNews }) {
                     <H2 klasse="mb-10">UPCOMING</H2>
                     {dataNews.map((e, i) => {
                         return (
-                            <div className="textelement">
+                            <div key={`news${i}`} className="textelement">
                                 <PortableText value={e.description}></PortableText>
                                 {i === dataNews.length - 1 ? "" : <hr className="mt-6 mb-6" />}
                             </div>
