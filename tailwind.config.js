@@ -6,9 +6,13 @@ module.exports = {
     content: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
     theme: {
         extend: {
+            colors: {
+                primaryColor: "#000",
+                text: "#696969",
+            },
             fontFamily: {
                 ...fontFamily,
-                sans: ["Montserrat", "sans-serif"],
+                sans: ["lato", "sans-serif"],
             },
         },
     },
