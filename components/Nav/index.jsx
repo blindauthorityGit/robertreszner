@@ -44,7 +44,14 @@ const Navbar = (props) => {
                         {props.MenuItems.map((e, i) => {
                             return (
                                 <Link key={`linkM${i}`} href={`/${e}`}>
-                                    <a className={`fade-in block text-xl mb-6 tracking-widest hover:text-black`}>{e}</a>
+                                    <a
+                                        onClick={() => {
+                                            setModalOpen(false);
+                                        }}
+                                        className={`fade-in block text-xl mb-6 tracking-widest hover:text-black`}
+                                    >
+                                        {e}
+                                    </a>
                                 </Link>
                             );
                         })}

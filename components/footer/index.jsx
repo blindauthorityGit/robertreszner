@@ -7,7 +7,7 @@ const Footer = (props) => {
 
     return (
         <>
-            <div className={`footer w-full col-span-12 md:col-span-9 lg:ml-[320px] mt-20 mb-32 px-6 ${props.colSpan}`}>
+            <div className={`footer w-full col-span-12 md:col-span-9 md:ml-[320px] mt-20 mb-32 px-6 ${props.colSpan}`}>
                 <hr />
                 <div className="flex justify-between mt-4">
                     <div className="left">2022 Eva Maria Schartmüller</div>

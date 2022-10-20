@@ -13,6 +13,10 @@ body {
 
 }
 
+p {
+  color: #333
+}
+
 
 a {
   color: inherit;
@@ -23,6 +27,9 @@ a {
 .texte {
   a {
     text-decoration: underline;
+  }
+  p {
+    margin: 1rem 0;
   }
 }
 

@@ -23,7 +23,7 @@ export default function Home({ dataStart, dataNews }) {
                 <title>{dataStart.seo.title}</title>
             </Head>
 
-            <div className="col-span-12 md:col-span-6">
+            <div className="col-span-12 md:col-span-8">
                 <Image
                     {...imageProps}
                     layout="responsive"

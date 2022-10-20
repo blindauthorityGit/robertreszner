@@ -5,6 +5,11 @@ import createSchema from "part:@sanity/base/schema-creator";
 import schemaTypes from "all:part:@sanity/base/schema-type";
 import home from "./components/home";
 import newsEintrag from "./components/newsEintrag";
+import work from "./components/work";
+import images from "./components/images";
+import about from "./components/about";
+import kontakt from "./components/kontakt";
+import links from "./components/links";
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -15,6 +20,11 @@ export default createSchema({
     types: schemaTypes.concat([
         home,
         newsEintrag,
+        work,
+        images,
+        about,
+        kontakt,
+        links,
         /* Your types here! */
     ]),
 });
