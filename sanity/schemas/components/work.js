@@ -51,6 +51,11 @@ export default {
             type: "array",
             of: [{ type: "block" }],
         },
+        {
+            title: "Video URL",
+            name: "video",
+            type: "string",
+        },
 
         // {
         //     title: "Bilder",

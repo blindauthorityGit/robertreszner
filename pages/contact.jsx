@@ -20,7 +20,7 @@ export default function Contact({ dataStart }) {
                 <title>Eva Maria Schartmüller</title>
             </Head>
 
-            <div className="col-span-12 md:col-span-6">
+            <div className="col-span-12 md:col-span-6 sm:pt-28">
                 <div className="texte mt-8 px-12 md:px-0">
                     <p>{dataStart.email}</p>
                     <p>{dataStart.phone}</p>

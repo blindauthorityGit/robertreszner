@@ -37,16 +37,23 @@ const FormFull = () => {
         }
     }
     return (
-        <div className="col-span-12 sm:col-span-12 grid grid-cols-12">
+        <div className="col-span-12 sm:col-span-12 grid grid-cols-12 text-text">
             <form
                 onSubmit={handleSubmit(onSubmitForm)}
-                className="col-span-12 grid grid-cols-12 footer topKontakt sm:gap-8"
+                className="col-span-12 grid grid-cols-12 footer topKontakt sm:gap-2"
                 action=""
             >
                 <input
+                    {...register("firstName", { required: false })}
+                    id="firstName"
+                    className="col-span-12 border border-text p-2 font-[300] hidden text-text"
+                    type="text"
+                    placeholder="Name"
+                />
+                <input
                     {...register("name", { required: true })}
                     id="name"
-                    className="col-span-12 border p-2"
+                    className="col-span-12 border border-text p-2 font-[300] text-text"
                     type="text"
                     placeholder="Name"
                 />
@@ -56,7 +63,7 @@ const FormFull = () => {
                     {...register("email", { required: true })}
                     name="email"
                     id="email"
-                    className="col-span-12 border p-2"
+                    className="col-span-12 border border-text p-2 font-[300]"
                     type="email"
                     placeholder="Email"
                 />
@@ -66,7 +73,7 @@ const FormFull = () => {
                     {...register("phone", { required: true })}
                     name="phone"
                     id="phone"
-                    className="col-span-12 border p-2"
+                    className="col-span-12 border border-text p-2 font-[300]"
                     type="text"
                     placeholder="Telefonnummer"
                 />
@@ -74,7 +81,7 @@ const FormFull = () => {
 
                 <textarea
                     {...register("message", { required: true })}
-                    className="col-span-12 border p-2"
+                    className="col-span-12 border border-text p-2 font-[300]"
                     name="message"
                     id="message"
                     cols="20"
@@ -90,7 +97,7 @@ const FormFull = () => {
                         className="mr-4"
                         type="checkbox"
                     />
-                    <label htmlFor="checkbox" className="text-text">
+                    <label htmlFor="checkbox" className="text-text text-xs">
                         Ich stimme der Verarbeitung meiner Daten gemäß der Datenschutzerklärung zum Zweck der
                         Kontaktaufnahme zu. *
                     </label>

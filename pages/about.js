@@ -19,7 +19,7 @@ export default function About({ dataStart }) {
                 <title>Eva Maria Schartmüller</title>
             </Head>
 
-            <div className="col-span-12 md:col-span-6">
+            <div className="col-span-12 md:col-span-6 sm:pt-28">
                 <div className="texte mt-8 px-12 md:px-0">
                     <PortableText value={dataStart.description}></PortableText>
                 </div>

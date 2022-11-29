@@ -24,20 +24,22 @@ export default function Home({ dataStart, dataNews }) {
             </Head>
 
             <div className="col-span-12 md:col-span-8">
-                <Image
-                    {...imageProps}
-                    layout="responsive"
-                    objectFit="cover"
-                    alt="hero"
-                    sizes="(max-height: 550px) 100%, 550px"
-                />
-                <div className="texte mt-8 px-12 md:px-0">
-                    <H2 klasse="mb-10">UPCOMING</H2>
+                <div className="imgwrapper aspect-4/3 relative max-h-[26rem]">
+                    <Image
+                        {...imageProps}
+                        layout="responsive"
+                        objectFit="responsive"
+                        alt="hero"
+                        sizes="(max-height: 550px) 100%, 550px"
+                    />
+                </div>
+                <div className="texte mt-6 px-6 md:px-0">
+                    <H2 klasse="mb-6">UPCOMING</H2>
                     {dataNews.map((e, i) => {
                         return (
                             <div key={`news${i}`} className="textelement">
                                 <PortableText value={e.description}></PortableText>
-                                {i === dataNews.length - 1 ? "" : <hr className="mt-6 mb-6" />}
+                                {i === dataNews.length - 1 ? "" : <hr className="mt-4 mb-4" />}
                             </div>
                         );
                     })}

@@ -10,11 +10,7 @@ function H1(props) {
     );
 }
 function H2(props) {
-    return (
-        <h2 className={`z-20 text-4xl lg-text-5xl xl:text-6xl 2xl:text-5xl 3xl:text-7xl   ${props.klasse}`}>
-            {props.children}
-        </h2>
-    );
+    return <h2 className={`z-20 text-base font-light  ${props.klasse}`}>{props.children}</h2>;
 }
 function H2Variant(props) {
     return (

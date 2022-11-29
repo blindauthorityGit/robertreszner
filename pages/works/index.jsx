@@ -33,6 +33,13 @@ const Works = ({ dataAll }) => {
         console.log(dataAll);
     }, []);
 
+    function onEnter(e) {
+        e.target.style.transform = "scale(1.2)";
+    }
+    function onLeave(e) {
+        e.target.style.transform = "scale(1)";
+    }
+
     return (
         <>
             <MainContainer width="w-full col-span-12 md:col-span-9 md:ml-[320px] overflow-hidden">
@@ -41,32 +48,42 @@ const Works = ({ dataAll }) => {
                     {/* <meta name="description" content={post.seo.description} /> */}
                 </Head>
 
-                <div className="col-span-12 md:col-span-6  ">
+                <div className="col-span-12 md:col-span-8 lg:col-span-6  flex justify-center sm:block">
                     {/* <div className="texte mt-8 px-12 md:px-0">
                         <H2 klasse="mb-10">{post.title}</H2>
                         <PortableText value={post.description}></PortableText>
                     </div> */}
-                    <div className="images mt-16 grid grid-cols-12 gap-8">
+                    <div className="images mt-16 grid grid-cols-12 gap-1">
                         {dataAll.map((e, i) => {
                             // counter++;
                             return (
-                                <div key={`image${i}`} className="mb-8 col-span-6 ">
+                                <div key={`image${i}`} className="mb-8 col-span-12 lg:col-span-6 overflow-hidden">
                                     <Link href={`/works/${e.slug.current}`}>
-                                        <a>
+                                        <a className="aspect-video md:aspect-4/3 h-48 block relative ">
                                             <Image
                                                 {...ImagePropsGallery(i)}
-                                                layout="responsive"
-                                                objectFit="cover"
+                                                layout="fill"
+                                                objectFit="responsive"
                                                 alt="hero"
                                                 sizes="(max-height: 550px) 100%, 550px"
-
+                                                className="transition duration-500"
+                                                onMouseEnter={(e) => {
+                                                    onEnter(e);
+                                                }}
+                                                onMouseLeave={(e) => {
+                                                    onLeave(e);
+                                                }}
                                                 // onLoad={() => {
                                                 //     setImage(i);
                                                 // }}
                                             />
-                                            {e.title && <div className="caption mt-2 text-text italic">{e.title}</div>}
                                         </a>
                                     </Link>
+                                    {e.title && (
+                                        <div className="caption mt-2 text-sm text-text font-[300] italic">
+                                            {e.title}
+                                        </div>
+                                    )}
                                 </div>
                             );
                         })}

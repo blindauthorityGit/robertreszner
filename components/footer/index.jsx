@@ -7,11 +7,15 @@ const Footer = (props) => {
 
     return (
         <>
-            <div className={`footer w-full col-span-12 md:col-span-9 md:ml-[320px] mt-20 mb-32 px-6 ${props.colSpan}`}>
+            <div
+                className={`footer w-full col-span-12 md:col-span-6 md:ml-[320px] mt-20 mb-32 font-[300] text-text px-6 ${props.colSpan}`}
+            >
                 <hr />
                 <div className="flex justify-between mt-4">
-                    <div className="left">2022 Eva Maria Schartmüller</div>
-                    <div className="right flex">
+                    <div className="left">
+                        2022 <span className="text-xs">by eva maria schartmüller</span>{" "}
+                    </div>
+                    <div className="right flex text-[#949494]">
                         <a className="mr-4" href={props.fb}>
                             <FaFacebook></FaFacebook>
                         </a>

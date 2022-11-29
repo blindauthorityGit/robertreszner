@@ -13,7 +13,7 @@ const Navbar = (props) => {
         <>
             {/* DESKTOP NAV */}
             <nav className={`navbar px-16 h-full fixed hidden md:block md:w-[320px] pt-16 ${props.colSpan}`}>
-                <div className="home uppercase text-text tracking-wide hover:text-black font-bold">
+                <div className="home uppercase text-text tracking-wide hover:text-black text-right font-bold">
                     <Link href="/">
                         <a className="block">{props.HomeLink}</a>
                     </Link>
@@ -22,7 +22,16 @@ const Navbar = (props) => {
                     {props.MenuItems.map((e, i) => {
                         return (
                             <Link key={`link${i}`} href={`/${e}`}>
-                                <a className={`fade-in block mb-3 tracking-widest hover:text-black`}>{e}</a>
+                                <a className={`fade-in block mb-2 font-[300] tracking-widest hover:text-black`}>{e}</a>
+                            </Link>
+                        );
+                    })}
+                </div>
+                <div className="mt-32 text-right pr-16 text-text text-xs">
+                    {props.MenuItemsLower.map((e, i) => {
+                        return (
+                            <Link key={`link${i}`} href={`/${e}`}>
+                                <a className={`fade-in block mb-2 font-[300] tracking-widest hover:text-black`}>{e}</a>
                             </Link>
                         );
                     })}
@@ -48,13 +57,29 @@ const Navbar = (props) => {
                                         onClick={() => {
                                             setModalOpen(false);
                                         }}
-                                        className={`fade-in block text-xl mb-6 tracking-widest hover:text-black`}
+                                        className={`fade-in block text-lg mb-6 tracking-widest hover:text-black`}
                                     >
                                         {e}
                                     </a>
                                 </Link>
                             );
                         })}
+                        <div className="mt-16 text-left  text-white text-xs">
+                            {props.MenuItemsLower.map((e, i) => {
+                                return (
+                                    <Link key={`link${i}`} href={`/${e}`}>
+                                        <a
+                                            onClick={() => {
+                                                setModalOpen(false);
+                                            }}
+                                            className={`fade-in block mb-2 font-[300] tracking-widest hover:text-black`}
+                                        >
+                                            {e}
+                                        </a>
+                                    </Link>
+                                );
+                            })}
+                        </div>
                     </div>
                     <div className={`footer w-full col-span-9 lg:ml-[320px] mt-20 mb-32 px-6`}>
                         <hr className="opacity-30" />
