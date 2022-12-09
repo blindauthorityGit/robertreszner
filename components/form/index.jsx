@@ -27,6 +27,7 @@ const FormFull = () => {
             },
             data: values,
         };
+        console.log(values);
 
         try {
             const response = await axios(config);

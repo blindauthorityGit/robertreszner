@@ -4,18 +4,9 @@ import { useState, useEffect } from "react";
 import imageUrlBuilder from "@sanity/image-url";
 import MainContainer from "../../components/layout/mainContainer";
 import Link from "next/link";
-// import FullWidthSwiper from "../../components/sections/fullWidthSwiper";
-// import StackedImgs from "../../components/sections/stackedImgs";
-// import InlineImgs from "../../components/sections/inlineImgs";
-// import Breadcrumbs from "../../components/sections/breadcrumbs";
-
-import { PortableText } from "@portabletext/react";
-import { H1, H2, H3 } from "../../components/utils/headlines";
 
 import Image from "next/image";
 import { useNextSanityImage } from "next-sanity-image";
-
-import WorksNav from "../../components/Nav/workNav";
 
 const Works = ({ dataAll }) => {
     function ImagePropsGallery(i) {
@@ -27,7 +18,6 @@ const Works = ({ dataAll }) => {
 
         return dataAll.map((e) => e.slug.current).indexOf(index);
     }
-    // const imagePropsGallery = useNextSanityImage(client, post.gallery.images);
 
     useEffect(() => {
         console.log(dataAll);
@@ -49,10 +39,6 @@ const Works = ({ dataAll }) => {
                 </Head>
 
                 <div className="col-span-12 md:col-span-8 lg:col-span-6  flex justify-center sm:block">
-                    {/* <div className="texte mt-8 px-12 md:px-0">
-                        <H2 klasse="mb-10">{post.title}</H2>
-                        <PortableText value={post.description}></PortableText>
-                    </div> */}
                     <div className="images mt-16 grid grid-cols-12 gap-1">
                         {dataAll.map((e, i) => {
                             // counter++;
@@ -73,9 +59,6 @@ const Works = ({ dataAll }) => {
                                                 onMouseLeave={(e) => {
                                                     onLeave(e);
                                                 }}
-                                                // onLoad={() => {
-                                                //     setImage(i);
-                                                // }}
                                             />
                                         </a>
                                     </Link>

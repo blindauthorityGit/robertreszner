@@ -9,12 +9,12 @@ import { H1, H2, H3 } from "../components/utils/headlines";
 import { PortableText } from "@portabletext/react";
 
 export default function Link({ dataStart }) {
-    // useEffect(() => {
-    //     console.log(dataStart, dataNews);
-    // }, []);
+    useEffect(() => {
+        console.log(dataStart);
+    }, []);
 
     return (
-        <MainContainer width="w-full col-span-12 md:col-span-9 md:ml-[320px] overflow-hidden">
+        <MainContainer width="w-full col-span-12 sm:pt-28 md:col-span-9 md:ml-[320px] overflow-hidden">
             <Head>
                 <title>Eva Maria Schartmüller</title>
             </Head>
@@ -29,7 +29,7 @@ export default function Link({ dataStart }) {
 }
 
 export const getStaticProps = async (context) => {
-    const resStart = await client.fetch(`*[_type in ["link"]]`);
+    const resStart = await client.fetch(`*[_type in ["links"]]`);
     const dataStart = await resStart[0];
 
     return {

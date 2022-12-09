@@ -10,6 +10,7 @@ import images from "./components/images";
 import about from "./components/about";
 import kontakt from "./components/kontakt";
 import links from "./components/links";
+import video from "./components/objects/video";
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -25,6 +26,7 @@ export default createSchema({
         about,
         kontakt,
         links,
+        video,
         /* Your types here! */
     ]),
 });

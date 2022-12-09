@@ -31,6 +31,7 @@ function urlFor(source) {
 
 const Work = ({ post, dataAll }) => {
     const [vid, setVid] = useState(post.video);
+    const [vids, setVids] = useState(post.videos);
     const videoRef = useRef();
     const imgRefs = useRef([]);
 
@@ -51,6 +52,21 @@ const Work = ({ post, dataAll }) => {
         ],
     };
 
+    function controls(i) {
+        return {
+            autoplay: false,
+            controls: true,
+            responsive: true,
+            fluid: true,
+            sources: [
+                {
+                    src: vids[i].link,
+                    type: "video/mp4",
+                },
+            ],
+        };
+    }
+
     const handlePlayerReady = (player) => {
         playerRef.current = player;
 
@@ -65,6 +81,10 @@ const Work = ({ post, dataAll }) => {
     };
 
     useEffect(() => {
+        console.log(post);
+    }, []);
+
+    useEffect(() => {
         console.log(imgRefs.current[0].clientWidth);
         setVideoDimensions({
             width: imgRefs.current[0].clientWidth,
@@ -75,11 +95,13 @@ const Work = ({ post, dataAll }) => {
 
     useEffect(() => {
         setVid(post.video);
+        setVids(post.videos);
+        console.log(post.video, post.videos);
 
         return () => {
             setVid(null);
         };
-    }, [post, vid]);
+    }, [post, vid, vids]);
 
     function findIndex(index) {
         const i = dataAll.map((e) => e.slug.current).indexOf(index);
@@ -112,7 +134,17 @@ const Work = ({ post, dataAll }) => {
                         <H2 klasse="mb-10">{post.title}</H2>
                         <PortableText value={post.description}></PortableText>
                     </div>
-                    {vid ? <VideoJS options={videoJsOptions} onReady={handlePlayerReady} /> : null}
+                    {/* {vid ? <VideoJS options={videoJsOptions} onReady={handlePlayerReady} /> : null} */}
+                    {vids
+                        ? vids.map((e, i) => {
+                              console.log(controls(i));
+                              return (
+                                  <div key={`key${i}`} className="mb-8">
+                                      <VideoJS options={controls(i)} onReady={handlePlayerReady} />
+                                  </div>
+                              );
+                          })
+                        : null}
 
                     {/* <ReactPlayer url={throwFinal} /> */}
                     <div className="images mt-8 grid grid-cols-12 gap-4">

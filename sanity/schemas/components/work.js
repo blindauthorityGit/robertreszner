@@ -57,6 +57,18 @@ export default {
             type: "string",
         },
 
+        {
+            title: "Videos",
+            name: "videos",
+            type: "array",
+            of: [
+                {
+                    title: "video",
+                    type: "video",
+                },
+            ],
+        },
+
         // {
         //     title: "Bilder",
         //     name: "gallery",
