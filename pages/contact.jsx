@@ -15,16 +15,19 @@ export default function Contact({ dataStart }) {
     // }, []);
 
     return (
-        <MainContainer width="w-full col-span-12 md:col-span-9 md:ml-[320px] overflow-hidden">
+        <MainContainer width="w-full col-span-12 pl-12 pt-16 md:col-span-9 md:ml-[320px] overflow-hidden">
             <Head>
                 <title>Eva Maria Schartmüller</title>
             </Head>
 
-            <div className="col-span-12 md:col-span-6 sm:pt-28">
-                <div className="texte mt-8 px-12 md:px-0">
-                    <p>{dataStart.email}</p>
-                    <p>{dataStart.phone}</p>
-                    <p>{dataStart.description}</p>
+            <div className="col-span-12 md:col-span-6 ">
+                <div className="texte  px-12 md:px-0">
+                    <p className="mt-0" style={{ marginTop: "-3px!important" }}>
+                        {dataStart.email}
+                        <br />
+                        {dataStart.phone}
+                    </p>
+                    <p style={{ margin: "3rem 0 4rem 0!important" }}>{dataStart.description}</p>
                     {/* <PortableText value={dataStart.description}></PortableText> */}
                     <FormFull></FormFull>
                 </div>

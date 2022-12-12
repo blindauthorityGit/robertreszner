@@ -9,6 +9,12 @@ export default {
             type: "string",
         },
         {
+            name: "order",
+            title: "Order",
+            type: "number",
+            hidden: true,
+        },
+        {
             title: "Slug",
             name: "slug",
             type: "slug",
@@ -51,10 +57,16 @@ export default {
             type: "array",
             of: [{ type: "block" }],
         },
+        // {
+        //     title: "Video URL",
+        //     name: "video",
+        //     type: "string",
+        // },
         {
-            title: "Video URL",
-            name: "video",
-            type: "string",
+            title: "Top Line",
+            name: "topLine",
+            type: "array",
+            of: [{ type: "block" }],
         },
 
         {
@@ -67,6 +79,14 @@ export default {
                     type: "video",
                 },
             ],
+        },
+        {
+            name: "audio",
+            type: "file",
+            subtype: "sanity.asset",
+            options: {
+                storeOriginalFilename: true,
+            },
         },
 
         // {
@@ -85,6 +105,91 @@ export default {
             name: "gallery",
             type: "object",
             title: "Gallery",
+            fields: [
+                {
+                    name: "images",
+                    type: "array",
+                    title: "Images",
+                    of: [
+                        {
+                            name: "image",
+                            type: "image",
+                            title: "Image",
+                            options: {
+                                hotspot: true,
+                            },
+                            initialValue: {
+                                big: true,
+                            },
+                            fields: [
+                                {
+                                    name: "alt",
+                                    type: "string",
+                                    title: "Alternative text",
+                                },
+                                {
+                                    name: "caption",
+                                    type: "string",
+                                    title: "Beschreibungstext Bild",
+                                },
+                                {
+                                    name: "captionTop",
+                                    type: "string",
+                                    title: "Beschreibungstext Bild Top",
+                                },
+                                {
+                                    name: "big",
+                                    type: "boolean",
+                                    title: "Big?",
+                                },
+                                {
+                                    name: "height",
+                                    type: "number",
+                                    title: "Höhe",
+                                },
+                            ],
+                        },
+                    ],
+
+                    options: {
+                        layout: "grid",
+                    },
+                },
+                {
+                    name: "display",
+                    type: "string",
+                    title: "Anzeigen als ...",
+                    description: "Wie sollen die Bilder dargestellt werden?",
+                    options: {
+                        list: [
+                            { title: "Übereinander", value: "stacked" },
+                            { title: "Nebeneinander", value: "inline" },
+                            { title: "Carousel", value: "carousel" },
+                        ],
+                        layout: "radio", // <-- defaults to 'dropdown'
+                    },
+                },
+            ],
+            preview: {
+                select: {
+                    images: "images",
+                    image: "images.0",
+                },
+                prepare(selection) {
+                    const { images, image } = selection;
+
+                    return {
+                        title: `Gallery block of ${Object.keys(images).length} images`,
+                        subtitle: `Alt text: ${image.alt}`,
+                        media: image,
+                    };
+                },
+            },
+        },
+        {
+            name: "galleryLightbox",
+            type: "object",
+            title: "Gallery Lightbox",
             fields: [
                 {
                     name: "images",

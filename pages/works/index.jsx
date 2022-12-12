@@ -32,19 +32,25 @@ const Works = ({ dataAll }) => {
 
     return (
         <>
-            <MainContainer width="w-full col-span-12 md:col-span-9 md:ml-[320px] overflow-hidden">
+            <MainContainer width="w-full col-span-12 md:col-span-9 md:ml-[320px] pl-12 overflow-hidden">
                 <Head>
                     <title>Works</title>
                     {/* <meta name="description" content={post.seo.description} /> */}
                 </Head>
 
-                <div className="col-span-12 md:col-span-8 lg:col-span-6  flex justify-center sm:block">
-                    <div className="images mt-16 grid grid-cols-12 gap-1">
+                <div className="col-span-12 md:col-span-8 lg:col-span-6 pt-16 flex justify-center sm:block">
+                    <p>selected works</p>
+                    <div className="images mt-12  ">
                         {dataAll.map((e, i) => {
                             // counter++;
                             return (
-                                <div key={`image${i}`} className="mb-8 col-span-12 lg:col-span-6 overflow-hidden">
-                                    <Link href={`/works/${e.slug.current}`}>
+                                <>
+                                    {e.title && (
+                                        <Link href={`/works/${e.slug.current}`}>
+                                            <a className="caption block  text-sm text-text font-[300] ">{e.title}</a>
+                                        </Link>
+                                    )}
+                                    {/* <Link href={`/works/${e.slug.current}`}>
                                         <a className="aspect-video md:aspect-4/3 h-48 block relative ">
                                             <Image
                                                 {...ImagePropsGallery(i)}
@@ -66,8 +72,8 @@ const Works = ({ dataAll }) => {
                                         <div className="caption mt-2 text-sm text-text font-[300] italic">
                                             {e.title}
                                         </div>
-                                    )}
-                                </div>
+                                    )} */}
+                                </>
                             );
                         })}
                     </div>
@@ -81,7 +87,9 @@ export default Works;
 
 export const getStaticProps = async (context) => {
     const resAll = await client.fetch(`*[_type in ["work"] ]`);
-    const dataAll = await resAll;
+    const dataAll = await resAll.sort((a, b) =>
+        a._createdAt < b._createdAt ? -1 : a._createdAt > b._createdAt ? 1 : 0
+    );
 
     return {
         props: {

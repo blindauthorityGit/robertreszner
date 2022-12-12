@@ -18,6 +18,11 @@ module.exports = {
                 ...fontFamily,
                 sans: ["lato", "sans-serif"],
             },
+            "aspect-video": {
+                width: "100%",
+                height: 0,
+                paddingBottom: "56.25%",
+            },
         },
     },
     plugins: [],

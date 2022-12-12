@@ -47,62 +47,62 @@ const FormFull = () => {
                 <input
                     {...register("firstName", { required: false })}
                     id="firstName"
-                    className="col-span-12 border border-text p-2 font-[300] hidden text-text"
+                    className="col-span-12 border border-text p-1 font-[300] hidden text-text"
                     type="text"
                     placeholder="Name"
                 />
                 <input
                     {...register("name", { required: true })}
                     id="name"
-                    className="col-span-12 border border-text p-2 font-[300] text-text"
+                    className="col-span-12 border border-text text-xs p-1 font-[300] text-text"
                     type="text"
-                    placeholder="Name"
+                    placeholder="name"
                 />
-                {errors.name && <Error klasse="col-span-12">Bitte geben Sie Ihren vollen Namen an</Error>}
+                {errors.name && <Error klasse="col-span-12 text-xs">Please fill in your full name</Error>}
 
                 <input
                     {...register("email", { required: true })}
                     name="email"
                     id="email"
-                    className="col-span-12 border border-text p-2 font-[300]"
+                    className="col-span-12 border border-text text-xs p-1 font-[300]"
                     type="email"
-                    placeholder="Email"
+                    placeholder="email"
                 />
-                {errors.email && <Error klasse="block col-span-12">Bitte geben Sie Ihre Email an</Error>}
+                {errors.email && <Error klasse="block col-span-12 text-xs">Please fill in your email</Error>}
 
                 <input
                     {...register("phone", { required: true })}
                     name="phone"
                     id="phone"
-                    className="col-span-12 border border-text p-2 font-[300]"
+                    className="col-span-12 border border-text text-xs p-1 font-[300]"
                     type="text"
-                    placeholder="Telefonnummer"
+                    placeholder="subject"
                 />
-                {errors.phone && <Error klasse="block col-span-12">Bitte geben Sie Ihre Telefonnummer an</Error>}
+                {errors.phone && <Error klasse="block col-span-12 text-xs">Please fill in your subject</Error>}
 
                 <textarea
                     {...register("message", { required: true })}
-                    className="col-span-12 border border-text p-2 font-[300]"
+                    className="col-span-12 border border-text p-1 text-xs font-[300]"
                     name="message"
                     id="message"
                     cols="20"
-                    rows="7"
-                    placeholder="Nachricht"
+                    rows="5"
+                    placeholder="message"
                 ></textarea>
-                {errors.message && <Error klasse="block col-span-12">Bitte geben Sie Ihre Nachricht an</Error>}
+                {errors.message && <Error klasse="block col-span-12 text-xs">Please fill in your message</Error>}
 
-                <div className="check col-span-12">
+                <div className="check col-span-12 flex">
                     <input
                         {...register("checkbox", { required: true })}
                         id="checkbox"
                         className="mr-4"
                         type="checkbox"
                     />
-                    <label htmlFor="checkbox" className="text-text text-xs">
-                        Ich stimme der Verarbeitung meiner Daten gemäß der Datenschutzerklärung zum Zweck der
-                        Kontaktaufnahme zu. *
+                    <label htmlFor="checkbox" style={{ fontWeight: "300" }} className="text-text text-xs">
+                        I agree to the processing of my data according to the privacy policy for the purpose of
+                        contacting me.
                     </label>
-                    {errors.checkbox && <Error klasse="block col-span-12">Bitte bestätigen</Error>}
+                    {errors.checkbox && <Error klasse="block col-span-12 text-xs block">Please tick the box</Error>}
                 </div>
                 {loading ? (
                     <div className="w-96 flex justify-center">
@@ -118,17 +118,18 @@ const FormFull = () => {
                         />
                     </div>
                 ) : (
-                    <div className="w-full col-span-12">
+                    <div className="w-full col-span-12 flex justify-end">
                         <button
-                            className="group w-full  sm:w-96 ease-in-out duration-200 hover:bg-darkBlue cursor-pointer p-4 flex items-center justify-center mt-8 sm:mt-4 mb-12 sm:mb-0 hover:bg-primaryColor hover:text-white border border-primaryColor text-primaryColor"
+                            style={{ fontWeight: "300" }}
+                            className="group  ease-in-out duration-200 hover:bg-darkBlue cursor-pointer   text-xs flex items-center justify-center   mb-12 sm:mb-0 "
                             type="submit"
                         >
-                            Absenden
+                            send
                         </button>
                     </div>
                 )}
             </form>
-            {success ? <div className="text-primaryColor w-96 mt-4">Vielen Dank für Ihre Nachricht!</div> : ""}
+            {success ? <div className="text-primaryColor w-96 mt-4 text-xs">Thanks for your message!</div> : ""}
         </div>
     );
 };

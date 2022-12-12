@@ -1,4 +1,5 @@
-import client from "../../client";
+import client, { getAsset } from "../../client";
+
 import Head from "next/head";
 import { useState, useEffect, useRef } from "react";
 import imageUrlBuilder from "@sanity/image-url";
@@ -32,8 +33,10 @@ function urlFor(source) {
 const Work = ({ post, dataAll }) => {
     const [vid, setVid] = useState(post.video);
     const [vids, setVids] = useState(post.videos);
+    const [lightBoxImg, setLightBoxImg] = useState(0);
     const videoRef = useRef();
     const imgRefs = useRef([]);
+    const lightboxRef = useRef(null);
 
     const [videoDimensions, setVideoDimensions] = useState({});
 
@@ -50,6 +53,15 @@ const Work = ({ post, dataAll }) => {
                 type: "video/mp4",
             },
         ],
+    };
+
+    const getUrlFromId = (ref) => {
+        // Example ref: file-207fd9951e759130053d37cf0a558ffe84ddd1c9-mp3
+        // We don't need the first part, unless we're using the same function for files and images
+        const PROJECT_ID = "bsxaqchg";
+        const DATASET = "production";
+        const [_file, id, extension] = ref.split("-");
+        return `https://cdn.sanity.io/files/${PROJECT_ID}/${DATASET}/${id}.${extension}`;
     };
 
     function controls(i) {
@@ -80,9 +92,17 @@ const Work = ({ post, dataAll }) => {
         });
     };
 
+    function lightBoxClick(e, i) {
+        lightboxRef.current.classList.remove("fade-in");
+        setTimeout(() => {
+            lightboxRef.current.classList.add("fade-in");
+            setLightBoxImg(i);
+        }, 100);
+    }
+
     useEffect(() => {
         console.log(post);
-    }, []);
+    }, [lightBoxImg]);
 
     useEffect(() => {
         console.log(imgRefs.current[0].clientWidth);
@@ -112,15 +132,18 @@ const Work = ({ post, dataAll }) => {
 
     return (
         <>
-            <MainContainer width="w-full col-span-12 md:col-span-9 md:ml-[320px] overflow-hidden">
+            <MainContainer width="w-full col-span-12 md:col-span-9 pl-12 pt-[69px] md:ml-[320px] overflow-hidden">
                 <Head>
                     <title>{post.seo.title}</title>
                     <meta name="description" content={post.seo.description} />
                 </Head>
 
                 <div className="col-span-12 md:col-span-8">
-                    <div className="imgwrapper aspect-4/3 relative max-h-[20rem]">
-                        <Image
+                    <div
+                        className="imgwrapper bg-cover bg-center w-[25rem] relative h-[16rem]"
+                        style={{ backgroundImage: `url(${urlFor(post.mainImage)})` }}
+                    >
+                        {/* <Image
                             // {...imageProps}
                             src={urlFor(post.mainImage).width(200).height(280).url()}
                             loader={() => urlFor(post.mainImage).url()}
@@ -128,38 +151,45 @@ const Work = ({ post, dataAll }) => {
                             loading="lazy"
                             objectFit="cover"
                             alt="hero"
-                        />
+                        /> */}
                     </div>
                     <div className="texte mt-8 px-12 md:px-0">
-                        <H2 klasse="mb-10">{post.title}</H2>
+                        {/* <p style={{ marginBottom: "0!important" }}>{post.title}</p> */}
                         <PortableText value={post.description}></PortableText>
                     </div>
                     {/* {vid ? <VideoJS options={videoJsOptions} onReady={handlePlayerReady} /> : null} */}
-                    {vids
+                    {post.topLine ? (
+                        <div className="topLineText">
+                            {" "}
+                            <PortableText value={post.topLine}></PortableText>
+                        </div>
+                    ) : null}
+                    {/* {vids
                         ? vids.map((e, i) => {
                               console.log(controls(i));
                               return (
-                                  <div key={`key${i}`} className="mb-8">
+                                  <div key={`key${i}`} className="mb-2">
                                       <VideoJS options={controls(i)} onReady={handlePlayerReady} />
                                   </div>
                               );
                           })
-                        : null}
+                        : null} */}
 
                     {/* <ReactPlayer url={throwFinal} /> */}
-                    <div className="images mt-8 grid grid-cols-12 gap-4">
+                    <div className="images  grid grid-cols-12 gap-1">
                         {post.gallery.images.map((e, i) => {
                             // counter++;
                             return (
                                 <>
                                     {e.captionTop && (
-                                        <div className="caption col-span-12 pb-2 text-text italic">{e.captionTop}</div>
+                                        <div className="caption col-span-12  text-text italic">{e.captionTop}</div>
                                     )}
                                     <div
                                         key={`image${i}`}
                                         className={`${
                                             e.big ? "col-span-12" : "col-span-12 sm:col-span-6 lg:col-span-4"
-                                        } mb-4 relative aspect-video`}
+                                        }  relative aspect-video`}
+                                        // style={e.big ? "" : { marginTop: "-5px!important" }}
                                         ref={(ref) => (imgRefs.current[i] = ref)}
                                     >
                                         <Image
@@ -171,13 +201,86 @@ const Work = ({ post, dataAll }) => {
                                             objectFit="cover"
                                             alt="hero"
                                         />
-                                        {e.caption && <div className="caption mt-2 text-text italic">{e.caption}</div>}
-                                    </div>{" "}
+                                    </div>
+                                    {e.caption && (
+                                        <div
+                                            style={{ marginTop: "-8px!important" }}
+                                            className="caption  col-span-12 text-text text-xs"
+                                        >
+                                            {e.caption}
+                                        </div>
+                                    )}
                                 </>
                             );
                         })}
+                        {/* LIGHTBOX GALLERY */}
+                        {post.galleryLightbox ? (
+                            <div
+                                ref={lightboxRef}
+                                className="col-span-12 lightBox aspect-video bg-contain bg-no-repeat"
+                                style={{ backgroundImage: `url(${urlFor(post.galleryLightbox.images[lightBoxImg])})` }}
+                            ></div>
+                        ) : null}
+                        {post.galleryLightbox
+                            ? post.galleryLightbox.images.map((e, i) => {
+                                  // counter++;
+                                  return (
+                                      <>
+                                          {e.captionTop && (
+                                              <div className="caption col-span-12  text-text italic">
+                                                  {e.captionTop}
+                                              </div>
+                                          )}
+                                          <div
+                                              key={`image${i}`}
+                                              className={`${"col-span-12 sm:col-span-6 lg:col-span-4  overflow-hidden"}  relative aspect-video`}
+                                              // style={e.big ? "" : { marginTop: "-5px!important" }}
+                                              ref={(ref) => (imgRefs.current[i] = ref)}
+                                          >
+                                              <Image
+                                                  // {...ImagePropsGallery(i)}
+                                                  src={urlFor(e).width(200).height(280).url()}
+                                                  loader={() => urlFor(e).url()}
+                                                  layout="fill"
+                                                  loading="lazy"
+                                                  objectFit="cover"
+                                                  alt="hero"
+                                                  className="hover:scale-110 transition-all cursor-pointer"
+                                                  onClick={(e) => {
+                                                      lightBoxClick(e, i);
+                                                  }}
+                                              />
+                                          </div>
+                                          {e.caption && (
+                                              <div
+                                                  style={{ marginTop: "-8px!important" }}
+                                                  className="caption  col-span-12 text-text text-xs"
+                                              >
+                                                  {e.caption}
+                                              </div>
+                                          )}
+                                      </>
+                                  );
+                              })
+                            : null}
                     </div>
-                    <div className="bottomtext">
+                    {vids
+                        ? vids.map((e, i) => {
+                              console.log(controls(i));
+                              return (
+                                  <div key={`key${i}`} className="mt-2">
+                                      <VideoJS options={controls(i)} onReady={handlePlayerReady} />
+                                  </div>
+                              );
+                          })
+                        : null}
+                    {post.audio ? (
+                        <audio className="w-full mt-2" controls>
+                            <source src={getUrlFromId(post.audio.asset._ref)} type="audio/mpeg" />
+                            Your browser does not support the audio element.
+                        </audio>
+                    ) : null}
+                    <div className="bottomtext mt-6">
                         <PortableText value={post.descriptionBottom}></PortableText>
                     </div>
                 </div>
@@ -214,7 +317,7 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async (context) => {
     const slug = context.params.slug;
-    const res = await client.fetch(`*[_type == "work" && slug.current == "${slug}"]
+    const res = await client.fetch(`*[_type == "work" && slug.current == "${slug}"] 
     `);
     const data = await res;
 

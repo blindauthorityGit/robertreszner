@@ -10,36 +10,53 @@ import { H1, H2, H3 } from "../components/utils/headlines";
 
 import { useNextSanityImage } from "next-sanity-image";
 
+import imageUrlBuilder from "@sanity/image-url";
+
+const builder = imageUrlBuilder(client);
+
+function urlFor(source) {
+    return builder.image(source);
+}
+
 export default function Home({ dataStart, dataNews }) {
-    // useEffect(() => {
-    //     console.log(dataStart, dataNews);
-    // }, []);
+    useEffect(() => {
+        console.log(dataStart.mainImage, dataNews);
+    }, []);
 
     const imageProps = useNextSanityImage(client, dataStart.mainImage);
 
     return (
-        <MainContainer width="w-full col-span-12 md:col-span-9 md:ml-[320px] overflow-hidden">
+        <MainContainer width="w-full col-span-12 md:col-span-9 pl-12 md:ml-[320px] pt-[69px] overflow-hidden">
             <Head>
                 <title>{dataStart.seo.title}</title>
             </Head>
 
             <div className="col-span-12 md:col-span-8">
-                <div className="imgwrapper aspect-4/3 relative max-h-[26rem]">
-                    <Image
+                <div
+                    style={{
+                        backgroundImage: `url(${urlFor(dataStart.mainImage)})`,
+                        backgroundSize: "933px",
+                        backgroundPositionX: "left",
+                        backgroundPositionY: "center",
+                    }}
+                    className="imgwrapper aspect-4/3 relative max-h-[26rem]"
+                >
+                    {/* <Image
                         {...imageProps}
-                        layout="responsive"
+                        layout="fill"
                         objectFit="responsive"
                         alt="hero"
                         sizes="(max-height: 550px) 100%, 550px"
-                    />
+                    /> */}
+                    {/* <img src={urlFor(dataStart.mainImage)} alt="" /> */}
                 </div>
                 <div className="texte mt-6 px-6 md:px-0">
-                    <H2 klasse="mb-6">UPCOMING</H2>
+                    <H2 klasse="mb-4">UPCOMING</H2>
                     {dataNews.map((e, i) => {
                         return (
                             <div key={`news${i}`} className="textelement">
                                 <PortableText value={e.description}></PortableText>
-                                {i === dataNews.length - 1 ? "" : <hr className="mt-4 mb-4" />}
+                                {i === dataNews.length - 1 ? "" : <hr className="mt-4 mb-4 w-[20%] " />}
                             </div>
                         );
                     })}

@@ -12,13 +12,16 @@ const Navbar = (props) => {
     return (
         <>
             {/* DESKTOP NAV */}
-            <nav className={`navbar px-16 h-full fixed hidden md:block md:w-[320px] pt-16 ${props.colSpan}`}>
-                <div className="home uppercase text-text tracking-wide hover:text-black text-right font-bold">
+            <nav className={`navbar px-12 h-full fixed hidden md:block md:w-[320px] pt-16 ${props.colSpan}`}>
+                <div
+                    style={{ fontWeight: "300" }}
+                    className="home uppercase text-text tracking-wide font-regular hover:text-black text-right text-sm"
+                >
                     <Link href="/">
                         <a className="block">{props.HomeLink}</a>
                     </Link>
                 </div>
-                <div className="mt-32 text-right pr-16 text-text">
+                <div className="mt-16 text-right text-xs text-text">
                     {props.MenuItems.map((e, i) => {
                         return (
                             <Link key={`link${i}`} href={`/${e}`}>
@@ -27,7 +30,7 @@ const Navbar = (props) => {
                         );
                     })}
                 </div>
-                <div className="mt-32 text-right pr-16 text-text text-xs">
+                <div className="text-right text-text text-xs ">
                     {props.MenuItemsLower.map((e, i) => {
                         return (
                             <Link key={`link${i}`} href={`/${e}`}>
