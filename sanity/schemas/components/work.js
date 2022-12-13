@@ -192,6 +192,11 @@ export default {
             title: "Gallery Lightbox",
             fields: [
                 {
+                    name: "captionTop",
+                    type: "string",
+                    title: "Beschreibungstext Bild Top",
+                },
+                {
                     name: "images",
                     type: "array",
                     title: "Images",
@@ -235,24 +240,6 @@ export default {
                             ],
                         },
                     ],
-
-                    options: {
-                        layout: "grid",
-                    },
-                },
-                {
-                    name: "display",
-                    type: "string",
-                    title: "Anzeigen als ...",
-                    description: "Wie sollen die Bilder dargestellt werden?",
-                    options: {
-                        list: [
-                            { title: "Übereinander", value: "stacked" },
-                            { title: "Nebeneinander", value: "inline" },
-                            { title: "Carousel", value: "carousel" },
-                        ],
-                        layout: "radio", // <-- defaults to 'dropdown'
-                    },
                 },
             ],
             preview: {

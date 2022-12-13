@@ -39,7 +39,7 @@ export default function Home({ dataStart, dataNews }) {
                         backgroundPositionX: "left",
                         backgroundPositionY: "center",
                     }}
-                    className="imgwrapper aspect-4/3 relative max-h-[26rem]"
+                    className="imgwrapper aspect-video relative max-h-[20rem]"
                 >
                     {/* <Image
                         {...imageProps}

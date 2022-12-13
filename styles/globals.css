@@ -29,6 +29,14 @@ a {
   margin: 1rem 0;
 }
 
+.texteContact {
+  margin-top: -3px !important;
+}
+
+.texteContact p {
+  margin: 0 0 1rem 0;
+}
+
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;

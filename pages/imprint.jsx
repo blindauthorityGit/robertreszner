@@ -14,22 +14,23 @@ export default function About({ dataStart }) {
     // }, []);
 
     return (
-        <MainContainer width="w-full col-span-12 md:col-span-9 md:ml-[320px] overflow-hidden">
+        <MainContainer width="w-full p-12 col-span-12 md:col-span-9 md:ml-[320px] overflow-hidden">
             <Head>
                 <title>Eva Maria Schartmüller</title>
             </Head>
 
-            <div className="col-span-12 md:col-span-6 sm:pt-28">
+            <div className="col-span-12 pt-4 md:col-span-6 ">
+                <strong>Impressum</strong>
                 <div className="texte mt-8 px-12 md:px-0">
-                    <strong>Impressum</strong>
                     <p>
                         Informationspflicht laut §5 E-Commerce Gesetz, §14 Unternehmensgesetzbuch, §63 Gewerbeordnung
                         und Offenlegungspflicht laut §25 Mediengesetz.
                     </p>
-                    <span>Eva Maria Schartmüller</span> <br />
-                    <span>Austria, Wien</span>
-                    <br />
-                    <span>Mail: contact@schartmueller.com</span>
+                    <p>
+                        Eva Maria Schartmüller <br />
+                        Austria, Wien <br />
+                        Mail: contact@schartmueller.com
+                    </p>
                     <p>
                         <strong>Haftung für Inhalte dieser Webseite</strong>
                     </p>
@@ -75,10 +76,11 @@ export default function About({ dataStart }) {
                         <strong>Bildernachweis</strong>
                     </p>
                     <p>Die Bilder, Fotos und Grafiken auf dieser Webseite sind urheberrechtlich geschützt.</p>
-                    <p>Die Bilderrechte liegen bei den folgenden Fotografen und Unternehmen:</p>
-                    <ul>
-                        <li>Eva Maria Schartmüller</li>
-                    </ul>
+                    <p>
+                        Die Bilderrechte liegen bei den folgenden Fotografen und Unternehmen:
+                        <br />
+                        Eva Maria Schartmüller
+                    </p>
                 </div>
             </div>
         </MainContainer>

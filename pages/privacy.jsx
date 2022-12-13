@@ -14,16 +14,16 @@ export default function About({ dataStart }) {
     // }, []);
 
     return (
-        <MainContainer width="w-full col-span-12 md:col-span-9 md:ml-[320px] overflow-hidden">
+        <MainContainer width="w-full  p-12  col-span-12 md:col-span-9 md:ml-[320px] overflow-hidden">
             <Head>
                 <title>Eva Maria Schartmüller</title>
             </Head>
 
-            <div className="col-span-12 md:col-span-6 sm:pt-28">
+            <div className="col-span-12 md:col-span-6 pt-4">
+                {" "}
+                <strong>Datenschutzerklärung</strong>
                 <div className="texte mt-8 px-12 md:px-0">
-                    <p>
-                        <strong>Datenschutzerklärung</strong>
-                    </p>
+                    <p></p>
 
                     <p>
                         <strong>Einleitung und Überblick</strong>
@@ -82,11 +82,11 @@ export default function About({ dataStart }) {
                         Datenschutzerklärung umfasst:
                     </p>
 
-                    <ul>
-                        <li>alle Onlineauftritte (Websites, Onlineshops), die wir betreiben</li>
-                        <li>Social Media Auftritte und E-Mail-Kommunikation</li>
-                        <li>mobile Apps für Smartphones und andere Geräte</li>
-                    </ul>
+                    <p>
+                        alle Onlineauftritte (Websites, Onlineshops), die wir betreiben <br />
+                        Social Media Auftritte und E-Mail-Kommunikation <br />
+                        mobile Apps für Smartphones und andere Geräte
+                    </p>
 
                     <p>
                         <strong>Kurz gesagt:</strong>&nbsp;Die Datenschutzerklärung gilt für alle Bereiche, in denen
@@ -119,32 +119,26 @@ export default function About({ dataStart }) {
 
                     <p>Wir verarbeiten Ihre Daten nur, wenn mindestens eine der folgenden Bedingungen zutrifft:</p>
 
-                    <ol>
-                        <li>
-                            <strong>Einwilligung</strong>&nbsp;(Artikel 6 Absatz 1 lit. a DSGVO): Sie haben uns Ihre
-                            Einwilligung gegeben, Daten zu einem bestimmten Zweck zu verarbeiten. Ein Beispiel wäre die
-                            Speicherung Ihrer eingegebenen Daten eines Kontaktformulars.
-                        </li>
-                        <li>
-                            <strong>Vertrag</strong>&nbsp;(Artikel 6 Absatz 1 lit. b DSGVO): Um einen Vertrag oder
-                            vorvertragliche Verpflichtungen mit Ihnen zu erfüllen, verarbeiten wir Ihre Daten. Wenn wir
-                            zum Beispiel einen Kaufvertrag mit Ihnen abschließen, benötigen wir vorab personenbezogene
-                            Informationen.
-                        </li>
-                        <li>
-                            <strong>Rechtliche Verpflichtung</strong>&nbsp;(Artikel 6 Absatz 1 lit. c DSGVO): Wenn wir
-                            einer rechtlichen Verpflichtung unterliegen, verarbeiten wir Ihre Daten. Zum Beispiel sind
-                            wir gesetzlich verpflichtet Rechnungen für die Buchhaltung aufzuheben. Diese enthalten in
-                            der Regel personenbezogene Daten.
-                        </li>
-                        <li>
-                            <strong>Berechtigte Interessen</strong>&nbsp;(Artikel 6 Absatz 1 lit. f DSGVO): Im Falle
-                            berechtigter Interessen, die Ihre Grundrechte nicht einschränken, behalten wir uns die
-                            Verarbeitung personenbezogener Daten vor. Wir müssen zum Beispiel gewisse Daten verarbeiten,
-                            um unsere Website sicher und wirtschaftlich effizient betreiben zu können. Diese
-                            Verarbeitung ist somit ein berechtigtes Interesse.
-                        </li>
-                    </ol>
+                    <p>
+                        <strong>Einwilligung</strong>&nbsp;(Artikel 6 Absatz 1 lit. a DSGVO): Sie haben uns Ihre
+                        Einwilligung gegeben, Daten zu einem bestimmten Zweck zu verarbeiten. Ein Beispiel wäre die
+                        Speicherung Ihrer eingegebenen Daten eines Kontaktformulars.
+                        <br /> <br />
+                        <strong>Vertrag</strong>&nbsp;(Artikel 6 Absatz 1 lit. b DSGVO): Um einen Vertrag oder
+                        vorvertragliche Verpflichtungen mit Ihnen zu erfüllen, verarbeiten wir Ihre Daten. Wenn wir zum
+                        Beispiel einen Kaufvertrag mit Ihnen abschließen, benötigen wir vorab personenbezogene
+                        Informationen.
+                        <br /> <br />
+                        <strong>Rechtliche Verpflichtung</strong>&nbsp;(Artikel 6 Absatz 1 lit. c DSGVO): Wenn wir einer
+                        rechtlichen Verpflichtung unterliegen, verarbeiten wir Ihre Daten. Zum Beispiel sind wir
+                        gesetzlich verpflichtet Rechnungen für die Buchhaltung aufzuheben. Diese enthalten in der Regel
+                        personenbezogene Daten.
+                        <br /> <br />
+                        <strong>Berechtigte Interessen</strong>&nbsp;(Artikel 6 Absatz 1 lit. f DSGVO): Im Falle
+                        berechtigter Interessen, die Ihre Grundrechte nicht einschränken, behalten wir uns die
+                        Verarbeitung personenbezogener Daten vor. Wir müssen zum Beispiel gewisse Daten verarbeiten, um
+                        unsere Website sicher und wirtschaftlich effizient betreiben zu können. Diese
+                    </p>
 
                     <p>
                         Weitere Bedingungen wie die Wahrnehmung von Aufnahmen im öffentlichen Interesse und Ausübung
@@ -155,17 +149,14 @@ export default function About({ dataStart }) {
 
                     <p>Zusätzlich zu der EU-Verordnung gelten auch noch nationale Gesetze:</p>
 
-                    <ul>
-                        <li>
-                            In&nbsp;<strong>Österreich</strong>&nbsp;ist dies das Bundesgesetz zum Schutz natürlicher
-                            Personen bei der Verarbeitung personenbezogener Daten (<strong>Datenschutzgesetz</strong>),
-                            kurz&nbsp;<strong>DSG</strong>.
-                        </li>
-                        <li>
-                            In&nbsp;<strong>Deutschland</strong>&nbsp;gilt das&nbsp;
-                            <strong>Bundesdatenschutzgesetz</strong>, kurz<strong>&nbsp;BDSG</strong>.
-                        </li>
-                    </ul>
+                    <p>
+                        In&nbsp;<strong>Österreich</strong>&nbsp;ist dies das Bundesgesetz zum Schutz natürlicher
+                        Personen bei der Verarbeitung personenbezogener Daten (<strong>Datenschutzgesetz</strong>),
+                        kurz&nbsp;<strong>DSG</strong>.
+                        <br /> <br />
+                        In&nbsp;<strong>Deutschland</strong>&nbsp;gilt das&nbsp;
+                        <strong>Bundesdatenschutzgesetz</strong>, kurz<strong>&nbsp;BDSG</strong>.
+                    </p>
 
                     <p>
                         Sofern weitere regionale oder nationale Gesetze zur Anwendung kommen, informieren wir Sie in den
@@ -222,79 +213,62 @@ export default function About({ dataStart }) {
                         transparenten Verarbeitung von Daten kommt:
                     </p>
 
-                    <ul>
-                        <li>
-                            Sie haben laut Artikel 15 DSGVO ein Auskunftsrecht darüber, ob wir Daten von Ihnen
-                            verarbeiten. Sollte das zutreffen, haben Sie Recht darauf eine Kopie der Daten zu erhalten
-                            und die folgenden Informationen zu erfahren:
-                            <ul>
-                                <li>zu welchem Zweck wir die Verarbeitung durchführen;</li>
-                                <li>die Kategorien, also die Arten von Daten, die verarbeitet werden;</li>
-                                <li>
-                                    wer diese Daten erhält und wenn die Daten an Drittländer übermittelt werden, wie die
-                                    Sicherheit garantiert werden kann;
-                                </li>
-                                <li>wie lange die Daten gespeichert werden;</li>
-                                <li>
-                                    das Bestehen des Rechts auf Berichtigung, Löschung oder Einschränkung der
-                                    Verarbeitung und dem Widerspruchsrecht gegen die Verarbeitung;
-                                </li>
-                                <li>
-                                    dass Sie sich bei einer Aufsichtsbehörde beschweren können (Links zu diesen Behörden
-                                    finden Sie weiter unten);
-                                </li>
-                                <li>die Herkunft der Daten, wenn wir sie nicht bei Ihnen erhoben haben;</li>
-                                <li>
-                                    ob Profiling durchgeführt wird, ob also Daten automatisch ausgewertet werden, um zu
-                                    einem persönlichen Profil von Ihnen zu gelangen.
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            Sie haben laut Artikel 16 DSGVO ein Recht auf Berichtigung der Daten, was bedeutet, dass wir
-                            Daten richtig stellen müssen, falls Sie Fehler finden.
-                        </li>
-                        <li>
-                            Sie haben laut Artikel 17 DSGVO das Recht auf Löschung („Recht auf Vergessenwerden“), was
-                            konkret bedeutet, dass Sie die Löschung Ihrer Daten verlangen dürfen.
-                        </li>
-                        <li>
-                            Sie haben laut Artikel 18 DSGVO das Recht auf Einschränkung der Verarbeitung, was bedeutet,
-                            dass wir die Daten nur mehr speichern dürfen aber nicht weiter verwenden.
-                        </li>
-                        <li>
-                            Sie haben laut Artikel 19 DSGVO das Recht auf Datenübertragbarkeit, was bedeutet, dass wir
-                            Ihnen auf Anfrage Ihre Daten in einem gängigen Format zur Verfügung stellen.
-                        </li>
-                        <li>
-                            Sie haben laut Artikel 21 DSGVO ein Widerspruchsrecht, welches nach Durchsetzung eine
-                            Änderung der Verarbeitung mit sich bringt.
-                            <ul>
-                                <li>
-                                    Wenn die Verarbeitung Ihrer Daten auf Artikel 6 Abs. 1 lit. e (öffentliches
-                                    Interesse, Ausübung öffentlicher Gewalt) oder Artikel 6 Abs. 1 lit. f (berechtigtes
-                                    Interesse) basiert, können Sie gegen die Verarbeitung Widerspruch einlegen. Wir
-                                    prüfen danach so rasch wie möglich, ob wir diesem Widerspruch rechtlich nachkommen
-                                    können.
-                                </li>
-                                <li>
-                                    Werden Daten verwendet, um Direktwerbung zu betreiben, können Sie jederzeit gegen
-                                    diese Art der Datenverarbeitung widersprechen. Wir dürfen Ihre Daten danach nicht
-                                    mehr für Direktmarketing verwenden.
-                                </li>
-                                <li>
-                                    Werden Daten verwendet, um Profiling zu betreiben, können Sie jederzeit gegen diese
-                                    Art der Datenverarbeitung widersprechen. Wir dürfen Ihre Daten danach nicht mehr für
-                                    Profiling verwenden.
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            Sie haben laut Artikel 22 DSGVO unter Umständen das Recht, nicht einer ausschließlich auf
-                            einer&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;automatisierten
-                            Verarbeitung (zum Beispiel Profiling) beruhenden Entscheidung unterworfen zu werden.
-                        </li>
-                    </ul>
+                    <p>
+                        Sie haben laut Artikel 15 DSGVO ein Auskunftsrecht darüber, ob wir Daten von Ihnen verarbeiten.
+                        Sollte das zutreffen, haben Sie Recht darauf eine Kopie der Daten zu erhalten und die folgenden
+                        Informationen zu erfahren:
+                        <br />
+                        zu welchem Zweck wir die Verarbeitung durchführen; die Kategorien, also die Arten von Daten, die
+                        verarbeitet werden;
+                        <br />
+                        wer diese Daten erhält und wenn die Daten an Drittländer übermittelt werden, wie die Sicherheit
+                        garantiert werden kann;
+                        <br />
+                        wie lange die Daten gespeichert werden;
+                        <br />
+                        das Bestehen des Rechts auf Berichtigung, Löschung oder Einschränkung der Verarbeitung und dem
+                        Widerspruchsrecht gegen die Verarbeitung;
+                        <br />
+                        dass Sie sich bei einer Aufsichtsbehörde beschweren können (Links zu diesen Behörden finden Sie
+                        weiter unten);
+                        <br />
+                        die Herkunft der Daten, wenn wir sie nicht bei Ihnen erhoben haben;
+                        <br />
+                        ob Profiling durchgeführt wird, ob also Daten automatisch ausgewertet werden, um zu einem
+                        persönlichen Profil von Ihnen zu gelangen.
+                        <br />
+                        Sie haben laut Artikel 16 DSGVO ein Recht auf Berichtigung der Daten, was bedeutet, dass wir
+                        Daten richtig stellen müssen, falls Sie Fehler finden.
+                        <br />
+                        Sie haben laut Artikel 17 DSGVO das Recht auf Löschung („Recht auf Vergessenwerden“), was
+                        konkret bedeutet, dass Sie die Löschung Ihrer Daten verlangen dürfen.
+                        <br />
+                        Sie haben laut Artikel 18 DSGVO das Recht auf Einschränkung der Verarbeitung, was bedeutet, dass
+                        wir die Daten nur mehr speichern dürfen aber nicht weiter verwenden.
+                        <br />
+                        Sie haben laut Artikel 19 DSGVO das Recht auf Datenübertragbarkeit, was bedeutet, dass wir Ihnen
+                        auf Anfrage Ihre Daten in einem gängigen Format zur Verfügung stellen.
+                        <br />
+                        Sie haben laut Artikel 21 DSGVO ein Widerspruchsrecht, welches nach Durchsetzung eine Änderung
+                        der Verarbeitung mit sich bringt.
+                        <br />
+                        Wenn die Verarbeitung Ihrer Daten auf Artikel 6 Abs. 1 lit. e (öffentliches Interesse, Ausübung
+                        öffentlicher Gewalt) oder Artikel 6 Abs. 1 lit. f (berechtigtes Interesse) basiert, können Sie
+                        gegen die Verarbeitung Widerspruch einlegen. Wir prüfen danach so rasch wie möglich, ob wir
+                        diesem Widerspruch rechtlich nachkommen können.
+                        <br />
+                        Werden Daten verwendet, um Direktwerbung zu betreiben, können Sie jederzeit gegen diese Art der
+                        Datenverarbeitung widersprechen. Wir dürfen Ihre Daten danach nicht mehr für Direktmarketing
+                        verwenden.
+                        <br />
+                        Werden Daten verwendet, um Profiling zu betreiben, können Sie jederzeit gegen diese Art der
+                        Datenverarbeitung widersprechen. Wir dürfen Ihre Daten danach nicht mehr für Profiling
+                        verwenden.
+                        <br />
+                        Sie haben laut Artikel 22 DSGVO unter Umständen das Recht, nicht einer ausschließlich auf
+                        einer&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;automatisierten
+                        Verarbeitung (zum Beispiel Profiling) beruhenden Entscheidung unterworfen zu werden.
+                    </p>
 
                     <p>
                         <strong>Kurz gesagt:</strong>&nbsp;Sie haben Rechte – zögern Sie nicht, die oben gelistete
@@ -353,31 +327,22 @@ export default function About({ dataStart }) {
                         <strong>Cookies</strong>
                     </p>
 
-                    <figure className="wp-block-table">
-                        <table>
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        <strong>Cookies Zusammenfassung</strong>
-                                        <br />
-                                        Betroffene: Besucher der Website
-                                        <br />
-                                        Zweck: abhängig vom jeweiligen Cookie. Mehr Details dazu finden Sie weiter unten
-                                        bzw. beim Hersteller der Software, der das Cookie setzt.
-                                        <br />
-                                        Verarbeitete Daten: Abhängig vom jeweils eingesetzten Cookie. Mehr Details dazu
-                                        finden Sie weiter unten bzw. beim Hersteller der Software, der das Cookie setzt.
-                                        <br />
-                                        Speicherdauer: abhängig vom jeweiligen Cookie, kann von Stunden bis hin zu
-                                        Jahren variieren
-                                        <br />
-                                        &#x2696;&#xfe0f;&nbsp;Rechtsgrundlagen: Art. 6 Abs. 1 lit. a DSGVO
-                                        (Einwilligung), Art. 6 Abs. 1 lit.f DSGVO (Berechtigte Interessen)
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </figure>
+                    <p>
+                        <strong>Cookies Zusammenfassung</strong>
+                        <br />
+                        Betroffene: Besucher der Website
+                        <br />
+                        Zweck: abhängig vom jeweiligen Cookie. Mehr Details dazu finden Sie weiter unten bzw. beim
+                        Hersteller der Software, der das Cookie setzt.
+                        <br />
+                        Verarbeitete Daten: Abhängig vom jeweils eingesetzten Cookie. Mehr Details dazu finden Sie
+                        weiter unten bzw. beim Hersteller der Software, der das Cookie setzt.
+                        <br />
+                        Speicherdauer: abhängig vom jeweiligen Cookie, kann von Stunden bis hin zu Jahren variieren
+                        <br />
+                        &#x2696;&#xfe0f;&nbsp;Rechtsgrundlagen: Art. 6 Abs. 1 lit. a DSGVO (Einwilligung), Art. 6 Abs. 1
+                        lit.f DSGVO (Berechtigte Interessen)
+                    </p>
 
                     <p>
                         <strong>Was sind Cookies?</strong>
@@ -444,11 +409,11 @@ export default function About({ dataStart }) {
 
                     <p>Diese Mindestgrößen sollte ein Browser unterstützen können:</p>
 
-                    <ul>
-                        <li>Mindestens 4096 Bytes pro Cookie</li>
-                        <li>Mindestens 50 Cookies pro Domain</li>
-                        <li>Mindestens 3000 Cookies insgesamt</li>
-                    </ul>
+                    <p>
+                        Mindestens 4096 Bytes pro Cookie <br />
+                        Mindestens 50 Cookies pro Domain <br />
+                        Mindestens 3000 Cookies insgesamt
+                    </p>
 
                     <p>
                         <strong>Welche Arten von Cookies gibt es?</strong>
@@ -656,30 +621,21 @@ export default function About({ dataStart }) {
                         <strong>Webhosting Einleitung</strong>
                     </p>
 
-                    <figure className="wp-block-table">
-                        <table>
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        <strong>Webhosting Zusammenfassung</strong>
-                                        <br />
-                                        Betroffene: Besucher der Website
-                                        <br />
-                                        Zweck: professionelles Hosting der Website und Absicherung des Betriebs
-                                        <br />
-                                        Verarbeitete Daten: IP-Adresse, Zeitpunkt des Websitebesuchs, verwendeter
-                                        Browser und weitere Daten. Mehr Details dazu finden Sie weiter unten bzw. beim
-                                        jeweils eingesetzten Webhosting Provider.
-                                        <br />
-                                        Speicherdauer: abhängig vom jeweiligen Provider, aber in der Regel 2 Wochen
-                                        <br />
-                                        &#x2696;&#xfe0f;&nbsp;Rechtsgrundlagen: Art. 6 Abs. 1 lit.f DSGVO (Berechtigte
-                                        Interessen)
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </figure>
+                    <p>
+                        <strong>Webhosting Zusammenfassung</strong>
+                        <br />
+                        Betroffene: Besucher der Website
+                        <br />
+                        Zweck: professionelles Hosting der Website und Absicherung des Betriebs
+                        <br />
+                        Verarbeitete Daten: IP-Adresse, Zeitpunkt des Websitebesuchs, verwendeter Browser und weitere
+                        Daten. Mehr Details dazu finden Sie weiter unten bzw. beim jeweils eingesetzten Webhosting
+                        Provider.
+                        <br />
+                        Speicherdauer: abhängig vom jeweiligen Provider, aber in der Regel 2 Wochen
+                        <br />
+                        &#x2696;&#xfe0f;&nbsp;Rechtsgrundlagen: Art. 6 Abs. 1 lit.f DSGVO (Berechtigte Interessen)
+                    </p>
 
                     <p>
                         <strong>Was ist Webhosting?</strong>
@@ -723,14 +679,12 @@ export default function About({ dataStart }) {
 
                     <p>Die Zwecke der Datenverarbeitung sind:</p>
 
-                    <ol>
-                        <li>Professionelles Hosting der Website und Absicherung des Betriebs</li>
-                        <li>zur Aufrechterhaltung der Betriebs- und IT-Sicherheit</li>
-                        <li>
-                            Anonyme Auswertung des Zugriffsverhaltens zur Verbesserung unseres Angebots und ggf. zur
-                            Strafverfolgung bzw. Verfolgung von Ansprüchen
-                        </li>
-                    </ol>
+                    <p>
+                        Professionelles Hosting der Website und Absicherung des Betriebs zur Aufrechterhaltung der
+                        Betriebs- und IT-Sicherheit <br />
+                        Anonyme Auswertung des Zugriffsverhaltens zur Verbesserung unseres Angebots und ggf. zur
+                        Strafverfolgung bzw. Verfolgung von Ansprüchen
+                    </p>
 
                     <p>
                         <strong>Welche Daten werden verarbeitet?</strong>
@@ -741,28 +695,28 @@ export default function About({ dataStart }) {
                         Computer auf dem diese Webseite gespeichert ist, in der Regel automatisch Daten wie
                     </p>
 
-                    <ul>
-                        <li>die komplette Internetadresse (URL) der aufgerufenen Webseite</li>
-                        <li>Browser und Browserversion (z. B. Chrome 87)</li>
-                        <li>das verwendete Betriebssystem (z. B. Windows 10)</li>
-                        <li>
-                            die Adresse (URL) der zuvor besuchten Seite (Referrer URL) (z. B.&nbsp;
-                            <a
-                                href="https://www.beispielquellsite.de/vondabinichgekommen.html/"
-                                target="_blank"
-                                rel="noreferrer noopener"
-                            >
-                                https://www.beispielquellsite.de/vondabinichgekommen.html/
-                            </a>
-                            )
-                        </li>
-                        <li>
-                            den Hostnamen und die IP-Adresse des Geräts von welchem aus zugegriffen wird (z. B.
-                            COMPUTERNAME und 194.23.43.121)
-                        </li>
-                        <li>Datum und Uhrzeit</li>
-                        <li>in Dateien, den sogenannten Webserver-Logfiles</li>
-                    </ul>
+                    <p>
+                        die komplette Internetadresse (URL) der aufgerufenen Webseite
+                        <br />
+                        Browser und Browserversion (z. B. Chrome 87)
+                        <br />
+                        das verwendete Betriebssystem (z. B. Windows 10)
+                        <br />
+                        die Adresse (URL) der zuvor besuchten Seite (Referrer URL) (z. B.&nbsp;
+                        <a
+                            href="https://www.beispielquellsite.de/vondabinichgekommen.html/"
+                            target="_blank"
+                            rel="noreferrer noopener"
+                        >
+                            https://www.beispielquellsite.de/vondabinichgekommen.html/
+                        </a>
+                        )
+                        <br />
+                        den Hostnamen und die IP-Adresse des Geräts von welchem aus zugegriffen wird (z. B. COMPUTERNAME
+                        und 194.23.43.121)
+                        <br />
+                        Datum und Uhrzeit in Dateien, den sogenannten Webserver-Logfiles
+                    </p>
 
                     <p>
                         <strong>Wie lange werden Daten gespeichert?</strong>
@@ -802,33 +756,24 @@ export default function About({ dataStart }) {
                         <strong>Audio &amp; Video Einleitung</strong>
                     </p>
 
-                    <figure className="wp-block-table">
-                        <table>
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        <strong>Audio &amp; Video Datenschutzerklärung Zusammenfassung</strong>
-                                        <br />
-                                        Betroffene: Besucher der Website
-                                        <br />
-                                        Zweck: Optimierung unserer Serviceleistung
-                                        <br />
-                                        Verarbeitete Daten: Daten wie etwa Kontaktdaten, Daten zum Nutzerverhalten,
-                                        Informationen zu Ihrem Gerät und Ihre IP-Adresse können gespeichert werden.
-                                        <br />
-                                        Mehr Details dazu finden Sie weiter unten in den entsprechenden
-                                        Datenschutztexten.
-                                        <br />
-                                        Speicherdauer: Daten bleiben grundsätzlich gespeichert, solange sie für den
-                                        Dienstzweck nötig sind
-                                        <br />
-                                        &#x2696;&#xfe0f;&nbsp;Rechtsgrundlagen: Art. 6 Abs. 1 lit. a DSGVO
-                                        (Einwilligung), Art. 6 Abs. 1 lit. f DSGVO (Berechtigte Interessen)
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </figure>
+                    <p>
+                        <strong>Audio &amp; Video Datenschutzerklärung Zusammenfassung</strong>
+                        <br />
+                        Betroffene: Besucher der Website
+                        <br />
+                        Zweck: Optimierung unserer Serviceleistung
+                        <br />
+                        Verarbeitete Daten: Daten wie etwa Kontaktdaten, Daten zum Nutzerverhalten, Informationen zu
+                        Ihrem Gerät und Ihre IP-Adresse können gespeichert werden.
+                        <br />
+                        Mehr Details dazu finden Sie weiter unten in den entsprechenden Datenschutztexten.
+                        <br />
+                        Speicherdauer: Daten bleiben grundsätzlich gespeichert, solange sie für den Dienstzweck nötig
+                        sind
+                        <br />
+                        &#x2696;&#xfe0f;&nbsp;Rechtsgrundlagen: Art. 6 Abs. 1 lit. a DSGVO (Einwilligung), Art. 6 Abs. 1
+                        lit. f DSGVO (Berechtigte Interessen)
+                    </p>
 
                     <p>
                         <strong>Was sind Audio- und Videoelemente?</strong>
@@ -933,247 +878,6 @@ export default function About({ dataStart }) {
                         mit Ihnen oder anderen Kunden und Geschäftspartnern gespeichert und verarbeitet. Wir setzen die
                         eingebundenen Audio- und Video-Elemente gleichwohl nur ein, soweit Sie eine Einwilligung erteilt
                         haben.
-                    </p>
-
-                    <p>
-                        <strong>Vimeo Datenschutzerklärung</strong>
-                    </p>
-
-                    <figure className="wp-block-table">
-                        <table>
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        <strong>Vimeo Datenschutzerklärung Zusammenfassung</strong>
-                                        <br />
-                                        Betroffene: Besucher der Website
-                                        <br />
-                                        Zweck: Optimierung unserer Serviceleistung
-                                        <br />
-                                        Verarbeitete Daten: Daten wie etwa Kontaktdaten, Daten zum Nutzerverhalten,
-                                        Informationen zu Ihrem Gerät und Ihre IP-Adresse können gespeichert werden.
-                                        <br />
-                                        Mehr Details dazu finden Sie weiter unten in dieser Datenschutzerklärung.
-                                        <br />
-                                        Speicherdauer: Daten bleiben grundsätzlich gespeichert, solange sie für den
-                                        Dienstzweck nötig sind
-                                        <br />
-                                        &#x2696;&#xfe0f;&nbsp;Rechtsgrundlagen: Art. 6 Abs. 1 lit. a DSGVO
-                                        (Einwilligung), Art. 6 Abs. 1 lit. f DSGVO (Berechtigte Interessen)
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </figure>
-
-                    <p>
-                        <strong>Was ist Vimeo?</strong>
-                    </p>
-
-                    <p>
-                        Wir verwenden auf unserer Website auch Videos der Firma Vimeo. Betrieben wird das Videoportal
-                        durch Vimeo LLC, 555 West 18th Street, New York, New York 10011, USA. Mit Hilfe eines Plug-ins
-                        können wir Ihnen so interessantes Videomaterial direkt auf unserer Website anzeigen. Dabei
-                        können gewissen Daten von Ihnen an Vimeo übertragen werden. In dieser Datenschutzerklärung
-                        zeigen wir Ihnen, um welche Daten es sich handelt, warum wir Vimeo verwenden und wie Sie Ihre
-                        Daten bzw. die Datenübertragung verwalten oder unterbinden können.
-                    </p>
-
-                    <p>
-                        Vimeo ist eine Videoplattform, die 2004 gegründet wurde und seit 2007 das Streamen von Videos in
-                        HD-Qualität ermöglicht. Seit 2015 kann auch in 4k Ultra HD gestreamt werden. Die Nutzung des
-                        Portals ist kostenlos, es kann allerdings auch kostenpflichtiger Content veröffentlicht werden.
-                        Im Vergleich zum Marktführer YouTube, legt Vimeo vorrangig Wert auf hochwertigen Content in
-                        guter Qualität. So bietet das Portal einerseits viele künstlerische Inhalte wie Musikvideos und
-                        Kurzfilme, andererseits aber auch wissenswerte Dokumentationen zu den unterschiedlichsten
-                        Themen.
-                    </p>
-
-                    <p>
-                        <strong>Warum verwenden wir Vimeo auf unserer Website?</strong>
-                    </p>
-
-                    <p>
-                        Ziel unserer Webpräsenz ist es, Ihnen den bestmöglichen Content zu liefern. Und zwar so einfach
-                        zugänglich wie möglich. Erst wenn wir das geschafft haben, sind wir mit unserem Service
-                        zufrieden. Der Videodienst Vimeo unterstützt uns dieses Ziel zu erreichen. Vimeo bietet uns die
-                        Möglichkeit, Ihnen qualitativ hochwertige Inhalte direkt auf unserer Website zu präsentieren.
-                        Statt Ihnen nur einen Link zu einem interessanten Video zu geben, können Sie so das Video gleich
-                        bei uns ansehen. Das erweitert unser Service und erleichtert Ihnen den Zugang zu interessanten
-                        Inhalten. Somit bieten wir neben unseren Texten und Bildern auch Video-Content an.
-                    </p>
-
-                    <p>
-                        <strong>Welche Daten werden auf Vimeo gespeichert?</strong>
-                    </p>
-
-                    <p>
-                        Wenn Sie auf unserer Website eine Seite aufrufen, die ein Vimeo-Video eingebettet hat, verbindet
-                        sich Ihr Browser mit den Servern von Vimeo. Dabei kommt es zu einer Datenübertragung. Diese
-                        Daten werden auf den Vimeo-Servern gesammelt, gespeichert und verarbeitet. Unabhängig davon, ob
-                        Sie ein Vimeo-Konto haben oder nicht, sammelt Vimeo Daten über Sie. Dazu zählen Ihre IP-Adresse,
-                        technische Infos über Ihren Browsertyp, Ihr Betriebssystem oder ganz grundlegende
-                        Geräteinformationen. Weiters speichert Vimeo Informationen über welche Webseite Sie den
-                        Vimeo-Dienst nutzen und welche Handlungen (Webaktivitäten) Sie auf unserer Webseite ausführen.
-                        Zu diesen Webaktivitäten zählen beispielsweise Sitzungsdauer, Absprungrate oder auf welchen
-                        Button Sie auf unserer Webseite mit eingebauter Vimeo-Funktion geklickt haben. Diese Handlungen
-                        kann Vimeo mit Hilfe von Cookies und ähnlichen Technologien verfolgen und speichern.
-                    </p>
-
-                    <p>
-                        Falls Sie als registriertes Mitglied bei Vimeo eingeloggt sind, können meistens mehr Daten
-                        erhoben werden, da möglicherweise mehr Cookies bereits in Ihrem Browser gesetzt wurden. Zudem
-                        werden Ihre Handlungen auf unsere Webseite direkt mit Ihrem Vimeo-Account verknüpft. Um dies zu
-                        verhindern müssen Sie sich, während des “Surfens” auf unserer Webseite, von Vimeo ausloggen.
-                    </p>
-
-                    <p>
-                        Nachfolgend zeigen wir Ihnen Cookies, die von Vimeo gesetzt werden, wenn Sie auf einer Webseite
-                        mit integrierter Vimeo-Funktion, sind. Diese Liste erhebt keinen Anspruch auf Vollständigkeit
-                        und geht davon aus, dass Sie keinen Vimeo-Account haben.
-                    </p>
-
-                    <p>
-                        <strong>Name:</strong>&nbsp;player
-                        <br />
-                        <strong>Wert:</strong>&nbsp;“”
-                        <br />
-                        <strong>Verwendungszweck:</strong>&nbsp;Dieses Cookie speichert Ihre Einstellungen, bevor Sie
-                        ein eingebettetes Vimeo-Video abspielen. Dadurch bekommen Sie beim nächsten Mal, wenn Sie ein
-                        Vimeo-Video ansehen, wieder Ihre bevorzugten Einstellungen.
-                        <br />
-                        <strong>Ablaufdatum:</strong>&nbsp;nach einem Jahr
-                    </p>
-
-                    <p>
-                        <strong>Name</strong>:&nbsp;vuid
-                        <br />
-                        <strong>Wert:&nbsp;</strong>pl1046149876.614422590111947866-4
-                        <strong>
-                            <br />
-                            Verwendungszweck:&nbsp;&nbsp;
-                        </strong>
-                        Dieses Cookie sammelt Informationen über Ihre Handlungen auf Webseiten, die ein Vimeo-Video
-                        eingebettet haben.
-                        <strong>
-                            <br />
-                            Ablaufdatum:&nbsp;&nbsp;
-                        </strong>
-                        nach 2 Jahren
-                    </p>
-
-                    <p>
-                        <strong>Anmerkung:</strong>&nbsp;Diese beiden Cookies werden immer gesetzt, sobald Sie sich auf
-                        einer Webseite mit einem eingebetteten Vimeo-Video befinden. Wenn Sie das Video ansehen und auf
-                        die Schaltfläche klicken, um beispielsweise das Video zu “teilen” oder zu “liken”, werden
-                        weitere Cookies gesetzt. Dabei handelt es sich auch um Drittanbieter-Cookies wie&nbsp; _ga oder
-                        _gat_UA-76641-8 von Google Analytics oder _fbp von Facebook. Welche Cookies hier genau gesetzt
-                        werden, hängt von Ihrer Interaktion mit dem Video ab.
-                    </p>
-
-                    <p>
-                        Die folgende Liste zeigt einen Ausschnitt möglicher Cookies, die gesetzt werden, wenn Sie mit
-                        dem Vimeo-Video interagieren:
-                    </p>
-
-                    <p>
-                        <strong>Name:</strong>&nbsp;_abexps
-                        <br />
-                        <strong>Wert:</strong>&nbsp;%5B%5D
-                        <br />
-                        <strong>Verwendungszweck:&nbsp;</strong>Dieses Vimeo-Cookie hilft Vimeo, sich an die von Ihnen
-                        getroffenen Einstellungen zu erinnern. Dabei kann es sich zum Beispiel um eine voreingestellte
-                        Sprache, um eine Region oder einen Benutzernamen handeln. Im Allgemeinen speichert das Cookie
-                        Daten darüber, wie Sie Vimeo verwenden.
-                        <br />
-                        <strong>Ablaufdatum:</strong>&nbsp;nach einem Jahr
-                    </p>
-
-                    <p>
-                        <strong>Name:</strong>&nbsp;continuous_play_v3
-                        <br />
-                        <strong>Wert:</strong>&nbsp;1
-                        <br />
-                        <strong>Verwendungszweck:&nbsp;</strong>Bei diesem Cookie handelt es sich um ein
-                        Erstanbieter-Cookie von Vimeo. Das Cookie sammelt Informationen wie Sie das Vimeo-Service
-                        verwenden. Beispielsweise speichert das Cookie, wann Sie ein Video pausieren bzw. wieder
-                        abspielen.
-                        <br />
-                        <strong>Ablaufdatum:</strong>&nbsp;nach einem Jahr
-                    </p>
-
-                    <p>
-                        <strong>Name:</strong>&nbsp;_ga
-                        <br />
-                        <strong>Wert:</strong>&nbsp;GA1.2.1522249635.1578401280111947866-7
-                        <br />
-                        <strong>Verwendungszweck:&nbsp;</strong>Dieses Cookie ist ein Drittanbieter-Cookie von Google.
-                        Standardmäßig verwendet analytics.js das Cookie _ga, um die User-ID zu speichern. Grundsätzlich
-                        dient es zur Unterscheidung der Websitebesucher.
-                        <br />
-                        <strong>Ablaufdatum:</strong>&nbsp;nach 2 Jahren
-                    </p>
-
-                    <p>
-                        <strong>Name:</strong>&nbsp;_gcl_au
-                        <br />
-                        <strong>Wert:</strong>&nbsp;1.1.770887836.1578401279111947866-3
-                        <br />
-                        <strong>Verwendungszweck:&nbsp;</strong>Dieses Drittanbieter-Cookie von Google AdSense wird
-                        verwendet, um die Effizienz von Werbeanzeigen auf Websites zu verbessern.
-                        <br />
-                        <strong>Ablaufdatum:</strong>&nbsp;nach 3 Monaten
-                    </p>
-
-                    <p>
-                        <strong>Name:</strong>&nbsp;_fbp
-                        <br />
-                        <strong>Wert:</strong>&nbsp;fb.1.1578401280585.310434968
-                        <br />
-                        <strong>Verwendungszweck:</strong>&nbsp;Das ist ein Facebook-Cookie. Dieses Cookie wird
-                        verwendet, um Werbeanzeigen bzw. Werbeprodukte von Facebook oder anderen Werbetreibenden
-                        einzublenden.
-                        <br />
-                        <strong>Ablaufdatum:</strong>&nbsp;nach 3 Monaten
-                    </p>
-
-                    <p>
-                        Vimeo nutzt diese Daten unter anderem, um das eigene Service zu verbessern, um mit Ihnen in
-                        Kommunikation zu treten und um eigene zielgerichtete Werbemaßnahmen zu setzen. Vimeo betont auf
-                        seiner Website, dass bei eingebetteten Videos nur Erstanbieter-Cookies (also Cookies von Vimeo
-                        selbst) verwendet werden, solange man mit dem Video nicht interagiert.
-                    </p>
-
-                    <p>
-                        <strong>Wie lange und wo werden die Daten gespeichert?</strong>
-                    </p>
-
-                    <p>
-                        Vimeo hat den Hauptsitz in White Plains im Bundesstaat New York (USA). Die Dienste werden aber
-                        weltweit angeboten. Dabei verwendet das Unternehmen Computersysteme, Datenbanken und Server in
-                        den USA und auch in anderen Ländern. Ihre Daten können somit auch auf Servern in Amerika
-                        gespeichert und verarbeitet werden. Die Daten bleiben bei Vimeo so lange gespeichert, bis das
-                        Unternehmen keinen wirtschaftlichen Grund mehr für die Speicherung hat. Dann werden die Daten
-                        gelöscht oder anonymisiert.
-                    </p>
-
-                    <p>
-                        <strong>Wie kann ich meine Daten löschen bzw. die Datenspeicherung verhindern?</strong>
-                    </p>
-
-                    <p>
-                        Sie haben immer die Möglichkeit, Cookies in Ihrem Browser nach Ihren Wünschen zu verwalten. Wenn
-                        Sie beispielsweise nicht wollen, dass Vimeo Cookies setzt und so Informationen über Sie sammelt,
-                        können Sie in Ihren Browser-Einstellungen Cookies jederzeit löschen oder deaktivieren. Je nach
-                        Browser funktioniert dies ein bisschen anders. Bitte beachten Sie, dass möglicherweise nach dem
-                        Deaktivieren/Löschen von Cookies diverse Funktionen nicht mehr im vollen Ausmaß zur Verfügung
-                        stehen. Unter dem Abschnitt „Cookies“ finden Sie die entsprechenden Links zu den jeweiligen
-                        Anleitungen der bekanntesten Browser.
-                    </p>
-
-                    <p>
-                        Falls Sie ein registriertes Vimeo-Mitglied sind, können Sie auch in den Einstellungen bei Vimeo
-                        die verwendeten Cookies verwalten.
                     </p>
 
                     <p>

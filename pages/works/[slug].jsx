@@ -204,7 +204,7 @@ const Work = ({ post, dataAll }) => {
                                     </div>
                                     {e.caption && (
                                         <div
-                                            style={{ marginTop: "-8px!important" }}
+                                            style={{ marginTop: "-5px!important" }}
                                             className="caption  col-span-12 text-text text-xs"
                                         >
                                             {e.caption}
@@ -214,11 +214,19 @@ const Work = ({ post, dataAll }) => {
                             );
                         })}
                         {/* LIGHTBOX GALLERY */}
+                        {typeof post.galleryLightbox !== "undefined" ? (
+                            <div className="caption col-span-12  text-text text-xs">
+                                {post.galleryLightbox.captionTop}
+                            </div>
+                        ) : null}
                         {post.galleryLightbox ? (
                             <div
                                 ref={lightboxRef}
                                 className="col-span-12 lightBox aspect-video bg-contain bg-no-repeat"
-                                style={{ backgroundImage: `url(${urlFor(post.galleryLightbox.images[lightBoxImg])})` }}
+                                style={{
+                                    marginTop: "-5px!important",
+                                    backgroundImage: `url(${urlFor(post.galleryLightbox.images[lightBoxImg])}`,
+                                }}
                             ></div>
                         ) : null}
                         {post.galleryLightbox
@@ -226,11 +234,6 @@ const Work = ({ post, dataAll }) => {
                                   // counter++;
                                   return (
                                       <>
-                                          {e.captionTop && (
-                                              <div className="caption col-span-12  text-text italic">
-                                                  {e.captionTop}
-                                              </div>
-                                          )}
                                           <div
                                               key={`image${i}`}
                                               className={`${"col-span-12 sm:col-span-6 lg:col-span-4  overflow-hidden"}  relative aspect-video`}
@@ -270,6 +273,7 @@ const Work = ({ post, dataAll }) => {
                               return (
                                   <div key={`key${i}`} className="mt-2">
                                       <VideoJS options={controls(i)} onReady={handlePlayerReady} />
+                                      {e.bottomLine ? <p className="bottomLine">{e.bottomLine}</p> : null}
                                   </div>
                               );
                           })

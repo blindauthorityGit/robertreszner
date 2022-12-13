@@ -8,5 +8,10 @@ export default {
             name: "link",
             type: "string",
         },
+        {
+            title: "bottomLine",
+            name: "bottomLine",
+            type: "string",
+        },
     ],
 };
