@@ -17,7 +17,7 @@ export default function Contact({ dataStart }) {
     }, []);
 
     return (
-        <MainContainer width="w-full col-span-12 pl-12 pt-16 md:col-span-9 md:ml-[320px] overflow-hidden">
+        <MainContainer width="w-full col-span-12 pl-12 pt-16 md:col-span-9 md:ml-[320px] overflow-hidden mb-48">
             <Head>
                 <title>Eva Maria Schartmüller</title>
             </Head>
@@ -29,7 +29,9 @@ export default function Contact({ dataStart }) {
                         <br />
                         {dataStart.phone}
                     </p>
-                    <p style={{ margin: "3rem 0 4rem 0!important" }}>{dataStart.description}</p>
+                    <p className="pDescri" style={{ margin: "3rem 0 4rem 0!important" }}>
+                        {dataStart.description}
+                    </p>
                     {/* <PortableText value={dataStart.description}></PortableText> */}
                     <FormFull></FormFull>
                 </div>

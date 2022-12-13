@@ -94,6 +94,14 @@ const Work = ({ post, dataAll }) => {
 
     function lightBoxClick(e, i) {
         lightboxRef.current.classList.remove("fade-in");
+        if (!e.target.classList.contains("big")) {
+            lightboxRef.current.style.paddingBottom = "100%";
+            console.log("not big");
+        } else {
+            lightboxRef.current.style.paddingBottom = "66.25%";
+            console.log(" big");
+        }
+        console.log(e.target.classList.contains("big"));
         setTimeout(() => {
             lightboxRef.current.classList.add("fade-in");
             setLightBoxImg(i);
@@ -222,7 +230,7 @@ const Work = ({ post, dataAll }) => {
                         {post.galleryLightbox ? (
                             <div
                                 ref={lightboxRef}
-                                className="col-span-12 lightBox aspect-video bg-contain bg-no-repeat"
+                                className="col-span-12 lightBox aspect-videoBig bg-cover bg-no-repeat"
                                 style={{
                                     marginTop: "-5px!important",
                                     backgroundImage: `url(${urlFor(post.galleryLightbox.images[lightBoxImg])}`,
@@ -248,7 +256,9 @@ const Work = ({ post, dataAll }) => {
                                                   loading="lazy"
                                                   objectFit="cover"
                                                   alt="hero"
-                                                  className="hover:scale-110 transition-all cursor-pointer"
+                                                  className={`hover:scale-110 transition-all cursor-pointer ${
+                                                      e.big ? "big" : null
+                                                  }`}
                                                   onClick={(e) => {
                                                       lightBoxClick(e, i);
                                                   }}

@@ -32,7 +32,7 @@ const Works = ({ dataAll }) => {
 
     return (
         <>
-            <MainContainer width="w-full col-span-12 md:col-span-9 md:ml-[320px] pl-12 overflow-hidden">
+            <MainContainer width="w-full col-span-12 md:col-span-9 md:ml-[320px] pl-12 overflow-hidden mb-64">
                 <Head>
                     <title>Works</title>
                     {/* <meta name="description" content={post.seo.description} /> */}

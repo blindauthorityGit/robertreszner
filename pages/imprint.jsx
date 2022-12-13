@@ -20,7 +20,7 @@ export default function About({ dataStart }) {
             </Head>
 
             <div className="col-span-12 pt-4 md:col-span-6 ">
-                <strong>Impressum</strong>
+                <p>Impressum</p>
                 <div className="texte mt-8 px-12 md:px-0">
                     <p>
                         Informationspflicht laut §5 E-Commerce Gesetz, §14 Unternehmensgesetzbuch, §63 Gewerbeordnung

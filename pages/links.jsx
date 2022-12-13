@@ -14,7 +14,7 @@ export default function Link({ dataStart }) {
     }, []);
 
     return (
-        <MainContainer width="w-full col-span-12 pl-12 pt-8 md:col-span-9 md:ml-[320px] overflow-hidden">
+        <MainContainer width="w-full col-span-12 pl-12 pt-8 md:col-span-9 md:ml-[320px] overflow-hidden mb-96">
             <Head>
                 <title>Eva Maria Schartmüller</title>
             </Head>

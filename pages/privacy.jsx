@@ -21,7 +21,7 @@ export default function About({ dataStart }) {
 
             <div className="col-span-12 md:col-span-6 pt-4">
                 {" "}
-                <strong>Datenschutzerklärung</strong>
+                <p>Datenschutzerklärung</p>
                 <div className="texte mt-8 px-12 md:px-0">
                     <p></p>
 
