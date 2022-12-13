@@ -24,9 +24,6 @@ const Footer = (props) => {
                         2022 <span className="text-xs">by eva maria schartmüller</span>
                     </div>
                     <div className="right flex text-[#949494]">
-                        <a className="mr-4" href={props.fb}>
-                            <RiFacebookFill></RiFacebookFill>
-                        </a>
                         <a className="mr-4" href={props.insta}>
                             <FaInstagram></FaInstagram>
                         </a>

@@ -223,9 +223,7 @@ const Work = ({ post, dataAll }) => {
                         })}
                         {/* LIGHTBOX GALLERY */}
                         {typeof post.galleryLightbox !== "undefined" ? (
-                            <div className="caption col-span-12  text-text text-xs">
-                                {post.galleryLightbox.captionTop}
-                            </div>
+                            <p className="caption col-span-12  text-text mt-2">{post.galleryLightbox.captionTop}</p>
                         ) : null}
                         {post.galleryLightbox ? (
                             <div
