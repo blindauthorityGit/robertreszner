@@ -35,11 +35,11 @@ export default function Home({ dataStart, dataNews }) {
                 <div
                     style={{
                         backgroundImage: `url(${urlFor(dataStart.mainImage)})`,
-                        backgroundSize: "933px",
+                        // backgroundSize: "933px",
                         backgroundPositionX: "left",
                         backgroundPositionY: "center",
                     }}
-                    className="imgwrapper aspect-video relative max-h-[20rem]"
+                    className="imgwrapper aspect-video bg-[length:500px] sm:bg-[length:933px] relative max-h-[20rem]"
                 >
                     {/* <Image
                         {...imageProps}
