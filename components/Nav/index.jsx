@@ -60,14 +60,14 @@ const Navbar = (props) => {
                                         onClick={() => {
                                             setModalOpen(false);
                                         }}
-                                        className={`fade-in block text-lg mb-6 tracking-widest hover:text-black`}
+                                        className={`fade-in block text-lg mb-2 tracking-widest hover:text-black`}
                                     >
                                         {e}
                                     </a>
                                 </Link>
                             );
                         })}
-                        <div className="mt-16 text-left  text-white text-xs">
+                        <div className=" text-left  text-white text-lg tracking-widest block">
                             {props.MenuItemsLower.map((e, i) => {
                                 return (
                                     <Link key={`link${i}`} href={`/${e}`}>
@@ -75,7 +75,7 @@ const Navbar = (props) => {
                                             onClick={() => {
                                                 setModalOpen(false);
                                             }}
-                                            className={`fade-in block mb-2 font-[300] tracking-widest hover:text-black`}
+                                            className={`fade-in block mb-2 tracking-widest hover:text-black`}
                                         >
                                             {e}
                                         </a>

@@ -14,13 +14,13 @@ export default function Link({ dataStart }) {
     }, []);
 
     return (
-        <MainContainer width="w-full col-span-12 pl-12 pt-8 md:col-span-9 md:ml-[320px] overflow-hidden mb-96">
+        <MainContainer width="w-full col-span-12 sm:pl-12 sm:pt-8 md:col-span-9 md:ml-[320px] overflow-hidden mb-96">
             <Head>
                 <title>Eva Maria Schartmüller</title>
             </Head>
 
             <div className="col-span-12 md:col-span-6">
-                <div className="texte mt-8 px-12 md:px-0">
+                <div className="texte mt-[-10px] sm:mt-8 px-6 sm:px-12 md:px-0">
                     <PortableText value={dataStart.description}></PortableText>
                 </div>
             </div>

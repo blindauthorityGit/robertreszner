@@ -14,13 +14,13 @@ export default function About({ dataStart }) {
     // }, []);
 
     return (
-        <MainContainer width="w-full pl-12 col-span-12 md:col-span-9 md:ml-[320px] overflow-hidden">
+        <MainContainer width="w-full px-6 sm:px- sm:pl-12 col-span-12 md:col-span-9 md:ml-[320px] overflow-hidden">
             <Head>
                 <title>Eva Maria Schartmüller</title>
             </Head>
 
-            <div className="col-span-12 md:col-span-6 pt-8">
-                <div className="texte mt-8  md:px-0">
+            <div className="col-span-12 md:col-span-6 sm:pt-8">
+                <div className="texte mt-[-10px] sm:mt-8  md:px-0">
                     <PortableText value={dataStart.description}></PortableText>
                 </div>
             </div>

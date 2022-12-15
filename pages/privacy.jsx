@@ -14,15 +14,15 @@ export default function About({ dataStart }) {
     // }, []);
 
     return (
-        <MainContainer width="w-full  p-12  col-span-12 md:col-span-9 md:ml-[320px] overflow-hidden">
+        <MainContainer width="w-full  sm:p-12  col-span-12 md:col-span-9 md:ml-[320px] overflow-hidden">
             <Head>
                 <title>Eva Maria Schartmüller</title>
             </Head>
 
-            <div className="col-span-12 md:col-span-6 pt-4">
+            <div className="col-span-12 px-6 sm:px-0 md:col-span-6 sm:pt-4">
                 {" "}
                 <p>Datenschutzerklärung</p>
-                <div className="texte mt-8 px-12 md:px-0">
+                <div className="texte sm:mt-8 sm:px-12 md:px-0">
                     <p></p>
 
                     <p>

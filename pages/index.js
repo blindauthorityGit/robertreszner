@@ -26,7 +26,7 @@ export default function Home({ dataStart, dataNews }) {
     const imageProps = useNextSanityImage(client, dataStart.mainImage);
 
     return (
-        <MainContainer width="w-full col-span-12 md:col-span-9 pl-12 md:ml-[320px] pt-[69px] overflow-hidden">
+        <MainContainer width="w-full col-span-12 md:col-span-9 md:pl-12 md:ml-[320px] sm:pt-[69px] overflow-hidden">
             <Head>
                 <title>{dataStart.seo.title}</title>
             </Head>

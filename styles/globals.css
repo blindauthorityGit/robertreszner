@@ -78,4 +78,18 @@ a {
   height: 0;
   padding-bottom: 66.25%;
 }
+
+.mainWrapper {
+  padding-bottom: 6rem;
+}
+
+body {
+  position: relative;
+  min-height: 100vh;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+}
 /*# sourceMappingURL=globals.css.map */

@@ -109,7 +109,7 @@ const Work = ({ post, dataAll }) => {
     }
 
     useEffect(() => {
-        console.log(post);
+        console.log(post, dataAll);
     }, [lightBoxImg]);
 
     useEffect(() => {
@@ -140,7 +140,7 @@ const Work = ({ post, dataAll }) => {
 
     return (
         <>
-            <MainContainer width="w-full col-span-12 md:col-span-9 pl-12 pt-[69px] md:ml-[320px] overflow-hidden">
+            <MainContainer width="w-full col-span-12 md:col-span-9 sm:;pl-12 sm:pt-[69px] md:ml-[320px] overflow-hidden">
                 <Head>
                     <title>{post.seo.title}</title>
                     <meta name="description" content={post.seo.description} />
@@ -167,7 +167,7 @@ const Work = ({ post, dataAll }) => {
                     </div>
                     {/* {vid ? <VideoJS options={videoJsOptions} onReady={handlePlayerReady} /> : null} */}
                     {post.topLine ? (
-                        <div className="topLineText">
+                        <div className="topLineText  px-6 sm:px-0">
                             {" "}
                             <PortableText value={post.topLine}></PortableText>
                         </div>
@@ -190,7 +190,9 @@ const Work = ({ post, dataAll }) => {
                             return (
                                 <>
                                     {e.captionTop && (
-                                        <div className="caption col-span-12  text-text italic">{e.captionTop}</div>
+                                        <div className="caption col-span-12  pl-6 sm:pl-0 text-text italic">
+                                            {e.captionTop}
+                                        </div>
                                     )}
                                     <div
                                         key={`image${i}`}
@@ -213,7 +215,7 @@ const Work = ({ post, dataAll }) => {
                                     {e.caption && (
                                         <div
                                             style={{ marginTop: "-5px!important" }}
-                                            className="caption  col-span-12 text-text text-xs"
+                                            className="caption px-6 sm:px-0 col-span-12 text-text text-xs"
                                         >
                                             {e.caption}
                                         </div>
@@ -223,12 +225,14 @@ const Work = ({ post, dataAll }) => {
                         })}
                         {/* LIGHTBOX GALLERY */}
                         {typeof post.galleryLightbox !== "undefined" ? (
-                            <p className="caption col-span-12  text-text mt-2">{post.galleryLightbox.captionTop}</p>
+                            <p className="caption  col-span-12 pl-6 sm:pl-0  text-text mt-2">
+                                {post.galleryLightbox.captionTop}
+                            </p>
                         ) : null}
                         {post.galleryLightbox ? (
                             <div
                                 ref={lightboxRef}
-                                className="col-span-12 lightBox aspect-videoBig bg-cover bg-no-repeat"
+                                className="col-span-12 hidden sm:block lightBox aspect-videoBig bg-cover bg-no-repeat"
                                 style={{
                                     marginTop: "-5px!important",
                                     backgroundImage: `url(${urlFor(post.galleryLightbox.images[lightBoxImg])}`,
@@ -265,7 +269,7 @@ const Work = ({ post, dataAll }) => {
                                           {e.caption && (
                                               <div
                                                   style={{ marginTop: "-8px!important" }}
-                                                  className="caption  col-span-12 text-text text-xs"
+                                                  className="caption px-6 sm:px-0 col-span-12 text-text text-xs"
                                               >
                                                   {e.caption}
                                               </div>
@@ -281,7 +285,11 @@ const Work = ({ post, dataAll }) => {
                               return (
                                   <div key={`key${i}`} className="mt-2">
                                       <VideoJS options={controls(i)} onReady={handlePlayerReady} />
-                                      {e.bottomLine ? <p className="bottomLine">{e.bottomLine}</p> : null}
+                                      {e.bottomLine ? (
+                                          <div className="bottomLine px-6 sm:px-0  text-text text-xs">
+                                              {e.bottomLine}
+                                          </div>
+                                      ) : null}
                                   </div>
                               );
                           })
@@ -292,7 +300,7 @@ const Work = ({ post, dataAll }) => {
                             Your browser does not support the audio element.
                         </audio>
                     ) : null}
-                    <div className="bottomtext mt-6">
+                    <div className="bottomtext px-6 sm:px-0 mt-6">
                         <PortableText value={post.descriptionBottom}></PortableText>
                     </div>
                 </div>
@@ -334,7 +342,9 @@ export const getStaticProps = async (context) => {
     const data = await res;
 
     const resAll = await client.fetch(`*[_type in ["work"] ]`);
-    const dataAll = await resAll;
+    const dataAll = await resAll.sort((a, b) =>
+        a._createdAt < b._createdAt ? -1 : a._createdAt > b._createdAt ? 1 : 0
+    );
 
     return {
         props: {

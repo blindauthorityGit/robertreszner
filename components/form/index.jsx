@@ -41,7 +41,7 @@ const FormFull = () => {
         <div className="col-span-12 sm:col-span-12 grid grid-cols-12 text-text">
             <form
                 onSubmit={handleSubmit(onSubmitForm)}
-                className="col-span-12 grid grid-cols-12 footer topKontakt sm:gap-2"
+                className="col-span-12 grid grid-cols-12  topKontakt sm:gap-2"
                 action=""
             >
                 <input

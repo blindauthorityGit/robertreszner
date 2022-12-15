@@ -14,14 +14,14 @@ export default function About({ dataStart }) {
     // }, []);
 
     return (
-        <MainContainer width="w-full p-12 col-span-12 md:col-span-9 md:ml-[320px] overflow-hidden">
+        <MainContainer width="w-full sm:p-12 col-span-12 md:col-span-9 md:ml-[320px] overflow-hidden">
             <Head>
                 <title>Eva Maria Schartmüller</title>
             </Head>
 
-            <div className="col-span-12 pt-4 md:col-span-6 ">
+            <div className="col-span-12 px-6 sm:px-0 sm:pt-4 md:col-span-6 ">
                 <p>Impressum</p>
-                <div className="texte mt-8 px-12 md:px-0">
+                <div className="texte mt-8 sm:px-12 md:px-0">
                     <p>
                         Informationspflicht laut §5 E-Commerce Gesetz, §14 Unternehmensgesetzbuch, §63 Gewerbeordnung
                         und Offenlegungspflicht laut §25 Mediengesetz.

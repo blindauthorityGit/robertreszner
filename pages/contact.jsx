@@ -17,13 +17,13 @@ export default function Contact({ dataStart }) {
     }, []);
 
     return (
-        <MainContainer width="w-full col-span-12 pl-12 pt-16 md:col-span-9 md:ml-[320px] overflow-hidden mb-48">
+        <MainContainer width="w-full col-span-12 sm:pl-12 sm:pt-16 md:col-span-9 md:ml-[320px] overflow-hidden ">
             <Head>
                 <title>Eva Maria Schartmüller</title>
             </Head>
 
             <div className="col-span-12 md:col-span-6 ">
-                <div className="texteContact  px-12 md:px-0">
+                <div className="texteContact px-6 sm:px-12 md:px-0">
                     <p ref={pRef} className="mt-0" style={{ marginTop: "-3px!important" }}>
                         {dataStart.email}
                         <br />

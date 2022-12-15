@@ -32,13 +32,13 @@ const Works = ({ dataAll }) => {
 
     return (
         <>
-            <MainContainer width="w-full col-span-12 md:col-span-9 md:ml-[320px] pl-12 overflow-hidden mb-64">
+            <MainContainer width="w-full col-span-12 md:col-span-9 md:ml-[320px] sm:pl-12 overflow-hidden ">
                 <Head>
                     <title>Works</title>
                     {/* <meta name="description" content={post.seo.description} /> */}
                 </Head>
 
-                <div className="col-span-12 md:col-span-8 lg:col-span-6 pt-16 flex justify-center sm:block">
+                <div className="col-span-12 md:col-span-8 lg:col-span-6 pl-6 sm:pl-0 sm:pt-16 sm:block">
                     <p>selected works</p>
                     <div className="images mt-12  ">
                         {dataAll.map((e, i) => {
@@ -50,29 +50,6 @@ const Works = ({ dataAll }) => {
                                             <a className="caption block  text-sm text-text font-[300] ">{e.title}</a>
                                         </Link>
                                     )}
-                                    {/* <Link href={`/works/${e.slug.current}`}>
-                                        <a className="aspect-video md:aspect-4/3 h-48 block relative ">
-                                            <Image
-                                                {...ImagePropsGallery(i)}
-                                                layout="fill"
-                                                objectFit="responsive"
-                                                alt="hero"
-                                                sizes="(max-height: 550px) 100%, 550px"
-                                                className="transition duration-500"
-                                                onMouseEnter={(e) => {
-                                                    onEnter(e);
-                                                }}
-                                                onMouseLeave={(e) => {
-                                                    onLeave(e);
-                                                }}
-                                            />
-                                        </a>
-                                    </Link>
-                                    {e.title && (
-                                        <div className="caption mt-2 text-sm text-text font-[300] italic">
-                                            {e.title}
-                                        </div>
-                                    )} */}
                                 </>
                             );
                         })}
