@@ -8,7 +8,14 @@ import { MenuItems, HomeLink, MenuItemsLower } from "../config";
 function MyApp({ Component, pageProps }) {
     return (
         <MasterContainer klasse="w-full">
-            <Navbar HomeLink={HomeLink} MenuItemsLower={MenuItemsLower} MenuItems={MenuItems} colSpan="col-span-3" />
+            <Navbar
+                insta="https://www.instagram.com/evamariaschartmueller/"
+                twitter="https://twitter.com/SchartmuellerM"
+                HomeLink={HomeLink}
+                MenuItemsLower={MenuItemsLower}
+                MenuItems={MenuItems}
+                colSpan="col-span-3"
+            />
 
             <Component className="bubu" {...pageProps} style={{ paddingBottom: "2rem" }} />
 

@@ -89,9 +89,6 @@ const Navbar = (props) => {
                         <div className="flex justify-between mt-4 text-text">
                             <div className="left">2022 Eva Maria Schartmüller</div>
                             <div className="right flex">
-                                <a className="mr-4" href={props.fb}>
-                                    <FaFacebook></FaFacebook>
-                                </a>
                                 <a className="mr-4" href={props.insta}>
                                     <FaInstagram></FaInstagram>
                                 </a>
