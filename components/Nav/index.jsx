@@ -49,9 +49,9 @@ const Navbar = (props) => {
                     }}
                     klasse={modalOpen ? "slide-in-right" : "slide-out-right"}
                 >
-                    <div className="mt-32 text-left pl-16 text-white">
+                    <div className="mt-6 text-left pl-6 text-text">
                         <Link href="/">
-                            <a className="block text-2xl mb-6">{props.HomeLink}</a>
+                            <a className="block text-base font-[300]  mb-6 uppercase">{props.HomeLink}</a>
                         </Link>
                         {props.MenuItems.map((e, i) => {
                             return (
@@ -60,14 +60,14 @@ const Navbar = (props) => {
                                         onClick={() => {
                                             setModalOpen(false);
                                         }}
-                                        className={`fade-in block text-lg mb-2 tracking-widest hover:text-black`}
+                                        className={`fade-in font-[300] block text-regular mb-2 tracking-wide hover:text-black`}
                                     >
                                         {e}
                                     </a>
                                 </Link>
                             );
                         })}
-                        <div className=" text-left  text-white text-lg tracking-widest block">
+                        <div className=" text-left font-[300] text-black text-base tracking-wide block">
                             {props.MenuItemsLower.map((e, i) => {
                                 return (
                                     <Link key={`link${i}`} href={`/${e}`}>
@@ -75,7 +75,7 @@ const Navbar = (props) => {
                                             onClick={() => {
                                                 setModalOpen(false);
                                             }}
-                                            className={`fade-in block mb-2 tracking-widest hover:text-black`}
+                                            className={`fade-in block mb-2 tracking-wide hover:text-black`}
                                         >
                                             {e}
                                         </a>
@@ -101,8 +101,8 @@ const Navbar = (props) => {
                 </NavModal>
             )}
 
-            <div className="nav mobileNav  md:hidden col-span-12 px-6 pt-6 flex items-center justify-between">
-                <div className="home uppercase text-text tracking-wide hover:text-black font-bold">
+            <div className="nav mobileNav text-base font-[300] md:hidden col-span-12 px-6 pt-6 flex items-center justify-between">
+                <div className="home uppercase text-text tracking-wide hover:text-black ">
                     <Link href="/">
                         <a className="block">{props.HomeLink}</a>
                     </Link>

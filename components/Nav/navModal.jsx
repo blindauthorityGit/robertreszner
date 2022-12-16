@@ -6,14 +6,14 @@ const NavModal = (props) => {
 
     return (
         <div
-            className={`navModal w-full h-screen bg-black fixed z-20 ${props.klasse}`}
+            className={`navModal w-full h-screen bg-white fixed z-20 ${props.klasse}`}
             onAnimationEnd={() => {
                 setAniEnd(true);
             }}
         >
             <div className={`${aniEnd ? "fade-in" : "hidden"}`}>
                 <CgClose
-                    className="text-white text-3xl absolute z-30 right-6 top-6 cursor-pointer"
+                    className="text-black text-3xl absolute z-30 right-6 top-6 cursor-pointer"
                     onClick={props.onClick}
                 ></CgClose>
             </div>

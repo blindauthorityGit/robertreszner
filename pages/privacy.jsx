@@ -14,7 +14,7 @@ export default function About({ dataStart }) {
     // }, []);
 
     return (
-        <MainContainer width="w-full  sm:p-12  col-span-12 md:col-span-9 md:ml-[320px] overflow-hidden">
+        <MainContainer width="w-full  sm:p-12  col-span-12 md:col-span-9 md:ml-[320px] overflow-hidden mb-16">
             <Head>
                 <title>Eva Maria Schartmüller</title>
             </Head>
@@ -776,76 +776,6 @@ export default function About({ dataStart }) {
                     </p>
 
                     <p>
-                        <strong>Was sind Audio- und Videoelemente?</strong>
-                    </p>
-
-                    <p>
-                        Wir haben auf unsere Website Audio- bzw. Videoelemente eingebunden, damit Sie sich direkt über
-                        unsere Website etwa Videos ansehen oder Musik/Podcasts anhören können. Die Inhalte werden von
-                        Dienstanbietern zur Verfügung gestellt. Alle Inhalte werden also auch von den entsprechenden
-                        Servern der Anbieter bezogen.
-                    </p>
-
-                    <p>
-                        Es handelt sich dabei um eingebundene Funktionselemente von Plattformen wie etwa YouTube, Vimeo
-                        oder Spotify. Die Nutzung dieser Portale ist in der Regel kostenlos, es können aber auch
-                        kostenpflichtige Inhalte veröffentlicht werden. Mit Hilfe dieser eingebundenen Elemente könne
-                        Sie sich über unsere Website die jeweiligen Inhalte anhören oder ansehen.
-                    </p>
-
-                    <p>
-                        Wenn Sie Audio- oder Videoelemente auf unsere Website verwenden, können auch personenbezogene
-                        Daten von Ihnen an die Dienstanbieter übermittelt, verarbeitet und gespeichert werden.
-                    </p>
-
-                    <p>
-                        <strong>Warum verwenden wir Audio- &amp; Videoelemente auf unserer Website?</strong>
-                    </p>
-
-                    <p>
-                        Natürlich wollen wir Ihnen auf unserer Website das beste Angebot liefern. Und uns ist bewusst,
-                        dass Inhalte nicht mehr bloß in Text und statischem Bild vermittelt werden. Statt Ihnen einfach
-                        nur einen Link zu einem Video zu geben, bieten wir Ihnen direkt auf unserer Website Audio- und
-                        Videoformate, die unterhaltend oder informativ und im Idealfall sogar beides sind. Das erweitert
-                        unser Service und erleichtert Ihnen den Zugang zu interessanten Inhalten. Somit bieten wir neben
-                        unseren Texten und Bildern auch Video und/oder Audio-Inhalte an.
-                    </p>
-
-                    <p>
-                        <strong>Welche Daten werden durch Audio- &amp; Videoelemente gespeichert?</strong>
-                    </p>
-
-                    <p>
-                        Wenn Sie eine Seite auf unserer Website aufrufen, die beispielsweise ein eingebettetes Video
-                        hat, verbindet sich Ihr Server mit dem Server des Dienstanbieters. Dabei werden auch Daten von
-                        Ihnen an den Drittanbieter übertragen und dort gespeichert. Manche Daten werden ganz unabhängig
-                        davon, ob Sie bei dem Drittanbieter ein Konto haben oder nicht, gesammelt und gespeichert. Dazu
-                        zählen meist Ihre IP-Adresse, Browsertyp, Betriebssystem, und weitere allgemeine Informationen
-                        zu Ihrem Endgerät. Weiters werden von den meisten Anbietern auch Informationen über Ihre
-                        Webaktivität eingeholt. Dazu zählen etwa Sitzungsdauer, Absprungrate, auf welchen Button Sie
-                        geklickt haben oder über welche Website Sie den Dienst nutzen. All diese Informationen werden
-                        meist über Cookies oder Pixel-Tags (auch Web Beacon genannt) gespeichert. Pseudonymisierte Daten
-                        werden meist in Cookies in Ihrem Browser gespeichert. Welche Daten genau gespeichert und
-                        verarbeitet werden, erfahren Sie stets in der Datenschutzerklärung des jeweiligen Anbieters.
-                    </p>
-
-                    <p>
-                        <strong>Dauer der Datenverarbeitung</strong>
-                    </p>
-
-                    <p>
-                        Wie lange die Daten auf den Servern der Drittanbieter genau gespeichert werden, erfahren Sie
-                        entweder weiter unten im Datenschutztext des jeweiligen Tools oder in der Datenschutzerklärung
-                        des Anbieters. Grundsätzlich werden personenbezogene Daten immer nur so lange verarbeitet, wie
-                        es für die Bereitstellung unserer Dienstleistungen oder Produkte unbedingt nötig wird. Dies gilt
-                        in der Regel auch für Drittanbieter. Meist können Sie davon ausgehen, dass gewisse Daten über
-                        mehrere Jahre auf den Servern der Drittanbieter gespeichert werden. Daten können speziell in
-                        Cookies unterschiedlich lange gespeichert werden. Manche Cookies werden bereits nach dem
-                        Verlassen der Website wieder gelöscht, anderen können über einige Jahre in Ihrem Browser
-                        gespeichert sein.
-                    </p>
-
-                    <p>
                         <strong>Widerspruchsrecht</strong>
                     </p>
 
@@ -878,79 +808,6 @@ export default function About({ dataStart }) {
                         mit Ihnen oder anderen Kunden und Geschäftspartnern gespeichert und verarbeitet. Wir setzen die
                         eingebundenen Audio- und Video-Elemente gleichwohl nur ein, soweit Sie eine Einwilligung erteilt
                         haben.
-                    </p>
-
-                    <p>
-                        <strong>Rechtsgrundlage</strong>
-                    </p>
-
-                    <p>
-                        Wenn Sie eingewilligt haben, dass Daten von Ihnen durch eingebundene Vimeo-Elemente verarbeitet
-                        und gespeichert werden können, gilt diese Einwilligung als Rechtsgrundlage der
-                        Datenverarbeitung&nbsp;<strong>(Art. 6 Abs. 1 lit. a DSGVO)</strong>. Grundsätzlich werden Ihre
-                        Daten auch auf Grundlage unseres berechtigten Interesses&nbsp;
-                        <strong>(Art. 6 Abs. 1 lit. f DSGVO)</strong>&nbsp;an einer schnellen und guten Kommunikation
-                        mit Ihnen oder anderen Kunden und Geschäftspartnern gespeichert und verarbeitet. Wir setzen die
-                        eingebundenen Vimeo-Elemente gleichwohl nur ein, soweit Sie eine Einwilligung erteilt haben.
-                        Vimeo setzt auch Cookies in Ihrem Browser, um Daten zu speichern. Darum empfehlen wir Ihnen,
-                        unseren Datenschutztext über Cookies genau durchzulesen und die Datenschutzerklärung oder die
-                        Cookie-Richtlinien des jeweiligen Dienstanbieters anzusehen.
-                    </p>
-
-                    <p>
-                        Vimeo verarbeitet Daten von Ihnen u.a. auch in den USA. Wir weisen darauf hin, dass nach Meinung
-                        des Europäischen Gerichtshofs derzeit kein angemessenes Schutzniveau für den Datentransfer in
-                        die USA besteht. Dies kann mit verschiedenen Risiken für die Rechtmäßigkeit und Sicherheit der
-                        Datenverarbeitung einhergehen.
-                    </p>
-
-                    <p>
-                        Als Grundlage der Datenverarbeitung bei Empfängern mit Sitz in Drittstaaten (außerhalb der
-                        Europäischen Union, Island, Liechtenstein, Norwegen, also insbesondere in den USA) oder einer
-                        Datenweitergabe dorthin verwendet Vimeo sogenannte Standardvertragsklauseln (= Art. 46. Abs. 2
-                        und 3 DSGVO). Standardvertragsklauseln (Standard Contractual Clauses – SCC) sind von der
-                        EU-Kommission bereitgestellte Mustervorlagen und sollen sicherstellen, dass Ihre Daten auch dann
-                        den europäischen Datenschutzstandards entsprechen, wenn diese in Drittländer (wie beispielsweise
-                        in die USA) überliefert und dort gespeichert werden. Durch diese Klauseln verpflichtet sich
-                        Vimeo, bei der Verarbeitung Ihrer relevanten Daten, das europäische Datenschutzniveau
-                        einzuhalten, selbst wenn die Daten in den USA gespeichert, verarbeitet und verwaltet werden.
-                        Diese Klauseln basieren auf einem Durchführungsbeschluss der EU-Kommission. Sie finden den
-                        Beschluss und die entsprechenden Standardvertragsklauseln u.a. hier:&nbsp;
-                        <a
-                            href="https://eur-lex.europa.eu/eli/dec_impl/2021/914/oj?locale=de"
-                            target="_blank"
-                            rel="noreferrer noopener"
-                        >
-                            https://eur-lex.europa.eu/eli/dec_impl/2021/914/oj?locale=de
-                        </a>
-                    </p>
-
-                    <p>
-                        Mehr Informationen zu den Standardvertragsklauseln bei Vimeo finden Sie unter&nbsp;
-                        <a
-                            href="https://vimeo.com/privacy#international_data_transfers_and_certain_user_rights"
-                            target="_blank"
-                            rel="noreferrer noopener"
-                        >
-                            https://vimeo.com/privacy#international_data_transfers_and_certain_user_rights
-                        </a>
-                        .
-                    </p>
-
-                    <p>
-                        Mehr über den Einsatz von Cookies bei Vimeo erfahren Sie auf&nbsp;
-                        <a
-                            href="https://vimeo.com/cookie_policy?tid=111947866"
-                            target="_blank"
-                            rel="noreferrer noopener"
-                        >
-                            https://vimeo.com/cookie_policy
-                        </a>
-                        , Informationen zum Datenschutz bei Vimeo können Sie auf&nbsp;
-                        <a href="https://vimeo.com/privacy?tid=111947866" target="_blank" rel="noreferrer noopener">
-                            https://vimeo.com/privacy
-                        </a>
-                        &nbsp;nachlesen.
                     </p>
 
                     <p>Alle Texte sind urheberrechtlich geschützt.</p>

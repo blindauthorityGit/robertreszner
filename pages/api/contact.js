@@ -9,19 +9,22 @@ export default async (req, res) => {
     const { firstName, name, email, message, phone } = req.body;
 
     const transporter = nodemailer.createTransport({
-        host: "smtp.gmail.com",
-        port: 465,
+        // host: "smtp.gmail.com",
+        host: "smtp.world4you.com",
+        port: 587,
         secure: true,
         auth: {
-            user: process.env.NEXT_USER,
-            pass: process.env.NEXT_PASSWORD_DEV,
+            user: "contact@schartmueller.com",
+            pass: "Throw1791",
+            // user: process.env.NEXT_USER,
+            // pass: process.env.NEXT_PASSWORD_DEV,
         },
     });
 
     if (!firstName) {
         try {
             const emailRes = transporter.sendMail({
-                from: email,
+                from: "contact@schartmueller.com",
                 // to: "contacts@german-cosmetics.de",
                 to: `${process.env.NEXT_DEV === "true" ? "office@atelierbuchner.at" : "contact@schartmueller.com"}`,
                 subject: `Email von ${name}`,

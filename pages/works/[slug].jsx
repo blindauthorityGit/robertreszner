@@ -140,7 +140,7 @@ const Work = ({ post, dataAll }) => {
 
     return (
         <>
-            <MainContainer width="w-full col-span-12 md:col-span-9 sm:;pl-12 sm:pt-[69px] md:ml-[320px] overflow-hidden">
+            <MainContainer width="w-full sm:pl-12 col-span-12 md:col-span-9 sm:;pl-12 sm:pt-[69px] md:ml-[320px] overflow-hidden">
                 <Head>
                     <title>{post.seo.title}</title>
                     <meta name="description" content={post.seo.description} />
@@ -161,7 +161,7 @@ const Work = ({ post, dataAll }) => {
                             alt="hero"
                         /> */}
                     </div>
-                    <div className="texte mt-8 px-12 md:px-0">
+                    <div className="texte mt-8 px-6 sm:px-12 md:px-0">
                         {/* <p style={{ marginBottom: "0!important" }}>{post.title}</p> */}
                         <PortableText value={post.description}></PortableText>
                     </div>
@@ -198,7 +198,7 @@ const Work = ({ post, dataAll }) => {
                                         key={`image${i}`}
                                         className={`${
                                             e.big ? "col-span-12" : "col-span-12 sm:col-span-6 lg:col-span-4"
-                                        }  relative aspect-video`}
+                                        } ${e.hoch ? "aspect-hoch" : "aspect-video"}   relative `}
                                         // style={e.big ? "" : { marginTop: "-5px!important" }}
                                         ref={(ref) => (imgRefs.current[i] = ref)}
                                     >

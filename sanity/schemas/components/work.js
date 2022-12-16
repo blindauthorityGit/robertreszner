@@ -143,6 +143,11 @@ export default {
                                     title: "Big?",
                                 },
                                 {
+                                    name: "hoch",
+                                    type: "boolean",
+                                    title: "Hoch?",
+                                },
+                                {
                                     name: "height",
                                     type: "number",
                                     title: "Höhe",

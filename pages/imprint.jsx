@@ -14,7 +14,7 @@ export default function About({ dataStart }) {
     // }, []);
 
     return (
-        <MainContainer width="w-full sm:p-12 col-span-12 md:col-span-9 md:ml-[320px] overflow-hidden">
+        <MainContainer width="w-full sm:p-12 col-span-12 md:col-span-9 md:ml-[320px] overflow-hidden mb-16">
             <Head>
                 <title>Eva Maria Schartmüller</title>
             </Head>
