@@ -14,10 +14,8 @@ export default async (req, res) => {
         port: 587,
         secure: true,
         auth: {
-            user: "contact@schartmueller.com",
-            pass: "Throw1791",
-            // user: process.env.NEXT_USER,
-            // pass: process.env.NEXT_PASSWORD_DEV,
+            user: process.env.NEXT_USER,
+            pass: process.env.NEXT_PASSWORD_DEV,
         },
     });
 
