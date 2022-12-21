@@ -84,11 +84,15 @@ const Navbar = (props) => {
                             })}
                         </div>
                     </div>
-                    <div className={`footer w-full col-span-9 lg:ml-[320px] mt-20 mb-32 px-6`}>
-                        <hr className="opacity-30" />
+                    <div
+                        className={`footer md:w-[50%] h-12 mb-12 pl-6 pr-6 sm:pr-0 sm:pl-12 w-full col-span-12 md:col-span-6 md:ml-[320px] mt-20  font-[300] text-text `}
+                    >
+                        <hr />
                         <div className="flex justify-between mt-4 text-text">
-                            <div className="left">2022 Eva Maria Schartmüller</div>
-                            <div className="right flex">
+                            <div className="left">
+                                2022 <span className="text-xs">by eva maria schartmüller</span>
+                            </div>
+                            <div className="right flex text-[#949494]">
                                 <a className="mr-4" href={props.insta}>
                                     <FaInstagram></FaInstagram>
                                 </a>
