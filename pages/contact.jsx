@@ -22,7 +22,7 @@ export default function Contact({ dataStart }) {
                 <title>Eva Maria Schartmüller</title>
             </Head>
 
-            <div className="col-span-12 md:col-span-6 ">
+            <div className="col-span-12 md:col-span-8 ">
                 <div className="texteContact px-6 sm:px-12 md:px-0">
                     <p ref={pRef} className="mt-0" style={{ marginTop: "-3px!important" }}>
                         {dataStart.email}

@@ -14,8 +14,8 @@ export default async (req, res) => {
         port: 587,
         secure: true,
         auth: {
-            user: process.env.NEXT_USER,
-            pass: process.env.NEXT_PASSWORD_DEV,
+            user: process.env.NEXT_USER_PRODUCTION,
+            pass: process.env.NEXT_PASSWORD_PRODUCTION,
         },
     });
 
