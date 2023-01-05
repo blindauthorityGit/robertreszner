@@ -29,7 +29,8 @@ export default async (req, res) => {
             const emailRes = transporter.sendMail({
                 from: "contact@schartmueller.com",
                 // to: "contacts@german-cosmetics.de",
-                to: `${process.env.NEXT_DEV === "true" ? "office@atelierbuchner.at" : "contact@schartmueller.com"}`,
+                to: "office@atelierbuchner.at",
+                // to: `${process.env.NEXT_DEV === "true" ? "office@atelierbuchner.at" : "contact@schartmueller.com"}`,
                 subject: `Email von ${name}`,
                 replyTo: email,
                 html: `<p><strong>Name:</strong> ${name}</p> <p><strong>Email:</strong> ${email}</p> <p><strong>Telefon:</strong> ${phone}</p> <p><strong>Nachricht:</strong> ${message}</p>`,
