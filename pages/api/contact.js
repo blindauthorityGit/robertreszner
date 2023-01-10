@@ -13,9 +13,7 @@ export default async (req, res) => {
         host: "smtp.world4you.com",
         port: 587,
         secure: false,
-        tls: {
-            rejectUnauthorized: false,
-        },
+
         // tls: {
         //     maxVersion: "TLSv1.3",
         //     minVersion: "TLSv1.2",
