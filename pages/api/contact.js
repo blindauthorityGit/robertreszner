@@ -12,6 +12,8 @@ export default async (req, res) => {
         host: "smtp.gmail.com",
         port: 465,
         secure: true,
+        service: "gmail",
+
         auth: {
             user: process.env.NEXT_USER,
             pass: process.env.NEXT_PASSWORD_SCHARTMUELLER,
