@@ -10,17 +10,17 @@ export default async (req, res) => {
 
     const transporter = nodemailer.createTransport({
         // host: "smtp.gmail.com",
-        host: "smtp.world4you.com",
-        port: 587,
-        secure: false,
+        host: "smtp.gmail.com",
+        port: 465,
+        secure: true,
         // tls: {
         //     maxVersion: "TLSv1.3",
         //     minVersion: "TLSv1.2",
         //     ciphers: "TLS_AES_128_GCM_SHA256",
         // },
         auth: {
-            user: process.env.NEXT_USER_PRODUCTION,
-            pass: process.env.NEXT_PASSWORD_PRODUCTION,
+            user: process.env.NEXT_USER,
+            pass: process.env.NEXT_PASSWORD_DEV,
         },
     });
 
