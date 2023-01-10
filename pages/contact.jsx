@@ -33,7 +33,7 @@ export default function Contact({ dataStart }) {
                         {dataStart.description}
                     </p>
                     {/* <PortableText value={dataStart.description}></PortableText> */}
-                    <FormFull></FormFull>
+                    {/* <FormFull></FormFull> */}
                 </div>
             </div>
         </MainContainer>
