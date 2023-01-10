@@ -9,15 +9,9 @@ export default async (req, res) => {
     const { firstName, name, email, message, phone } = req.body;
 
     const transporter = nodemailer.createTransport({
-        // host: "smtp.gmail.com",
         host: "smtp.gmail.com",
         port: 465,
         secure: true,
-        // tls: {
-        //     maxVersion: "TLSv1.3",
-        //     minVersion: "TLSv1.2",
-        //     ciphers: "TLS_AES_128_GCM_SHA256",
-        // },
         auth: {
             user: process.env.NEXT_USER,
             pass: process.env.NEXT_PASSWORD_SCHARTMUELLER,
