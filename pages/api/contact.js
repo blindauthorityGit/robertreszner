@@ -23,7 +23,7 @@ export default async (req, res) => {
             const emailRes = transporter.sendMail({
                 from: "johabuch@gmail.com",
                 // to: "contacts@german-cosmetics.de",
-                to: "johabuch@gmail.com",
+                to: "office@atelierbuchner.at",
                 // to: `${process.env.NEXT_DEV === "true" ? "office@atelierbuchner.at" : "contact@schartmueller.com"}`,
                 subject: `Email von ${name}`,
                 replyTo: email,
