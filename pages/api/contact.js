@@ -30,7 +30,7 @@ export default async (req, res) => {
                 html: `<p><strong>Name:</strong> ${name}</p> <p><strong>Email:</strong> ${email}</p> <p><strong>Telefon:</strong> ${phone}</p> <p><strong>Nachricht:</strong> ${message}</p>`,
             });
 
-            console.log("Message Sent", emailRes.messageId, process.env.NEXT_DEV);
+            console.log("Message Sent", process.env.NEXT_DEV, process.env.NEXT_USER);
             res.status(200).json(req.body);
         } catch (err) {
             console.log("GEHT NET", err);
