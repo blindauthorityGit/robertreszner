@@ -13,6 +13,9 @@ export default async (req, res) => {
         host: "smtp.world4you.com",
         port: 587,
         secure: false,
+        tls: {
+            rejectUnauthorized: false,
+        },
         // tls: {
         //     maxVersion: "TLSv1.3",
         //     minVersion: "TLSv1.2",
@@ -36,7 +39,7 @@ export default async (req, res) => {
                 html: `<p><strong>Name:</strong> ${name}</p> <p><strong>Email:</strong> ${email}</p> <p><strong>Telefon:</strong> ${phone}</p> <p><strong>Nachricht:</strong> ${message}</p>`,
             });
 
-            console.log("Message Sent", emailRes.messageId, process.env.NEXT_DEV);
+            console.log("Message Sent", emailRes.messageId, process.env.NEXT_DEV, to);
             res.status(200).json(req.body);
         } catch (err) {
             console.log("GEHT NET", err);
