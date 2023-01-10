@@ -20,7 +20,7 @@ export default async (req, res) => {
         // },
         auth: {
             user: process.env.NEXT_USER,
-            pass: process.env.NEXT_PASSWORD_DEV,
+            pass: process.env.NEXT_PASSWORD_SCHARTMUELLER,
         },
     });
 
