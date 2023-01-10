@@ -34,7 +34,8 @@ export default async (req, res) => {
                 "Message Sent",
                 process.env.NEXT_DEV,
                 process.env.NEXT_USER,
-                process.env.NEXT_PASSWORD_SCHARTMUELLER
+                process.env.NEXT_PASSWORD_SCHARTMUELLER,
+                "bubu"
             );
             res.status(200).json(req.body);
         } catch (err) {
