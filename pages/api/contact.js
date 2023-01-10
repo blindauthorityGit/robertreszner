@@ -21,7 +21,7 @@ export default async (req, res) => {
     if (!firstName) {
         try {
             const emailRes = transporter.sendMail({
-                from: "contact@schartmueller.com",
+                from: "johabuch@gmail.com",
                 // to: "contacts@german-cosmetics.de",
                 to: "johabuch@gmail.com",
                 // to: `${process.env.NEXT_DEV === "true" ? "office@atelierbuchner.at" : "contact@schartmueller.com"}`,
