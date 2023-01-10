@@ -34,7 +34,7 @@ const FormFull = () => {
             setLoading(false);
             setSuccess(true);
         } catch (err) {
-            console.log(err, "FRONT ERROR");
+            console.log(err);
         }
     }
     return (
