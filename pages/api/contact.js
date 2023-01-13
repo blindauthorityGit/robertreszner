@@ -20,13 +20,6 @@ export default async (req, res) => {
     //         pass: process.env.NEXT_PASSWORD_SCHARTMUELLER,
     //     },
     // });
-    const transporter = nodemailer.createTransport(
-        sendgridTransport({
-            auth: {
-                api_key: "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",
-            },
-        })
-    );
 
     if (!firstName) {
         try {
