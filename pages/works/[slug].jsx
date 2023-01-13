@@ -283,7 +283,7 @@ const Work = ({ post, dataAll }) => {
                         ? vids.map((e, i) => {
                               console.log(controls(i));
                               return (
-                                  <div key={`key${i}`} className="mt-2">
+                                  <div key={`key${i}`} className="mt-1">
                                       <VideoJS options={controls(i)} onReady={handlePlayerReady} />
                                       {e.bottomLine ? (
                                           <div className="bottomLine px-6 sm:px-0  text-text text-xs">

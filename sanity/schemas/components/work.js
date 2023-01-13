@@ -160,20 +160,6 @@ export default {
                         layout: "grid",
                     },
                 },
-                {
-                    name: "display",
-                    type: "string",
-                    title: "Anzeigen als ...",
-                    description: "Wie sollen die Bilder dargestellt werden?",
-                    options: {
-                        list: [
-                            { title: "Übereinander", value: "stacked" },
-                            { title: "Nebeneinander", value: "inline" },
-                            { title: "Carousel", value: "carousel" },
-                        ],
-                        layout: "radio", // <-- defaults to 'dropdown'
-                    },
-                },
             ],
             preview: {
                 select: {

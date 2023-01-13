@@ -1,5 +1,6 @@
 // import nodemailer from "nodemailer";
 const nodemailer = require("nodemailer");
+const sendgridTransport = require("nodemailer-sendgrid-transport");
 
 // const path = require("path");
 // const fs = require("fs");
@@ -8,17 +9,24 @@ const nodemailer = require("nodemailer");
 export default async (req, res) => {
     const { firstName, name, email, message, phone } = req.body;
 
-    const transporter = nodemailer.createTransport({
-        host: "smtp.gmail.com",
-        port: 465,
-        secure: false,
-        service: "gmail",
+    // const transporter = nodemailer.createTransport({
+    //     host: "smtp.gmail.com",
+    //     port: 465,
+    //     secure: false,
+    //     service: "gmail",
 
-        auth: {
-            user: process.env.NEXT_USER,
-            pass: process.env.NEXT_PASSWORD_SCHARTMUELLER,
-        },
-    });
+    //     auth: {
+    //         user: process.env.NEXT_USER,
+    //         pass: process.env.NEXT_PASSWORD_SCHARTMUELLER,
+    //     },
+    // });
+    const transporter = nodemailer.createTransport(
+        sendgridTransport({
+            auth: {
+                api_key: "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",
+            },
+        })
+    );
 
     if (!firstName) {
         try {
