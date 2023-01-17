@@ -72,5 +72,6 @@ export const getStaticProps = async (context) => {
         props: {
             dataAll,
         },
+        revalidate: 1, // 10 seconds
     };
 };
