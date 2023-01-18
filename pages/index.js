@@ -50,11 +50,12 @@ export default function Home({ dataStart, dataNews }) {
                     /> */}
                     {/* <img src={urlFor(dataStart.mainImage)} alt="" /> */}
                 </div>
-                <div className="texte mt-6 px-6 md:px-0">
+                <div className=" mt-6 px-6 md:px-0">
                     <H2 klasse="mb-4">UPCOMING</H2>
                     {dataNews.map((e, i) => {
                         return (
                             <div key={`news${i}`} className="textelement">
+                                <div className="bold text-sm">{e.title}</div>
                                 <PortableText value={e.description}></PortableText>
                                 {i === dataNews.length - 1 ? "" : <hr className="mt-4 mb-4 w-[20%] " />}
                             </div>
