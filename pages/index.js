@@ -78,5 +78,6 @@ export const getStaticProps = async (context) => {
             dataStart,
             dataNews,
         },
+        revalidate: 1, // 10 seconds
     };
 };
