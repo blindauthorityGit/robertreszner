@@ -329,10 +329,9 @@ export const getStaticPaths = async () => {
             params: { slug: e.slug.current },
         };
     });
-    console.log(paths);
     return {
         paths,
-        fallback: false,
+        fallback: true,
     };
 };
 
@@ -350,6 +349,6 @@ export const getStaticProps = async (context) => {
             post: data[0],
             dataAll,
         },
-        revalidate: 5, // 10 seconds
+        revalidate: 1, // 10 seconds
     };
 };
