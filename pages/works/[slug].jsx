@@ -341,10 +341,8 @@ export const getStaticProps = async (context) => {
     `);
     const data = await res;
 
-    const resAll = await client.fetch(`*[_type in ["work"] ]`);
-    const dataAll = await resAll.sort((a, b) =>
-        a._createdAt < b._createdAt ? -1 : a._createdAt > b._createdAt ? 1 : 0
-    );
+    const resAll = await client.fetch(`*[_type == "work"] | order(order asc)`);
+    const dataAll = await resAll;
 
     return {
         props: {
