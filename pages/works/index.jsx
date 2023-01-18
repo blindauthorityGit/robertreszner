@@ -46,7 +46,7 @@ const Works = ({ dataAll }) => {
                             return (
                                 <>
                                     {e.title && (
-                                        <Link href={`/works/${e.slug.current}`}>
+                                        <Link key={`worksKey${i}`} href={`/works/${e.slug.current}`}>
                                             <a className="caption block  text-sm text-text font-[300] ">{e.title}</a>
                                         </Link>
                                     )}

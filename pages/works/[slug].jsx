@@ -110,7 +110,7 @@ const Work = ({ post, dataAll }) => {
 
     useEffect(() => {
         console.log(post, dataAll);
-    }, [lightBoxImg]);
+    }, []);
 
     useEffect(() => {
         console.log(imgRefs.current[0].clientWidth);
@@ -329,6 +329,7 @@ export const getStaticPaths = async () => {
             params: { slug: e.slug.current },
         };
     });
+    console.log(paths);
     return {
         paths,
         fallback: false,
