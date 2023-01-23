@@ -42,6 +42,10 @@ const Work = ({ post, dataAll }) => {
 
     const playerRef = useRef(null);
 
+    useEffect(() => {
+        console.log(post, dataAll);
+    }, []);
+
     const videoJsOptions = {
         autoplay: false,
         controls: true,
@@ -330,7 +334,7 @@ export const getStaticPaths = async () => {
     });
     return {
         paths,
-        fallback: "blocked",
+        fallback: true,
     };
 };
 
