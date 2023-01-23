@@ -31,7 +31,7 @@ function urlFor(source) {
 }
 
 const Work = ({ post, dataAll }) => {
-    const [vid, setVid] = useState(post.video);
+    const [vid, setVid] = useState(null);
     const [vids, setVids] = useState(post.videos);
     const [lightBoxImg, setLightBoxImg] = useState(0);
     const videoRef = useRef();
@@ -43,7 +43,7 @@ const Work = ({ post, dataAll }) => {
     const playerRef = useRef(null);
 
     useEffect(() => {
-        console.log(post, dataAll);
+        post.video !== "undefined" ? setVid(post.video) : null;
     }, []);
 
     const videoJsOptions = {
