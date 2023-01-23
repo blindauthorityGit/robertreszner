@@ -31,7 +31,7 @@ function urlFor(source) {
 }
 
 const Work = ({ post, dataAll }) => {
-    const [vid, setVid] = useState(null);
+    const [vid, setVid] = useState(post.video);
     const [vids, setVids] = useState(post.videos);
     const [lightBoxImg, setLightBoxImg] = useState(0);
     const videoRef = useRef();
@@ -43,7 +43,8 @@ const Work = ({ post, dataAll }) => {
     const playerRef = useRef(null);
 
     useEffect(() => {
-        post.video !== "undefined" ? setVid(post.video) : null;
+        console.log(post.video);
+        console.log(vid);
     }, []);
 
     const videoJsOptions = {
@@ -282,7 +283,7 @@ const Work = ({ post, dataAll }) => {
                               })
                             : null}
                     </div>
-                    {vids
+                    {typeof vids !== "undefined"
                         ? vids.map((e, i) => {
                               console.log(controls(i));
                               return (
@@ -334,7 +335,7 @@ export const getStaticPaths = async () => {
     });
     return {
         paths,
-        fallback: true,
+        fallback: false,
     };
 };
 
