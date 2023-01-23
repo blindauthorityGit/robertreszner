@@ -26,7 +26,7 @@ export default function Home({ dataStart, dataNews }) {
     const imageProps = useNextSanityImage(client, dataStart.mainImage);
 
     return (
-        <MainContainer width="w-full col-span-12 md:col-span-9 md:pl-12 md:ml-[320px] sm:pt-[69px] overflow-hidden">
+        <MainContainer width="w-full col-span-12 md:col-span-9 md:pl-12 md:ml-[314px] sm:pt-[69px] overflow-hidden">
             <Head>
                 <title>{dataStart.seo.title}</title>
             </Head>
@@ -50,7 +50,7 @@ export default function Home({ dataStart, dataNews }) {
                     /> */}
                     {/* <img src={urlFor(dataStart.mainImage)} alt="" /> */}
                 </div>
-                <div className=" mt-6 px-6 md:px-0">
+                <div className=" mt-6 px-6 md:px-0 sm:pb-8">
                     <H2 klasse="mb-4">UPCOMING</H2>
                     {dataNews.map((e, i) => {
                         return (

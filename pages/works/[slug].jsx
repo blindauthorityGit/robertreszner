@@ -46,7 +46,6 @@ const Work = ({ post, dataAll }) => {
         autoplay: false,
         controls: true,
         responsive: true,
-        fluid: true,
         sources: [
             {
                 src: vid,
@@ -68,7 +67,7 @@ const Work = ({ post, dataAll }) => {
         return {
             autoplay: false,
             controls: true,
-            responsive: true,
+            responsive: false,
             fluid: true,
             sources: [
                 {
@@ -331,7 +330,7 @@ export const getStaticPaths = async () => {
     });
     return {
         paths,
-        fallback: "blocking",
+        fallback: true,
     };
 };
 
