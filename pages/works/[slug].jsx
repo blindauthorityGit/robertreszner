@@ -31,8 +31,8 @@ function urlFor(source) {
 }
 
 const Work = ({ post, dataAll }) => {
-    const [vid, setVid] = useState(post.video);
-    const [vids, setVids] = useState(post.videos);
+    const [vid, setVid] = useState(post.video && post.video);
+    const [vids, setVids] = useState(post.videos && post.videos);
     const [lightBoxImg, setLightBoxImg] = useState(0);
     const videoRef = useRef();
     const imgRefs = useRef([]);
