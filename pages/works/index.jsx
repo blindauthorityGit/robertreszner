@@ -19,10 +19,6 @@ const Works = ({ dataAll }) => {
         return dataAll.map((e) => e.slug.current).indexOf(index);
     }
 
-    useEffect(() => {
-        console.log(dataAll);
-    }, []);
-
     function onEnter(e) {
         e.target.style.transform = "scale(1.2)";
     }

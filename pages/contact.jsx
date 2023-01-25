@@ -14,7 +14,7 @@ export default function Contact({ dataStart }) {
     useEffect(() => {
         console.log(dataStart);
         pRef.current.style.marginTop = "-3px!important";
-    }, []);
+    }, [dataStart]);
 
     return (
         <MainContainer width="w-full col-span-12 sm:pl-12 sm:pt-16 md:col-span-9 md:ml-[320px] overflow-hidden ">

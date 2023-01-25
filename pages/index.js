@@ -19,10 +19,6 @@ function urlFor(source) {
 }
 
 export default function Home({ dataStart, dataNews }) {
-    useEffect(() => {
-        console.log(dataStart.mainImage, dataNews);
-    }, []);
-
     const imageProps = useNextSanityImage(client, dataStart.mainImage);
 
     return (

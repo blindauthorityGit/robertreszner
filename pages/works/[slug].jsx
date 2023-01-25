@@ -42,11 +42,6 @@ const Work = ({ post, dataAll }) => {
 
     const playerRef = useRef(null);
 
-    useEffect(() => {
-        console.log(post.video);
-        console.log(vid);
-    }, []);
-
     const videoJsOptions = {
         autoplay: false,
         controls: true,
@@ -113,16 +108,10 @@ const Work = ({ post, dataAll }) => {
     }
 
     useEffect(() => {
-        console.log(post, dataAll);
-    }, []);
-
-    useEffect(() => {
-        console.log(imgRefs.current[0].clientWidth);
         setVideoDimensions({
             width: imgRefs.current[0].clientWidth,
             height: imgRefs.current[0].clientHeight,
         });
-        console.log(videoDimensions);
     }, [imgRefs.current]);
 
     useEffect(() => {

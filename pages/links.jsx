@@ -9,10 +9,6 @@ import { H1, H2, H3 } from "../components/utils/headlines";
 import { PortableText } from "@portabletext/react";
 
 export default function Link({ dataStart }) {
-    useEffect(() => {
-        console.log(dataStart);
-    }, []);
-
     return (
         <MainContainer width="w-full col-span-12 sm:pl-12 sm:pt-8 md:col-span-9 md:ml-[320px] overflow-hidden mb-96">
             <Head>
