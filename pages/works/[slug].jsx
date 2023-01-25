@@ -31,28 +31,14 @@ function urlFor(source) {
 }
 
 const Work = ({ post, dataAll }) => {
-    const [vid, setVid] = useState(post.video);
     const [vids, setVids] = useState(post.videos);
     const [lightBoxImg, setLightBoxImg] = useState(0);
-    const videoRef = useRef();
     const imgRefs = useRef([]);
     const lightboxRef = useRef(null);
 
     const [videoDimensions, setVideoDimensions] = useState({});
 
     const playerRef = useRef(null);
-
-    const videoJsOptions = {
-        autoplay: false,
-        controls: true,
-        responsive: true,
-        sources: [
-            {
-                src: vid,
-                type: "video/mp4",
-            },
-        ],
-    };
 
     const getUrlFromId = (ref) => {
         // Example ref: file-207fd9951e759130053d37cf0a558ffe84ddd1c9-mp3
@@ -115,14 +101,13 @@ const Work = ({ post, dataAll }) => {
     }, [imgRefs.current]);
 
     useEffect(() => {
-        setVid(post.video);
         setVids(post.videos);
-        console.log(post.video, post.videos);
+        console.log(post.videos);
 
         return () => {
-            setVid(null);
+            setVids(null);
         };
-    }, [post, vid, vids]);
+    }, [post, vids]);
 
     function findIndex(index) {
         const i = dataAll.map((e) => e.slug.current).indexOf(index);
