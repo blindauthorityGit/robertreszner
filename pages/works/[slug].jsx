@@ -31,7 +31,9 @@ function urlFor(source) {
 }
 
 const Work = ({ post, dataAll }) => {
-    const [vids, setVids] = useState(post.videos);
+    // const [vids, setVids] = useState(post.videos);
+    const [vids, setVids] = useState(post?.videos || []);
+
     const [lightBoxImg, setLightBoxImg] = useState(0);
     const imgRefs = useRef([]);
     const lightboxRef = useRef(null);
@@ -98,7 +100,7 @@ const Work = ({ post, dataAll }) => {
             width: imgRefs.current[0].clientWidth,
             height: imgRefs.current[0].clientHeight,
         });
-    }, [imgRefs.current]);
+    }, []);
 
     useEffect(() => {
         setVids(post.videos);
