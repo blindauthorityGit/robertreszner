@@ -32,6 +32,7 @@ export default function Home({ dataStart, dataNews }) {
                     style={{
                         backgroundImage: `url(${urlFor(dataStart.mainImage)})`,
                         // backgroundSize: "933px",
+
                         backgroundPositionX: "right",
                         backgroundPositionY: "center",
                     }}
