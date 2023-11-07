@@ -267,7 +267,7 @@ const Work = ({ post, dataAll }) => {
                                   <div key={`key${i}`} className="mt-1">
                                       <VideoJS options={controls(i)} onReady={handlePlayerReady} />
                                       {e.bottomLine ? (
-                                          <div className="bottomLine px-6 sm:px-0  text-text text-xs">
+                                          <div className="bottomLine mt-1 px-6 sm:px-0 col-span-12 text-text text-xs">
                                               {e.bottomLine}
                                           </div>
                                       ) : null}
