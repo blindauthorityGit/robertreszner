@@ -306,6 +306,7 @@ export const getStaticPaths = async () => {
     const data = await res;
 
     const paths = data.map((e) => {
+        console.log(e);
         return {
             params: { slug: e.slug.current },
         };
@@ -330,6 +331,6 @@ export const getStaticProps = async (context) => {
             post: data[0],
             dataAll,
         },
-        revalidate: 1,
+        revalidate: 10,
     };
 };
