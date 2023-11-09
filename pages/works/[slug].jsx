@@ -306,7 +306,6 @@ export const getStaticPaths = async () => {
     const data = await res;
 
     const paths = data.map((e) => {
-        console.log(e);
         return {
             params: { slug: e.slug.current },
         };
