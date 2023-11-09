@@ -120,6 +120,7 @@ export default {
                             },
                             initialValue: {
                                 big: true,
+                                hoch: false,
                             },
                             fields: [
                                 {

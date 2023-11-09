@@ -168,6 +168,8 @@ const Work = ({ post, dataAll }) => {
                                                     loading="lazy"
                                                     objectFit="cover"
                                                     alt="hero"
+                                                    placeholder="blur"
+                                                    blurDataURL={urlFor(e).url()}
                                                 />
                                             </div>
                                             {e.caption && (
