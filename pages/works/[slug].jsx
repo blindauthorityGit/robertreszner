@@ -96,12 +96,12 @@ const Work = ({ post, dataAll }) => {
     }
 
     useEffect(() => {
-        console.log(post, dataAll);
+        console.log(post, dataAll, post.seo);
         setVideoDimensions({
             width: imgRefs.current[0].clientWidth,
             height: imgRefs.current[0].clientHeight,
         });
-    }, []);
+    }, [dataAll, post]);
 
     useEffect(() => {
         setVids(post.videos);
