@@ -96,11 +96,13 @@ const Work = ({ post, dataAll }) => {
     }
 
     useEffect(() => {
-        console.log(post, dataAll, post.seo);
-        setVideoDimensions({
-            width: imgRefs.current[0].clientWidth,
-            height: imgRefs.current[0].clientHeight,
-        });
+        console.log(post, dataAll, post.seo, imgRefs);
+        if (imgRefs.current.length > 0) {
+            setVideoDimensions({
+                width: imgRefs.current[0].clientWidth,
+                height: imgRefs.current[0].clientHeight,
+            });
+        }
     }, [dataAll, post]);
 
     useEffect(() => {
@@ -130,10 +132,13 @@ const Work = ({ post, dataAll }) => {
                         </Head>
 
                         <div className="col-span-12 md:col-span-8">
-                            <div
-                                className="imgwrapper bg-cover bg-center w-[25rem] relative h-[16rem]"
-                                style={{ backgroundImage: `url(${urlFor(post.mainImage)})` }}
-                            ></div>
+                            {post.mainImage && (
+                                <div
+                                    className="imgwrapper bg-cover bg-center w-[25rem] relative h-[16rem]"
+                                    style={{ backgroundImage: `url(${urlFor(post.mainImage)})` }}
+                                ></div>
+                            )}
+
                             <div className="texte mt-8 px-6 sm:px-12 md:px-0">
                                 <PortableText value={post.description}></PortableText>
                             </div>
@@ -145,44 +150,47 @@ const Work = ({ post, dataAll }) => {
                             ) : null}
 
                             <div className="images  grid grid-cols-12 gap-1">
-                                {post.gallery.images.map((e, i) => {
-                                    return (
-                                        <>
-                                            {e.captionTop && (
-                                                <div className="caption col-span-12  pl-6 sm:pl-0 text-text italic">
-                                                    {e.captionTop}
-                                                </div>
-                                            )}
-                                            <div
-                                                key={`image${i}`}
-                                                className={`${
-                                                    e.big ? "col-span-12" : "col-span-12 sm:col-span-6 lg:col-span-4"
-                                                } ${e.hoch ? "aspect-hoch" : "aspect-video"}   relative `}
-                                                ref={(ref) => (imgRefs.current[i] = ref)}
-                                            >
-                                                <Image
-                                                    // {...ImagePropsGallery(i)}
-                                                    src={urlFor(e).width(200).height(280).url()}
-                                                    loader={() => urlFor(e).url()}
-                                                    layout="fill"
-                                                    loading="lazy"
-                                                    objectFit="cover"
-                                                    alt="hero"
-                                                    placeholder="blur"
-                                                    blurDataURL={urlFor(e).url()}
-                                                />
-                                            </div>
-                                            {e.caption && (
+                                {post.gallery &&
+                                    post.gallery.images.map((e, i) => {
+                                        return (
+                                            <>
+                                                {e.captionTop && (
+                                                    <div className="caption col-span-12  pl-6 sm:pl-0 text-text italic">
+                                                        {e.captionTop}
+                                                    </div>
+                                                )}
                                                 <div
-                                                    style={{ marginTop: "-5px!important" }}
-                                                    className="caption px-6 sm:px-0 col-span-12 text-text text-xs"
+                                                    key={`image${i}`}
+                                                    className={`${
+                                                        e.big
+                                                            ? "col-span-12"
+                                                            : "col-span-12 sm:col-span-6 lg:col-span-4"
+                                                    } ${e.hoch ? "aspect-hoch" : "aspect-video"}   relative `}
+                                                    ref={(ref) => (imgRefs.current[i] = ref)}
                                                 >
-                                                    {e.caption}
+                                                    <Image
+                                                        // {...ImagePropsGallery(i)}
+                                                        src={urlFor(e).width(200).height(280).url()}
+                                                        loader={() => urlFor(e).url()}
+                                                        layout="fill"
+                                                        loading="lazy"
+                                                        objectFit="cover"
+                                                        alt="hero"
+                                                        placeholder="blur"
+                                                        blurDataURL={urlFor(e).url()}
+                                                    />
                                                 </div>
-                                            )}
-                                        </>
-                                    );
-                                })}
+                                                {e.caption && (
+                                                    <div
+                                                        style={{ marginTop: "-5px!important" }}
+                                                        className="caption px-6 sm:px-0 col-span-12 text-text text-xs"
+                                                    >
+                                                        {e.caption}
+                                                    </div>
+                                                )}
+                                            </>
+                                        );
+                                    })}
                                 {/* LIGHTBOX GALLERY */}
                                 {typeof post.galleryLightbox !== "undefined" ? (
                                     <p className="caption  col-span-12 pl-6 sm:pl-0  text-text mt-2">

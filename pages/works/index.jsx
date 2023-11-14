@@ -26,6 +26,10 @@ const Works = ({ dataAll }) => {
         e.target.style.transform = "scale(1)";
     }
 
+    useEffect(() => {
+        console.log(dataAll);
+    }, []);
+
     return (
         <>
             <MainContainer width="w-full col-span-12 md:col-span-9 md:ml-[320px] sm:pl-12 overflow-hidden ">
@@ -66,6 +70,6 @@ export const getStaticProps = async (context) => {
         props: {
             dataAll,
         },
-        revalidate: 1, // 10 seconds
+        revalidate: 10, // 10 seconds
     };
 };
