@@ -13,5 +13,12 @@ export default {
             name: "bottomLine",
             type: "string",
         },
+        {
+            title: "Video Top",
+            name: "videoTop",
+            type: "boolean",
+            description: "Set to true if this video should be at the top.",
+            // validation: (Rule) => Rule.default(false),
+        },
     ],
 };

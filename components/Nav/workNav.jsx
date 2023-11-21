@@ -16,11 +16,7 @@ const WorksNav = (props) => {
                 className={`worksNav mb-12 grid grid-cols-12 col-span-12 md:col-span-8 lg:col-span-12 ${props.colSpan}`}
             >
                 <div className="wrapper col-span-12 px-6 lg:px-0 md-col-span-8 lg:col-span-8 flex justify-between">
-                    <div
-                        className={`left ${
-                            props.previous ? "" : ""
-                        }  text-text flex items-center py-2 px-4 cursor-pointer`}
-                    >
+                    <div className={`left ${props.previous ? "" : ""}  text-text flex items-center  cursor-pointer`}>
                         {props.previous ? (
                             <>
                                 {" "}
@@ -32,7 +28,7 @@ const WorksNav = (props) => {
                     </div>{" "}
                     {props.next ? (
                         <>
-                            <div className="right  text-text flex items-center py-2 px-4 cursor-pointer">
+                            <div className="right  text-text flex items-center pr-2 cursor-pointer">
                                 <Link href={`/works/${props.next}`}>
                                     <HiOutlineChevronRight></HiOutlineChevronRight>
                                 </Link>

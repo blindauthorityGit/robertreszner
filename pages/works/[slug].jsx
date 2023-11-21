@@ -125,22 +125,24 @@ const Work = ({ post, dataAll }) => {
         <>
             {post && dataAll ? (
                 <>
-                    <MainContainer width="w-full sm:pl-12 col-span-12 md:col-span-9 sm:;pl-12 sm:pt-[69px] md:ml-[320px] overflow-hidden">
+                    <MainContainer width="w-full  sm:pl-12 col-span-12 md:col-span-9 sm:;pl-12 sm:pt-[69px] md:ml-[320px] overflow-hidden">
                         <Head>
                             <title>{post.seo.title}</title>
                             <meta name="description" content={post.seo.description} />
                         </Head>
 
-                        <div className="col-span-12 md:col-span-8">
-                            {post.mainImage && (
-                                <div
-                                    className="imgwrapper bg-cover bg-center w-[25rem] relative h-[16rem]"
-                                    style={{ backgroundImage: `url(${urlFor(post.mainImage)})` }}
-                                ></div>
-                            )}
+                        <div className="col-span-12 md:col-span-8 grid">
+                            <div className="order-first">
+                                {post.mainImage && (
+                                    <div
+                                        className="imgwrapper  bg-cover bg-center w-[25rem] relative h-[16rem]"
+                                        style={{ backgroundImage: `url(${urlFor(post.mainImage)})` }}
+                                    ></div>
+                                )}
 
-                            <div className="texte mt-8 px-6 sm:px-12 md:px-0">
-                                <PortableText value={post.description}></PortableText>
+                                <div className="texte mt-8  px-6 sm:px-12 md:px-0 order-second">
+                                    <PortableText value={post.description}></PortableText>
+                                </div>
                             </div>
                             {post.topLine ? (
                                 <div className="topLineText  px-6 sm:px-0">
@@ -249,7 +251,7 @@ const Work = ({ post, dataAll }) => {
                                 ? vids.map((e, i) => {
                                       console.log(controls(i));
                                       return (
-                                          <div key={`key${i}`} className="mt-1">
+                                          <div key={`key${i}`} className={`mt-1 ${e.videoTop ? "order-first" : null}`}>
                                               <VideoJS options={controls(i)} onReady={handlePlayerReady} />
                                               {e.bottomLine ? (
                                                   <div className="bottomLine mt-1 px-6 sm:px-0 col-span-12 text-text text-xs">
