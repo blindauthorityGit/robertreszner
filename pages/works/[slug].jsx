@@ -263,7 +263,7 @@ const Work = ({ post, dataAll }) => {
                                   })
                                 : null}
                             {post.audio ? (
-                                <audio className="w-full mt-2" controls>
+                                <audio className="w-full h-10 mt-2" controls>
                                     <source src={getUrlFromId(post.audio.asset._ref)} type="audio/mpeg" />
                                     Your browser does not support the audio element.
                                 </audio>
