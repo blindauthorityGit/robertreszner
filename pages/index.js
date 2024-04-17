@@ -33,10 +33,10 @@ export default function Home({ dataStart, dataNews }) {
                         backgroundImage: `url(${urlFor(dataStart.mainImage)})`,
                         // backgroundSize: "933px",
 
-                        backgroundPositionX: "right",
+                        backgroundPositionX: "left",
                         backgroundPositionY: "center",
                     }}
-                    className="imgwrapper bg-no-repeat bg-cover	 aspect-video relative max-h-[20rem]"
+                    className="imgwrapper bg-no-repeat bg-contain aspect-video relative max-h-[20rem]"
                 >
                     {/* <Image
                         {...imageProps}
@@ -47,18 +47,20 @@ export default function Home({ dataStart, dataNews }) {
                     /> */}
                     {/* <img src={urlFor(dataStart.mainImage)} alt="" /> */}
                 </div>
-                <div className=" mt-6 px-6 md:px-0 sm:pb-8">
-                    <H2 klasse="mb-4">UPCOMING</H2>
-                    {dataNews.map((e, i) => {
-                        return (
-                            <div key={`news${i}`} className="textelement">
-                                <div className="bold text-sm">{e.title}</div>
-                                <PortableText value={e.description}></PortableText>
-                                {i === dataNews.length - 1 ? "" : <hr className="mt-4 mb-4 w-[20%] " />}
-                            </div>
-                        );
-                    })}
-                </div>
+                {dataNews.length > 0 ? (
+                    <div className=" mt-6 px-6 md:px-0 sm:pb-8">
+                        <H2 klasse="mb-4">UPCOMING</H2>
+                        {dataNews.map((e, i) => {
+                            return (
+                                <div key={`news${i}`} className="textelement">
+                                    <div className="bold text-sm">{e.title}</div>
+                                    <PortableText value={e.description}></PortableText>
+                                    {i === dataNews.length - 1 ? "" : <hr className="mt-4 mb-4 w-[20%] " />}
+                                </div>
+                            );
+                        })}
+                    </div>
+                ) : null}
             </div>
         </MainContainer>
     );

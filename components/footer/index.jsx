@@ -21,15 +21,15 @@ const Footer = (props) => {
                 <hr />
                 <div className="flex justify-between mt-4">
                     <div className="left">
-                        2022 <span className="text-xs">by eva maria schartmüller</span>
+                        2024 <span className="text-xs">by robert reszner</span>
                     </div>
                     <div className="right flex text-[#949494]">
-                        <a className="mr-4" href={props.insta}>
+                        {/* <a className="mr-4" href={props.insta}>
                             <FaInstagram></FaInstagram>
                         </a>
                         <a className="mr-4" href={props.twitter}>
                             <FaTwitter></FaTwitter>
-                        </a>
+                        </a> */}
                     </div>
                 </div>
             </div>

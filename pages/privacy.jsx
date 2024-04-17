@@ -171,13 +171,13 @@ export default function About({ dataStart }) {
                         Sollten Sie Fragen zum Datenschutz haben, finden Sie nachfolgend die Kontaktdaten der
                         verantwortlichen Person bzw. Stelle:
                         <br />
-                        Eva Maria Schartmüller
+                        Robert Reszner
                         <br />
-                        E-Mail:&nbsp;office@schartmueller.com
+                        E-Mail:&nbsp;reszner@a-r-t.cc
                         <br />
-                        Telefon:&nbsp;+43 (0)6767907617
+                        Telefon:&nbsp;+43 (0)6765021846
                         <br />
-                        Impressum:&nbsp;<a href="https://www.robertreszner.com/">https://www.schartmueller.com</a>
+                        Impressum:&nbsp;<a href="https://www.robertreszner.com/"> https://www.robertreszner.com</a>
                     </p>
 
                     <p>

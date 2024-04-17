@@ -1,5 +1,5 @@
-const MenuItems = ["works", "contact", "about", "links"];
+const MenuItems = ["arbeiten", "biografie", "kontakt"];
 const MenuItemsLower = ["imprint", "privacy"];
-const HomeLink = "Eva Maria Schartmüller";
+const HomeLink = "Robert Reszner";
 
 export { MenuItems, HomeLink, MenuItemsLower };

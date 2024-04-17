@@ -20,16 +20,17 @@ export default function About({ dataStart }) {
             </Head>
 
             <div className="col-span-12 px-6 sm:px-0 sm:pt-4 md:col-span-6 ">
-                <p>Impressum</p>
+                <p>Impressum/Imprint</p>
                 <div className="texte mt-8 sm:px-12 md:px-0">
                     <p>
                         Informationspflicht laut §5 E-Commerce Gesetz, §14 Unternehmensgesetzbuch, §63 Gewerbeordnung
                         und Offenlegungspflicht laut §25 Mediengesetz.
                     </p>
                     <p>
-                        Eva Maria Schartmüller <br />
-                        Austria, Wien <br />
-                        Mail: contact@schartmueller.com
+                        Robert Reszner <br />
+                        Austria, Wien
+                        <br />
+                        Mail: reszner@a-r-t.cc
                     </p>
                     <p>
                         <strong>Haftung für Inhalte dieser Webseite</strong>
@@ -37,7 +38,7 @@ export default function About({ dataStart }) {
                     <p>
                         Wir entwickeln die Inhalte dieser Webseite ständig weiter und bemühen uns korrekte und aktuelle
                         Informationen bereitzustellen. Leider können wir keine Haftung für die Korrektheit aller Inhalte
-                        auf dieser Webseite übernehmen, speziell für jene die seitens Dritter bereitgestellt wurden.
+                        auf dieser Webseite übernehmen, speziell für jene die seitens Dritter bereitgestellt wurden.{" "}
                     </p>
                     <p>
                         Sollten Ihnen problematische oder rechtswidrige Inhalte auffallen, bitten wir Sie uns umgehend
@@ -79,7 +80,8 @@ export default function About({ dataStart }) {
                     <p>
                         Die Bilderrechte liegen bei den folgenden Fotografen und Unternehmen:
                         <br />
-                        Eva Maria Schartmüller
+                        Reszner Robert<br></br>
+                        Wolfgang Sohm
                     </p>
                 </div>
             </div>
