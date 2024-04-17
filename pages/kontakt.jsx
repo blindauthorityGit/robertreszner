@@ -7,7 +7,6 @@ import Hero from "../components/Hero/hero";
 import client from "../client";
 import { H1, H2, H3 } from "../components/utils/headlines";
 import { PortableText } from "@portabletext/react";
-import FormFull from "../components/form";
 
 export default function Contact({ dataStart }) {
     const pRef = useRef(null);
