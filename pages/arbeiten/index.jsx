@@ -6,13 +6,8 @@ import MainContainer from "../../components/layout/mainContainer";
 import Link from "next/link";
 
 import Image from "next/image";
-import { useNextSanityImage } from "next-sanity-image";
 
 const Works = ({ dataAll }) => {
-    function ImagePropsGallery(i) {
-        return useNextSanityImage(client, dataAll[i].mainImage);
-    }
-
     function findIndex(index) {
         const i = dataAll.map((e) => e.slug.current).indexOf(index);
 

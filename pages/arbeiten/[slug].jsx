@@ -13,7 +13,6 @@ import { PortableText } from "@portabletext/react";
 import { H1, H2, H3 } from "../../components/utils/headlines";
 
 import Image from "next/image";
-import { useNextSanityImage } from "next-sanity-image";
 
 import WorksNav from "../../components/Nav/workNav";
 // VIDEO
