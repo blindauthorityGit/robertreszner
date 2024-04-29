@@ -20,7 +20,7 @@ const WorksNav = (props) => {
                         {props.previous ? (
                             <>
                                 {" "}
-                                <Link href={`/works/${props.previous}`}>
+                                <Link href={`/arbeiten/${props.previous}`}>
                                     <HiOutlineChevronLeft></HiOutlineChevronLeft>
                                 </Link>
                             </>
@@ -29,7 +29,7 @@ const WorksNav = (props) => {
                     {props.next ? (
                         <>
                             <div className="right  text-text flex items-center pr-2 cursor-pointer">
-                                <Link href={`/works/${props.next}`}>
+                                <Link href={`/arbeiten/${props.next}`}>
                                     <HiOutlineChevronRight></HiOutlineChevronRight>
                                 </Link>
                             </div>{" "}
