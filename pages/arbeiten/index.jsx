@@ -34,7 +34,7 @@ const Works = ({ dataAll }) => {
                 </Head>
 
                 <div className="col-span-12 md:col-span-8 lg:col-span-6 pl-6 sm:pl-0 sm:pt-16 sm:block">
-                    <p>selected works</p>
+                    <p>ausgewählte Arbeiten</p>
                     <div className="images mt-12  ">
                         {dataAll.map((e, i) => {
                             // counter++;

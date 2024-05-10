@@ -15,7 +15,7 @@ const Navbar = (props) => {
             <nav className={`navbar px-12 h-full fixed hidden md:block md:w-[320px] pt-16 ${props.colSpan}`}>
                 <div
                     style={{ fontWeight: "300" }}
-                    className="home uppercase text-text tracking-wide font-regular hover:text-black text-right text-sm"
+                    className="home uppercase text-text tracking-wide font-regular hover:text-black text-right text-lg"
                 >
                     <Link href="/">
                         <a className="block">{props.HomeLink}</a>

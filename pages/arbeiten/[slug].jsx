@@ -98,7 +98,7 @@ const Work = ({ post, dataAll }) => {
 
     useEffect(() => {
         console.log(post, dataAll, post.seo, imgRefs);
-        if (imgRefs.current.length > 0) {
+        if (imgRefs.current.length > 0 && imgRefs.current[0]) {
             setVideoDimensions({
                 width: imgRefs.current[0].clientWidth,
                 height: imgRefs.current[0].clientHeight,

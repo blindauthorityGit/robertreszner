@@ -16,7 +16,7 @@ const Footer = (props) => {
         <>
             <div
                 ref={footerRef}
-                className={`footer md:w-[50%] h-12 mb-12 pl-6 pr-6 sm:pr-0 sm:pl-12 w-full col-span-12 md:col-span-6 md:ml-[314px] mt-20  font-[300] text-text  ${props.colSpan}`}
+                className={`footer md:w-[50%] h-12 mb-12 pl-6 pr-6 sm:pr-0 sm:pl-12 w-full col-span-12 md:col-span-6 md:ml-[322px] mt-20  font-[300] text-text  ${props.colSpan}`}
             >
                 <hr />
                 <div className="flex justify-between mt-4">
