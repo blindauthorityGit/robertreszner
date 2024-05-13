@@ -128,6 +128,7 @@ const Work = ({ post, dataAll }) => {
 
     useEffect(() => {
         setVids(post.videos);
+        console.log(post);
         console.log(post.videos, "test");
 
         return () => {
@@ -241,6 +242,7 @@ const Work = ({ post, dataAll }) => {
                                                             ? "col-span-12"
                                                             : "col-span-12 sm:col-span-6 lg:col-span-4"
                                                     } ${e.hoch ? "aspect-hoch" : "aspect-[3/2]"}   relative `}
+                                                    style={{ aspectRatio: e.aspectRatio ? e.aspectRatio : "" }}
                                                     ref={(ref) => (imgRefs.current[i] = ref)}
                                                 >
                                                     <Image
