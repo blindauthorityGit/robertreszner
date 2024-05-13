@@ -36,12 +36,25 @@ const Work = ({ post, dataAll }) => {
     const [vids, setVids] = useState(post?.videos || []);
 
     const [lightBoxImg, setLightBoxImg] = useState(0);
+    const initialAspectRatio = post?.galleryLightbox?.images?.[0]?.aspectRatio || "16/9"; // Default to '16/9' if aspectRatio is not found
+    const [lbAspect, setLbAspect] = useState(initialAspectRatio);
+
     const imgRefs = useRef([]);
     const lightboxRef = useRef(null);
 
     const [videoDimensions, setVideoDimensions] = useState({});
 
     const playerRef = useRef(null);
+    // Example function to update lbAspect
+    useEffect(() => {
+        const updateAspectRatio = () => {
+            // Calculate or fetch the new aspect ratio
+            const newAspectRatio = post?.galleryLightbox?.images?.[lightBoxImg]?.aspectRatio || "4/3"; // Example: replace with your logic
+            setLbAspect(newAspectRatio);
+        };
+
+        updateAspectRatio();
+    }, [post, lightBoxImg]);
 
     const getUrlFromId = (ref) => {
         // Example ref: file-207fd9951e759130053d37cf0a558ffe84ddd1c9-mp3
@@ -90,6 +103,13 @@ const Work = ({ post, dataAll }) => {
             console.log(" big");
         }
         console.log(e.target.classList.contains("big"));
+        const updateAspectRatio = () => {
+            // Calculate or fetch the new aspect ratio
+            const newAspectRatio = post?.galleryLightbox?.images?.[i]?.aspectRatio || "16/9"; // Example: replace with your logic
+            setLbAspect(newAspectRatio);
+        };
+
+        updateAspectRatio();
         setTimeout(() => {
             lightboxRef.current.classList.add("fade-in");
             setLightBoxImg(i);
@@ -143,7 +163,7 @@ const Work = ({ post, dataAll }) => {
 
                         <div className="col-span-12 md:col-span-8 grid">
                             <div className="order-first">
-                                <div className="2xl:h-[35rem] relative flex">
+                                <div className="2xl:h-[35rem] relative ">
                                     {post.mainImage &&
                                         post.mainImage.map((e, i) => {
                                             return (
@@ -168,14 +188,19 @@ const Work = ({ post, dataAll }) => {
                                                 //         objectFit="contain"
                                                 //     />
                                                 // </div>
-
-                                                <img
-                                                    key={`iniehnie${i}`}
-                                                    src={urlFor(e).url()}
-                                                    alt={"alt"}
-                                                    style={imageStyle}
-                                                />
-
+                                                <>
+                                                    <img
+                                                        key={`iniehnie${i}`}
+                                                        src={urlFor(e).url()}
+                                                        alt={"alt"}
+                                                        style={imageStyle}
+                                                    />
+                                                    {post.captionTop ? (
+                                                        <div className="col-span-12">
+                                                            <PortableText value={post.captionTop}></PortableText>
+                                                        </div>
+                                                    ) : null}
+                                                </>
                                                 // <div
                                                 //     key={`img${i}`}
                                                 //     className="imgwrapper bg-no-repeat bg-contain
@@ -244,10 +269,13 @@ const Work = ({ post, dataAll }) => {
                                 {post.galleryLightbox ? (
                                     <div
                                         ref={lightboxRef}
-                                        className="col-span-12 hidden sm:block lightBox aspect-videoBig bg-cover bg-no-repeat"
+                                        className={`col-span-12 hidden sm:block lightBox ${
+                                            lbAspect ? null : "aspect-videoBig"
+                                        } bg-cover bg-no-repeat`}
                                         style={{
                                             marginTop: "-5px!important",
-                                            backgroundImage: `url(${urlFor(post.galleryLightbox.images[lightBoxImg])}`,
+                                            backgroundImage: `url(${urlFor(post.galleryLightbox.images[lightBoxImg])})`,
+                                            aspectRatio: lbAspect,
                                         }}
                                     ></div>
                                 ) : null}

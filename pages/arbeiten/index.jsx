@@ -35,7 +35,16 @@ const Works = ({ dataAll }) => {
 
                 <div className="col-span-12 md:col-span-8 lg:col-span-6 pl-6 sm:pl-0 sm:pt-16 sm:block">
                     <p>ausgewählte Arbeiten</p>
-                    <div className="images mt-12  ">
+                    <a
+                        href="/formenvorgang-sml-web-close.pdf#page=5"
+                        className="text-sm underline block mt-2 hover:opacity-60"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Werkkatalog
+                    </a>
+
+                    <div className="images mt-6  ">
                         {dataAll.map((e, i) => {
                             // counter++;
                             return (

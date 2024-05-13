@@ -53,6 +53,12 @@ export default {
       of: [{type: 'image'}],
     },
     {
+      title: 'Caption Top',
+      name: 'captionTop',
+      type: 'array',
+      of: [{type: 'block'}],
+    },
+    {
       title: 'Beschreibung',
       name: 'description',
       type: 'array',
@@ -146,6 +152,11 @@ export default {
                   title: 'Big?',
                 },
                 {
+                  name: 'aspectRatio',
+                  type: 'string',
+                  title: 'Aspect Ratio',
+                },
+                {
                   name: 'hoch',
                   type: 'boolean',
                   title: 'Hoch?',
@@ -220,6 +231,11 @@ export default {
                   name: 'captionTop',
                   type: 'string',
                   title: 'Beschreibungstext Bild Top',
+                },
+                {
+                  name: 'aspectRatio',
+                  type: 'string',
+                  title: 'Aspect Ratio',
                 },
                 {
                   name: 'big',

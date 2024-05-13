@@ -1,16 +1,18 @@
-import { useState, useEffect } from "react";
-import { Document, Page } from "react-pdf";
+import { useState } from "react";
+import { Document, Page, pdfjs } from "react-pdf";
+import "react-pdf/dist/esm/Page/AnnotationLayer.css";
+
+// Set the worker URL
+pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
 
 const PdfViewer = ({ pdfUrl }) => {
     const [numPages, setNumPages] = useState(null);
+    const [pageNumber, setPageNumber] = useState(1);
 
     const onDocumentLoadSuccess = ({ numPages }) => {
         setNumPages(numPages);
+        setPageNumber(1);
     };
-
-    useEffect(() => {
-        console.log(pdfUrl);
-    }, []);
 
     return (
         <div>
