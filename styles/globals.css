@@ -67,6 +67,10 @@ a {
   margin-bottom: 6px;
 }
 
+.captionCredits p {
+  color: white !important;
+}
+
 .aspect-video {
   width: 100%;
   height: 0;

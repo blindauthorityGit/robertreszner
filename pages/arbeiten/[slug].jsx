@@ -163,7 +163,7 @@ const Work = ({ post, dataAll }) => {
 
                         <div className="col-span-12 md:col-span-8 grid">
                             <div className="order-first">
-                                <div className="2xl:h-[35rem] relative ">
+                                <div className="2xl:h-[35rem] relative flex">
                                     {post.mainImage &&
                                         post.mainImage.map((e, i) => {
                                             return (
@@ -196,8 +196,11 @@ const Work = ({ post, dataAll }) => {
                                                         style={imageStyle}
                                                     />
                                                     {post.captionTop ? (
-                                                        <div className="col-span-12">
-                                                            <PortableText value={post.captionTop}></PortableText>
+                                                        <div className="col-span-12 captionCredits absolute bottom-6 left-6 z-40 !text-white">
+                                                            <PortableText
+                                                                className="text-white"
+                                                                value={post.captionTop}
+                                                            ></PortableText>
                                                         </div>
                                                     ) : null}
                                                 </>
