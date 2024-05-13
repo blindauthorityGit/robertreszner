@@ -14,7 +14,7 @@ const Navbar = (props) => {
             {/* DESKTOP NAV */}
             <nav className={`navbar px-12 h-full fixed hidden md:block md:w-[320px] pt-16 ${props.colSpan}`}>
                 <div
-                    style={{ fontWeight: "300" }}
+                    style={{ fontWeight: "300", marginTop: "-5px" }}
                     className="home uppercase text-text tracking-wide font-regular hover:text-black text-right text-lg"
                 >
                     <Link href="/">
