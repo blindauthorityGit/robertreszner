@@ -240,7 +240,7 @@ const Work = ({ post, dataAll }) => {
                                                         e.big
                                                             ? "col-span-12"
                                                             : "col-span-12 sm:col-span-6 lg:col-span-4"
-                                                    } ${e.hoch ? "aspect-hoch" : "aspect-video"}   relative `}
+                                                    } ${e.hoch ? "aspect-hoch" : "aspect-[3/2]"}   relative `}
                                                     ref={(ref) => (imgRefs.current[i] = ref)}
                                                 >
                                                     <Image
@@ -279,6 +279,7 @@ const Work = ({ post, dataAll }) => {
                                             marginTop: "-5px!important",
                                             backgroundImage: `url(${urlFor(post.galleryLightbox.images[lightBoxImg])})`,
                                             aspectRatio: lbAspect,
+                                            backgroundPosition: "center -130px",
                                         }}
                                     ></div>
                                 ) : null}
@@ -289,7 +290,7 @@ const Work = ({ post, dataAll }) => {
                                               <>
                                                   <div
                                                       key={`image${i}`}
-                                                      className={`${"col-span-12 sm:col-span-6 lg:col-span-4  overflow-hidden"}  relative aspect-video`}
+                                                      className={`${"col-span-12 sm:col-span-6 lg:col-span-4  overflow-hidden"}  relative aspect-[16/14]`}
                                                       ref={(ref) => (imgRefs.current[i] = ref)}
                                                   >
                                                       <Image
@@ -298,6 +299,7 @@ const Work = ({ post, dataAll }) => {
                                                           layout="fill"
                                                           loading="lazy"
                                                           objectFit="cover"
+                                                          objectPosition="center -70px"
                                                           alt="hero"
                                                           className={`hover:scale-110 transition-all cursor-pointer ${
                                                               e.big ? "big" : null

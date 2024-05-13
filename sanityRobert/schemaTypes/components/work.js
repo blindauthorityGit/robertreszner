@@ -157,6 +157,11 @@ export default {
                   title: 'Aspect Ratio',
                 },
                 {
+                  name: 'backgroundPotion',
+                  type: 'string',
+                  title: 'Background Position',
+                },
+                {
                   name: 'hoch',
                   type: 'boolean',
                   title: 'Hoch?',
