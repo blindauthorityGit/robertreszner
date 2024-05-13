@@ -29,10 +29,10 @@ export default function Home({ dataStart, dataNews }) {
                         backgroundImage: `url(${urlFor(dataStart.mainImage)})`,
                         // backgroundSize: "933px",
 
-                        backgroundPositionX: "left",
+                        backgroundPositionX: "center",
                         backgroundPositionY: "center",
                     }}
-                    className="imgwrapper bg-no-repeat bg-contain aspect-video relative max-h-[20rem]"
+                    className="imgwrapper bg-no-repeat bg-cover aspect-[3/2] relative "
                 >
                     {/* <Image
                         {...imageProps}
