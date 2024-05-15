@@ -79,7 +79,7 @@ const Navbar = (props) => {
                                         }}
                                         className={`fade-in font-[300] block text-regular mb-2 tracking-wide hover:text-black`}
                                     >
-                                        {e}
+                                        {language == "DE" ? e.de : e.en}
                                     </a>
                                 </Link>
                             );
@@ -94,11 +94,20 @@ const Navbar = (props) => {
                                             }}
                                             className={`fade-in block mb-2 tracking-wide hover:text-black`}
                                         >
-                                            {e}
+                                            {language == "DE" ? e.de : e.en}
                                         </a>
                                     </Link>
                                 );
                             })}
+                        </div>
+                        <div className="lang text-left mt-8">
+                            <span className="cursor-pointer hover:opacity-40" onClick={() => setLanguage("DE")}>
+                                DE
+                            </span>{" "}
+                            |{" "}
+                            <span className="cursor-pointer hover:opacity-40" onClick={() => setLanguage("EN")}>
+                                EN
+                            </span>
                         </div>
                     </div>
                     <div
