@@ -7,20 +7,26 @@ import Hero from "../components/Hero/hero";
 import client from "../client";
 import { H1, H2, H3 } from "../components/utils/headlines";
 import { PortableText } from "@portabletext/react";
+import useStore from "../store/store"; // adjust the path as necessary
 
 export default function About({ dataStart }) {
     // useEffect(() => {
     //     console.log(dataStart, dataNews);
     // }, []);
+    const { language } = useStore();
 
     return (
         <MainContainer width="w-full sm:p-12 col-span-12 md:col-span-9 md:ml-[320px] overflow-hidden mb-16">
             <Head>
-                <title>Eva Maria Schartmüller</title>
+                <title>Robert Reszner</title>
             </Head>
 
-            <div className="col-span-12 px-6 sm:px-0 sm:pt-4 md:col-span-6 ">
-                <p>Impressum/Imprint</p>
+            <div className="col-span-12 px-6 sm:px-0 sm:pt-4 md:col-span-6 texte">
+                <PortableText
+                    className="texte"
+                    value={language == "DE" ? dataStart.description : dataStart.descriptionEN}
+                ></PortableText>
+                {/* <p>Impressum/Imprint</p>
                 <div className="texte mt-8 sm:px-12 md:px-0">
                     <p>
                         Informationspflicht laut §5 E-Commerce Gesetz, §14 Unternehmensgesetzbuch, §63 Gewerbeordnung
@@ -83,14 +89,14 @@ export default function About({ dataStart }) {
                         Reszner Robert<br></br>
                         Wolfgang Sohm
                     </p>
-                </div>
+                </div> */}
             </div>
         </MainContainer>
     );
 }
 
 export const getStaticProps = async (context) => {
-    const resStart = await client.fetch(`*[_type in ["about"]]`);
+    const resStart = await client.fetch(`*[_type in ["impressum"]]`);
     const dataStart = await resStart[0];
 
     return {

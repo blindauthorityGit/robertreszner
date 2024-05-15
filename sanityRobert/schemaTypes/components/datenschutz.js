@@ -1,18 +1,8 @@
 export default {
-  name: 'kontakt',
+  name: 'datenschutz',
   type: 'document',
-  title: 'kontakt',
+  title: 'datenschutz',
   fields: [
-    {
-      title: 'Email',
-      name: 'email',
-      type: 'string',
-    },
-    {
-      title: 'Phone',
-      name: 'phone',
-      type: 'string',
-    },
     {
       title: 'Description DE',
       name: 'description',

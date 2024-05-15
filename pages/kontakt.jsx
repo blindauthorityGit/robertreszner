@@ -7,9 +7,12 @@ import Hero from "../components/Hero/hero";
 import client from "../client";
 import { H1, H2, H3 } from "../components/utils/headlines";
 import { PortableText } from "@portabletext/react";
+import useStore from "../store/store"; // adjust the path as necessary
 
 export default function Contact({ dataStart }) {
     const pRef = useRef(null);
+    const { language } = useStore();
+
     useEffect(() => {
         console.log(dataStart);
         pRef.current.style.marginTop = "-3px!important";
@@ -29,7 +32,9 @@ export default function Contact({ dataStart }) {
                         {dataStart.phone}
                     </p>
                     <p className="pDescri" style={{ margin: "3rem 0 4rem 0!important" }}>
-                        <PortableText value={dataStart.description}></PortableText>
+                        <PortableText
+                            value={language == "DE" ? dataStart.description : dataStart.descriptionEN}
+                        ></PortableText>
                     </p>
                     {/* <FormFull></FormFull> */}
                 </div>

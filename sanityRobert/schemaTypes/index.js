@@ -6,6 +6,19 @@ import images from './components/images'
 import about from './components/about'
 import kontakt from './components/kontakt'
 import links from './components/links'
+import impressum from './components/impressum'
+import datenschutz from './components/datenschutz'
 import video from './components/objects/video'
 
-export const schemaTypes = [home, newsEintrag, work, images, about, kontakt, links, video]
+export const schemaTypes = [
+  home,
+  newsEintrag,
+  work,
+  images,
+  about,
+  kontakt,
+  links,
+  video,
+  impressum,
+  datenschutz,
+]

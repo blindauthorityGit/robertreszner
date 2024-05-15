@@ -6,8 +6,10 @@ import MainContainer from "../../components/layout/mainContainer";
 import Link from "next/link";
 
 import Image from "next/image";
+import useStore from "../../store/store"; // adjust the path as necessary
 
 const Works = ({ dataAll }) => {
+    const { language } = useStore();
     function findIndex(index) {
         const i = dataAll.map((e) => e.slug.current).indexOf(index);
 
@@ -34,7 +36,7 @@ const Works = ({ dataAll }) => {
                 </Head>
 
                 <div className="col-span-12 md:col-span-8 lg:col-span-6 pl-6 sm:pl-0 sm:pt-16 sm:block">
-                    <p>ausgewählte arbeiten</p>
+                    <p>{language == "DE" ? "ausgewählte arbeiten" : "selected works"}</p>
 
                     <div className="images mt-12  ">
                         {dataAll.map((e, i) => {
@@ -43,7 +45,9 @@ const Works = ({ dataAll }) => {
                                 <>
                                     {e.title && (
                                         <Link key={`worksKey${i}`} href={`/arbeiten/${e.slug.current}`}>
-                                            <a className="caption block  text-sm text-text font-[300] ">{e.title}</a>
+                                            <a className="caption block  text-sm text-text font-[300] ">
+                                                {language == "DE" ? e.title : e.titleEN}
+                                            </a>
                                         </Link>
                                     )}
                                 </>
@@ -57,7 +61,7 @@ const Works = ({ dataAll }) => {
                             target="_blank"
                             rel="noopener noreferrer"
                         >
-                            werkkatalog
+                            {language == "DE" ? "werkkatalog" : "catalog"}
                         </a>
                     </div>
                 </div>
@@ -69,7 +73,7 @@ const Works = ({ dataAll }) => {
 export default Works;
 
 export const getStaticProps = async (context) => {
-    const resAll = await client.fetch(`*[_type == "work"] | order(order asc)`);
+    const resAll = await client.fetch(`*[_type == "work"] | order(orderRank)`);
     const dataAll = await resAll;
 
     return {

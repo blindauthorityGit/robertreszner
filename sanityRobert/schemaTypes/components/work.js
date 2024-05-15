@@ -4,9 +4,20 @@ export default {
   title: 'Work',
   fields: [
     {
-      title: 'Titel',
+      title: 'Titel DE',
       name: 'title',
       type: 'string',
+    },
+    {
+      title: 'Titel EN',
+      name: 'titleEN',
+      type: 'string',
+    },
+    {
+      name: 'orderRank',
+      title: 'Order Rank',
+      type: 'string',
+      hidden: true,
     },
     {
       name: 'order',
@@ -53,14 +64,26 @@ export default {
       of: [{type: 'image'}],
     },
     {
-      title: 'Caption Top',
+      title: 'Caption Top DE',
       name: 'captionTop',
       type: 'array',
       of: [{type: 'block'}],
     },
     {
-      title: 'Beschreibung',
+      title: 'Caption Top EN',
+      name: 'captionTopEN',
+      type: 'array',
+      of: [{type: 'block'}],
+    },
+    {
+      title: 'Beschreibung DE',
       name: 'description',
+      type: 'array',
+      of: [{type: 'block'}],
+    },
+    {
+      title: 'Beschreibung EN',
+      name: 'descriptionEN',
       type: 'array',
       of: [{type: 'block'}],
     },
@@ -70,8 +93,14 @@ export default {
     //     type: "string",
     // },
     {
-      title: 'Top Line',
+      title: 'Top Line DE',
       name: 'topLine',
+      type: 'array',
+      of: [{type: 'block'}],
+    },
+    {
+      title: 'Top Line EN',
+      name: 'topLineEN',
       type: 'array',
       of: [{type: 'block'}],
     },
@@ -139,12 +168,23 @@ export default {
                   name: 'caption',
                   type: 'array',
                   of: [{type: 'block'}],
-                  title: 'Beschreibungstext Bild',
+                  title: 'Beschreibungstext Bild DE',
+                },
+                {
+                  name: 'captionEN',
+                  type: 'array',
+                  of: [{type: 'block'}],
+                  title: 'Beschreibungstext Bild EN',
                 },
                 {
                   name: 'captionTop',
                   type: 'string',
-                  title: 'Beschreibungstext Bild Top',
+                  title: 'Beschreibungstext Bild Top DE',
+                },
+                {
+                  name: 'captionTopEN',
+                  type: 'string',
+                  title: 'Beschreibungstext Bild Top EN',
                 },
                 {
                   name: 'big',
@@ -204,7 +244,12 @@ export default {
         {
           name: 'captionTop',
           type: 'string',
-          title: 'Beschreibungstext Bild Top',
+          title: 'Beschreibungstext Bild Top DE',
+        },
+        {
+          name: 'captionTopEN',
+          type: 'string',
+          title: 'Beschreibungstext Bild Top EN',
         },
         {
           name: 'images',
@@ -230,12 +275,22 @@ export default {
                 {
                   name: 'caption',
                   type: 'string',
-                  title: 'Beschreibungstext Bild',
+                  title: 'Beschreibungstext Bild DE',
+                },
+                {
+                  name: 'captionEN',
+                  type: 'string',
+                  title: 'Beschreibungstext Bild EN',
                 },
                 {
                   name: 'captionTop',
                   type: 'string',
-                  title: 'Beschreibungstext Bild Top',
+                  title: 'Beschreibungstext Bild Top DE',
+                },
+                {
+                  name: 'captionTopEN',
+                  type: 'string',
+                  title: 'Beschreibungstext Bild Top EN',
                 },
                 {
                   name: 'aspectRatio',
@@ -274,8 +329,14 @@ export default {
       },
     },
     {
-      title: 'Beschreibung Unten',
+      title: 'Beschreibung Unten DE',
       name: 'descriptionBottom',
+      type: 'array',
+      of: [{type: 'block'}],
+    },
+    {
+      title: 'Beschreibung Unten EN',
+      name: 'descriptionBottomEN',
       type: 'array',
       of: [{type: 'block'}],
     },

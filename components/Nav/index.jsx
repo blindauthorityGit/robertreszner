@@ -3,9 +3,11 @@ import Link from "next/link";
 import { GiHamburgerMenu } from "react-icons/gi";
 import NavModal from "./navModal";
 import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
+import useStore from "../../store/store"; // adjust the path as necessary
 
 const Navbar = (props) => {
     const [modalOpen, setModalOpen] = useState(false);
+    const { language, setLanguage } = useStore();
 
     useEffect(() => {});
 
@@ -18,26 +20,41 @@ const Navbar = (props) => {
                     className="home uppercase text-text tracking-wide font-regular hover:text-black text-right text-lg"
                 >
                     <Link href="/">
-                        <a className="block">{props.HomeLink}</a>
+                        <a className="block font-medium">{props.HomeLink}</a>
                     </Link>
                 </div>
-                <div className="mt-16 text-right text-xs text-text">
+                <div className="mt-16 text-right text-sm text-text">
                     {props.MenuItems.map((e, i) => {
+                        console.log(e);
                         return (
-                            <Link key={`link${i}`} href={`/${e}`}>
-                                <a className={`fade-in block mb-2 font-[300] tracking-widest hover:text-black`}>{e}</a>
+                            <Link key={`link${i}`} href={`/${e.de}`}>
+                                <a className={`fade-in block mb-2 font-[300] tracking-widest hover:text-black`}>
+                                    {language == "DE" ? e.de : e.en}
+                                </a>
                             </Link>
                         );
                     })}
                 </div>
-                <div className="text-right text-text text-xs ">
+                <div className="text-right text-text text-sm ">
                     {props.MenuItemsLower.map((e, i) => {
                         return (
-                            <Link key={`link${i}`} href={`/${e}`}>
-                                <a className={`fade-in block mb-2 font-[300] tracking-widest hover:text-black`}>{e}</a>
+                            <Link key={`link${i}`} href={`/${e.de}`}>
+                                <a className={`fade-in block mb-2 font-[300] tracking-widest hover:text-black`}>
+                                    {" "}
+                                    {language == "DE" ? e.de : e.en}
+                                </a>
                             </Link>
                         );
                     })}
+                </div>
+                <div className="lang text-right mt-8">
+                    <span className="cursor-pointer hover:opacity-40" onClick={() => setLanguage("DE")}>
+                        DE
+                    </span>{" "}
+                    |{" "}
+                    <span className="cursor-pointer hover:opacity-40" onClick={() => setLanguage("EN")}>
+                        EN
+                    </span>
                 </div>
             </nav>
             {/* MOBILE NAV */}
@@ -90,16 +107,16 @@ const Navbar = (props) => {
                         <hr />
                         <div className="flex justify-between mt-4 text-text">
                             <div className="left">
-                                2022 <span className="text-xs">by eva maria schartmüller</span>
+                                2024 <span className="text-xs">by robert reszner</span>
                             </div>
-                            <div className="right flex text-[#949494]">
+                            {/* <div className="right flex text-[#949494]">
                                 <a className="mr-4" href={props.insta}>
                                     <FaInstagram></FaInstagram>
                                 </a>
                                 <a className="mr-4" href={props.twitter}>
                                     <FaTwitter></FaTwitter>
                                 </a>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                 </NavModal>

@@ -1,5 +1,4 @@
 import client, { getAsset } from "../../client";
-
 import Head from "next/head";
 import { useState, useEffect, useRef } from "react";
 import imageUrlBuilder from "@sanity/image-url";
@@ -20,6 +19,8 @@ import VideoJS from "../../components/video";
 import dynamic from "next/dynamic";
 const ReactPlayer = dynamic(() => import("react-player/lazy"), { ssr: false });
 
+import useStore from "../../store/store"; // adjust the path as necessary
+
 import videojs from "video.js";
 import "video.js/dist/video-js.css";
 
@@ -34,6 +35,7 @@ import { CoverImage, ContainImage } from "../../components/images";
 const Work = ({ post, dataAll }) => {
     // const [vids, setVids] = useState(post.videos);
     const [vids, setVids] = useState(post?.videos || []);
+    const { language } = useStore();
 
     const [lightBoxImg, setLightBoxImg] = useState(0);
     const initialAspectRatio = post?.galleryLightbox?.images?.[0]?.aspectRatio || "16/9"; // Default to '16/9' if aspectRatio is not found
@@ -41,6 +43,30 @@ const Work = ({ post, dataAll }) => {
 
     const imgRefs = useRef([]);
     const lightboxRef = useRef(null);
+    const mainImgRef = useRef(null);
+    const [imgWidth, setImgWidth] = useState(0);
+
+    useEffect(() => {
+        const handleImageLoad = () => {
+            if (mainImgRef.current) {
+                setImgWidth(mainImgRef.current.width);
+            }
+        };
+
+        const imgElement = mainImgRef.current;
+        if (imgElement && imgElement.complete) {
+            handleImageLoad();
+        } else if (imgElement) {
+            imgElement.addEventListener("load", handleImageLoad);
+        }
+
+        // Cleanup event listener
+        return () => {
+            if (imgElement) {
+                imgElement.removeEventListener("load", handleImageLoad);
+            }
+        };
+    }, [mainImgRef.current]);
 
     const [videoDimensions, setVideoDimensions] = useState({});
 
@@ -102,7 +128,7 @@ const Work = ({ post, dataAll }) => {
             lightboxRef.current.style.paddingBottom = "66.25%";
             console.log(" big");
         }
-        console.log(e.target.classList.contains("big"));
+        console.log(post?.galleryLightbox?.images?.[i]?.aspectRatio);
         const updateAspectRatio = () => {
             // Calculate or fetch the new aspect ratio
             const newAspectRatio = post?.galleryLightbox?.images?.[i]?.aspectRatio || "16/9"; // Example: replace with your logic
@@ -129,6 +155,7 @@ const Work = ({ post, dataAll }) => {
     useEffect(() => {
         setVids(post.videos);
         console.log(post);
+        console.log(mainImgRef.current.width);
         console.log(post.videos, "test");
 
         return () => {
@@ -195,15 +222,16 @@ const Work = ({ post, dataAll }) => {
                                                         src={urlFor(e).url()}
                                                         alt={"alt"}
                                                         style={imageStyle}
+                                                        ref={mainImgRef}
                                                     />
-                                                    {post.captionTop ? (
+                                                    {/* {post.captionTop ? (
                                                         <div className="col-span-12 captionCredits absolute bottom-6 left-6 z-40 !text-white">
                                                             <PortableText
                                                                 className="text-white"
                                                                 value={post.captionTop}
                                                             ></PortableText>
                                                         </div>
-                                                    ) : null}
+                                                    ) : null} */}
                                                 </>
                                                 // <div
                                                 //     key={`img${i}`}
@@ -214,14 +242,26 @@ const Work = ({ post, dataAll }) => {
                                             );
                                         })}
                                 </div>
+                                {post.captionTop ? (
+                                    <div className="text-right" style={{ width: `${imgWidth}px` }}>
+                                        <PortableText
+                                            className="text-white text-xs"
+                                            value={language == "DE" ? post.captionTop : post.captionTopEN}
+                                        ></PortableText>
+                                    </div>
+                                ) : null}
                                 <div className="texte   px-6 sm:px-12 md:px-0 order-second">
-                                    <PortableText value={post.description}></PortableText>
+                                    <PortableText
+                                        value={language == "DE" ? post.description : post.descriptionEN}
+                                    ></PortableText>
                                 </div>
                             </div>
                             {post.topLine ? (
                                 <div className="topLineText  px-6 sm:px-0">
                                     {" "}
-                                    <PortableText value={post.topLine}></PortableText>
+                                    <PortableText
+                                        value={language == "DE" ? post.topLine : post.topLineEN}
+                                    ></PortableText>
                                 </div>
                             ) : null}
 
@@ -259,7 +299,9 @@ const Work = ({ post, dataAll }) => {
                                                 </div>
                                                 {e.caption && (
                                                     <div className="caption px-6 sm:px-0 col-span-12 text-text text-xs">
-                                                        <PortableText value={e.caption}></PortableText>
+                                                        <PortableText
+                                                            value={language == "DE" ? e.caption : e.captionEN}
+                                                        ></PortableText>
                                                     </div>
                                                 )}
                                             </>
@@ -268,7 +310,9 @@ const Work = ({ post, dataAll }) => {
                                 {/* LIGHTBOX GALLERY */}
                                 {typeof post.galleryLightbox !== "undefined" ? (
                                     <p className="caption  col-span-12 pl-6 sm:pl-0  text-text mt-2">
-                                        {post.galleryLightbox.captionTop}
+                                        {language == "DE"
+                                            ? post.galleryLightbox.captionTop
+                                            : post.galleryLightbox.captionEN}
                                     </p>
                                 ) : null}
                                 {post.galleryLightbox ? (
@@ -301,7 +345,12 @@ const Work = ({ post, dataAll }) => {
                                                           layout="fill"
                                                           loading="lazy"
                                                           objectFit="cover"
-                                                          objectPosition="center -70px"
+                                                          objectPosition={
+                                                              post.slug.current == "salzgehalt-i"
+                                                                  ? "center -70px"
+                                                                  : "center"
+                                                          }
+                                                          //   objectPosition="center -70px"
                                                           alt="hero"
                                                           className={`hover:scale-110 transition-all cursor-pointer ${
                                                               e.big ? "big" : null
@@ -316,7 +365,7 @@ const Work = ({ post, dataAll }) => {
                                                           style={{ marginTop: "-8px!important" }}
                                                           className="caption px-6 sm:px-0 col-span-12 text-text text-xs"
                                                       >
-                                                          {e.caption}
+                                                          {language == "DE" ? e.caption : e.captionEN}
                                                       </div>
                                                   )}
                                               </>
@@ -332,7 +381,7 @@ const Work = ({ post, dataAll }) => {
                                               <VideoJS options={controls(i)} onReady={handlePlayerReady} />
                                               {e.bottomLine ? (
                                                   <div className="bottomLine mt-1 px-6 sm:px-0 col-span-12 text-text text-xs">
-                                                      {e.bottomLine}
+                                                      {language == "DE" ? e.bottomLine : e.bottomLineEN}
                                                   </div>
                                               ) : null}
                                           </div>
@@ -346,7 +395,9 @@ const Work = ({ post, dataAll }) => {
                                 </audio>
                             ) : null}
                             <div className="bottomtext px-6 sm:px-0 mt-6">
-                                <PortableText value={post.descriptionBottom}></PortableText>
+                                <PortableText
+                                    value={language == "DE" ? post.descriptionBottom : post.descriptionBottomEN}
+                                ></PortableText>
                             </div>
                         </div>
                         <WorksNav
