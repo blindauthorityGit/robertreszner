@@ -7,11 +7,13 @@ import Hero from "../components/Hero/hero";
 import client from "../client";
 import { H1, H2, H3 } from "../components/utils/headlines";
 import { PortableText } from "@portabletext/react";
+import useStore from "../store/store"; // adjust the path as necessary
 
 export default function About({ dataStart }) {
     // useEffect(() => {
     //     console.log(dataStart, dataNews);
     // }, []);
+    const { language } = useStore();
 
     return (
         <MainContainer width="w-full px-6 sm:px- sm:pl-12 col-span-12 md:col-span-9 md:ml-[320px] overflow-hidden">
@@ -21,7 +23,9 @@ export default function About({ dataStart }) {
 
             <div className="col-span-12 md:col-span-6 sm:pt-8">
                 <div className="texte mt-[-10px] sm:mt-8  md:px-0">
-                    <PortableText value={dataStart.description}></PortableText>
+                    <PortableText
+                        value={language == "DE" ? dataStart.description : dataStart.descriptionEN}
+                    ></PortableText>
                 </div>
             </div>
         </MainContainer>

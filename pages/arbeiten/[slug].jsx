@@ -123,12 +123,9 @@ const Work = ({ post, dataAll }) => {
         lightboxRef.current.classList.remove("fade-in");
         if (!e.target.classList.contains("big")) {
             lightboxRef.current.style.paddingBottom = "100%";
-            console.log("not big");
         } else {
             lightboxRef.current.style.paddingBottom = "66.25%";
-            console.log(" big");
         }
-        console.log(post?.galleryLightbox?.images?.[i]?.aspectRatio);
         const updateAspectRatio = () => {
             // Calculate or fetch the new aspect ratio
             const newAspectRatio = post?.galleryLightbox?.images?.[i]?.aspectRatio || "16/9"; // Example: replace with your logic
@@ -143,7 +140,6 @@ const Work = ({ post, dataAll }) => {
     }
 
     useEffect(() => {
-        console.log(post, dataAll, post.seo, imgRefs);
         if (imgRefs.current.length > 0 && imgRefs.current[0]) {
             setVideoDimensions({
                 width: imgRefs.current[0].clientWidth,
@@ -154,9 +150,6 @@ const Work = ({ post, dataAll }) => {
 
     useEffect(() => {
         setVids(post.videos);
-        console.log(post);
-        console.log(mainImgRef.current.width);
-        console.log(post.videos, "test");
 
         return () => {
             setVids(null);
@@ -243,7 +236,7 @@ const Work = ({ post, dataAll }) => {
                                         })}
                                 </div>
                                 {post.captionTop ? (
-                                    <div className="text-right" style={{ width: `${imgWidth}px` }}>
+                                    <div className="text-right caption" style={{ width: `${imgWidth}px` }}>
                                         <PortableText
                                             className="text-white text-xs"
                                             value={language == "DE" ? post.captionTop : post.captionTopEN}
@@ -298,7 +291,7 @@ const Work = ({ post, dataAll }) => {
                                                     />
                                                 </div>
                                                 {e.caption && (
-                                                    <div className="caption px-6 sm:px-0 col-span-12 text-text text-xs">
+                                                    <div className="caption px-6 sm:px-0 col-span-12 text-text !text-xs">
                                                         <PortableText
                                                             value={language == "DE" ? e.caption : e.captionEN}
                                                         ></PortableText>
@@ -325,7 +318,8 @@ const Work = ({ post, dataAll }) => {
                                             marginTop: "-5px!important",
                                             backgroundImage: `url(${urlFor(post.galleryLightbox.images[lightBoxImg])})`,
                                             aspectRatio: lbAspect,
-                                            backgroundPosition: "center -130px",
+                                            backgroundPosition:
+                                                post.slug.current == "salzgehalt-i" ? "center -130px" : "center",
                                         }}
                                     ></div>
                                 ) : null}
@@ -394,7 +388,7 @@ const Work = ({ post, dataAll }) => {
                                     Your browser does not support the audio element.
                                 </audio>
                             ) : null}
-                            <div className="bottomtext px-6 sm:px-0 mt-6">
+                            <div className="bottomtext px-6 sm:px-0 mt-1">
                                 <PortableText
                                     value={language == "DE" ? post.descriptionBottom : post.descriptionBottomEN}
                                 ></PortableText>
@@ -422,7 +416,7 @@ const Work = ({ post, dataAll }) => {
 export default Work;
 
 export const getStaticPaths = async () => {
-    const res = await client.fetch(`*[_type in ["work"] ]`);
+    const res = await client.fetch(`*[_type in ["work"] | order(orderRank) ]`);
     const data = await res;
 
     const paths = data.map((e) => {
@@ -442,7 +436,7 @@ export const getStaticProps = async (context) => {
     `);
     const data = await res;
 
-    const resAll = await client.fetch(`*[_type == "work"] | order(order asc)`);
+    const resAll = await client.fetch(`*[_type == "work"] |  order(orderRank)`);
     const dataAll = await resAll;
 
     return {
