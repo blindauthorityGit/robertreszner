@@ -61,7 +61,9 @@ const Works = ({ dataAll }) => {
                             target="_blank"
                             rel="noopener noreferrer"
                         >
-                            {language == "DE" ? "werkkatalog" : "catalog"}
+                            {language == "DE"
+                                ? "PDFeBook | FORMenVORGANG | ausgewählte Werke 1993 bis 2009"
+                                : "PDFeBook | FORMenVORGANG | selected works 1993 to 2009"}
                         </a>
                     </div>
                 </div>
