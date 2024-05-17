@@ -77,7 +77,7 @@ const Navbar = (props) => {
                                         onClick={() => {
                                             setModalOpen(false);
                                         }}
-                                        className={`fade-in font-[300] block text-regular mb-2 tracking-wide hover:text-black`}
+                                        className={`fade-in font-medium block text-regular mb-2 tracking-wide hover:text-black`}
                                     >
                                         {language == "DE" ? e.de : e.en}
                                     </a>
@@ -134,7 +134,7 @@ const Navbar = (props) => {
             <div className="nav mobileNav text-base font-[300] md:hidden col-span-12 px-6 pt-6 flex items-center justify-between">
                 <div className="home uppercase text-text tracking-wide hover:text-black ">
                     <Link href="/">
-                        <a className="block">{props.HomeLink}</a>
+                        <a className="block font-medium">{props.HomeLink}</a>
                     </Link>
                 </div>
                 <div className="burger">
