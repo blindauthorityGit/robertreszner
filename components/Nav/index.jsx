@@ -72,7 +72,7 @@ const Navbar = (props) => {
                         </Link>
                         {props.MenuItems.map((e, i) => {
                             return (
-                                <Link key={`linkM${i}`} href={`/${e}`}>
+                                <Link key={`linkM${i}`} href={`/${e.de}`}>
                                     <a
                                         onClick={() => {
                                             setModalOpen(false);
