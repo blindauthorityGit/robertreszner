@@ -68,7 +68,7 @@ const Navbar = (props) => {
                 >
                     <div className="mt-6 text-left pl-6 text-text">
                         <Link href="/">
-                            <a className="block text-base font-[300]  mb-6 uppercase">{props.HomeLink}</a>
+                            <a className="block text-base font-medium  mb-6 uppercase">{props.HomeLink}</a>
                         </Link>
                         {props.MenuItems.map((e, i) => {
                             return (
@@ -77,7 +77,7 @@ const Navbar = (props) => {
                                         onClick={() => {
                                             setModalOpen(false);
                                         }}
-                                        className={`fade-in font-medium block text-regular mb-2 tracking-wide hover:text-black`}
+                                        className={`fade-in font-[300] block text-regular mb-2 tracking-wide hover:text-black`}
                                     >
                                         {language == "DE" ? e.de : e.en}
                                     </a>
@@ -87,7 +87,7 @@ const Navbar = (props) => {
                         <div className=" text-left font-[300] text-black text-base tracking-wide block">
                             {props.MenuItemsLower.map((e, i) => {
                                 return (
-                                    <Link key={`link${i}`} href={`/${e}`}>
+                                    <Link key={`link${i}`} href={`/${e.de}`}>
                                         <a
                                             onClick={() => {
                                                 setModalOpen(false);
