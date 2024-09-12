@@ -149,7 +149,9 @@ const Work = ({ post, dataAll }) => {
     }, [dataAll, post]);
 
     useEffect(() => {
-        setVids(post.videos);
+        if (post.videos) {
+            setVids(post.videos);
+        }
 
         return () => {
             setVids(null);
