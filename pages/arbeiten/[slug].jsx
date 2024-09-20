@@ -370,7 +370,7 @@ const Work = ({ post, dataAll }) => {
                                     : null}
                             </div>
                             {typeof vids !== "undefined"
-                                ? vids.map((e, i) => {
+                                ? vids?.map((e, i) => {
                                       console.log(controls(i));
                                       return (
                                           <div key={`key${i}`} className={`mt-1 ${e.videoTop ? "order-first" : null}`}>
