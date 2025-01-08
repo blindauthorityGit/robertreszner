@@ -186,7 +186,7 @@ const Work = ({ post, dataAll }) => {
 
                         <div className="col-span-12 md:col-span-8 grid">
                             <div className="order-first">
-                                <div className="2xl:h-[35rem] relative flex">
+                                <div className=" relative flex">
                                     {post.mainImage &&
                                         post.mainImage.map((e, i) => {
                                             return (
